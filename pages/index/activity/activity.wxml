@@ -1,0 +1,67 @@
+<!--pages/index/activity/activity.wxml-->
+<view class="container search-box">
+     <view class="section w100">
+          <input placeholder="请输入搜索内容" />
+          <image src='../../images/search_icon.png'></image>
+    </view>
+</view>
+<view class="container">
+  <view class="swiper">
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+    <swiper-item>
+        <image src="{{item}}" class="slide-image" style='width:100%;height:300rpx' />
+    </swiper-item>
+  </block>
+  </swiper>
+  </view>
+</view>
+
+<view class="container mt20" bindtap='detailed'>
+    <view class='list-cont'>
+         <image src='../../images/pic_04.png' class='hd-img'></image>
+         <view class='list-title'>互联网行业山东老乡学习交流，撬动流量变现</view>
+         <view class='list-data'>
+            <view class='left'><text class='cor-red'>¥1000</text>起</view>
+            <view class='right'>北京海淀</view>
+            <view class='right mr20'>12-31</view>
+         </view>
+  </view>
+</view>
+<view class="container mt20" bindtap='detailed'>
+    <view class='list-cont'>
+         <image src='../../images/pic_05.png' class='hd-img'></image>
+         <view class='list-title'>认识创新—读书交流会，周日上午思想碰撞周日上午思想碰撞周日…</view>
+         <view class='list-data'>
+            <view class='left'><text class='cor-red'>¥500</text>起</view>
+            <view class='right'>北京海淀</view>
+            <view class='right mr20'>12-31</view>
+         </view>
+  </view>
+</view>
+<view class="container mt20" bindtap='detailed'>
+    <view class='list-cont'>
+         <image src='../../images/pic_06.png' class='hd-img'></image>
+         <view class='list-title'>认识创新—读书交流会，周日上午思想碰撞</view>
+         <view class='list-data'>
+            <view class='left'><text class='cor-red'>¥1000</text>起</view>
+            <view class='right'>北京海淀</view>
+            <view class='right mr20'>12-31</view>
+         </view>
+  </view>
+</view>
+<view class="container mt20" bindtap='detailed'>
+    <view class='list-cont'>
+         <image src='../../images/pic_00.png' class='hd-img'></image>
+         <view class='list-title'>互联网行业山东老乡学习交流，撬动流量变现</view>
+         <view class='list-data'>
+            <view class='left'><text class='cor-red'>¥100</text>起</view>
+            <view class='right'>北京海淀</view>
+            <view class='right mr20'>12-31</view>
+         </view>
+  </view>
+</view>
+
+
+

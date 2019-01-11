@@ -1,0 +1,14 @@
+/* pages/index/activity/activity.wxss */
+.list-cont,.section{padding: 0 40rpx; width:670rpx;}
+.section { padding-bottom:24rpx; padding-top: 10rpx; position: fixed; top:0;left: 0; background: #fff; z-index: 999;/* box-shadow:0px 3px 6px rgba(123,127,149,0.15);*/} 
+.section input{ height:64rpx; background: #F6F6F6; border-radius:36rpx; float: left; width:520rpx; padding: 0 40rpx; font-size: 28rpx;}
+.section image{width: 44rpx; height: 44rpx; float: right; margin-top:10rpx; }
+.search-box{height:98rpx;}
+.swiper{width:100%;}
+swiper{ height: 300rpx;}
+.list-cont{ padding: 20rpx 40rpx;}
+.list-cont .cor-red{ font-size: 32rpx; margin-right: 5rpx;}
+.list-title{font-size: 32rpx; height: 120rpx; line-height: 40rpx}
+.list-data{line-height:36rpx; color: #666;}
+.list-data .right{ margin-top: 4rpx;}
+.hd-img{width: 160rpx; height: 160rpx; float: left;border-radius: 10rpx; margin-right:30rpx;}

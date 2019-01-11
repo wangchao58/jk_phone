@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/information/information",
+    "pages/index/activity/activity",
+    "pages/index/activityDetailed/activityDetailed",
+    "pages/index/shops/shops",
+    "pages/index/carpool/carpool",
+    "pages/publish/publish",
+    "pages/personal/personal"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "吃完就走",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#459dff",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/images/tab1.png",
+        "selectedIconPath": "pages/images/tab1-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "iconPath": "pages/images/tab2.png",
+        "selectedIconPath": "pages/images/tab2-active.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "pages/images/tab3.png",
+        "selectedIconPath": "pages/images/tab3-active.png",
+        "text": "我的"
+      }
+    ]
+  }
+}
