@@ -33,6 +33,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    src: "http://192.168.199.189"  //服务器域名
   }
 })
