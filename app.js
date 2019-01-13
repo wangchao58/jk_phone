@@ -44,7 +44,11 @@ App({
   },
   globalData: {
     userInfo: null,
+<<<<<<< HEAD
     // src: "http://192.168.199.189"  //服务器域名
     src: "http://192.168.43.184"
+=======
+    src: "http://192.168.199.189"  //服务器域名
+>>>>>>> master
   }
 })
