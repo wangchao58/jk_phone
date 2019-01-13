@@ -10,6 +10,16 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: "http://192.168.43.184/personage/addPersonage",
+          method: 'POST',
+          header: { 'content-type': 'application/x-www-form-urlencoded' },
+          data: { code: res.code },
+          success(res) {
+            //console.log(res.data)
+            wx.setStorageSync('userid', res.data.id)
+          }
+        })
       }
     })
     // 获取用户信息
@@ -33,6 +43,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    // src: "http://192.168.199.189"  //服务器域名
+    src: "http://192.168.43.184"
   }
 })
