@@ -12,7 +12,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.activityData();
+  },
 
+  /**
+ * 活动详情信息
+ */
+  activityData: function (id) {
+    var that = this;
+    var src = app.globalData.src + "/activity/getActivityByTid";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: { id: id },
+      success(res) {
+        that.setData({
+          tImg: res.data.tImg,
+          tHeadline: res.data.tHeadline,
+          tViewsNum: res.data.tViewsNum,
+          tCollectionNum: res.data.tCollectionNum,
+          tStartTime: res.data.tStartTime,
+          tEndTime: res.data.tEndTime,
+          tNickName: res.data.tNickName,
+          tSite: res.data.tSite,
+          tPhone: res.data.tPhone,
+          tContent: res.data.tContent
+        });
+      }
+    })
   },
 
   /**
