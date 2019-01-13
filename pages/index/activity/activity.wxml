@@ -18,14 +18,15 @@
   </view>
 </view>
 
-<view class="container mt20" bindtap='detailed'>
+<view class="container mt20" bindtap='detailed' wx:for="{{listShop}}" wx:key="{{item}}" id="{{item.name}}">
     <view class='list-cont'>
-         <image src='../../images/pic_04.png' class='hd-img'></image>
-         <view class='list-title'>互联网行业山东老乡学习交流，撬动流量变现</view>
+         <!-- <image src='../../images/pic_04.png' class='hd-img'></image> -->
+         <image src='{{item.tImg}}' class='hd-img'></image>
+         <view class='list-title'>{{item.tHeadline}}</view>
          <view class='list-data'>
-            <view class='left'><text class='cor-red'>¥1000</text>起</view>
-            <view class='right'>北京海淀</view>
-            <view class='right mr20'>12-31</view>
+            <view class='left'><text class='cor-red'>¥{{item.tMoney}}</text>起</view>
+            <view class='right'>{{item.tSite}}</view>
+            <view class='right mr20'>{{item.tSite}}</view>
          </view>
   </view>
 </view>
