@@ -34,22 +34,13 @@ Page({
         that.setData({
           data: res.data
         });
-        // that.setData({
-        //   tImg: res.data.tImg,
-        //   tHeadline: res.data.tHeadline,
-        //   tViewsNum: res.data.tViewsNum,
-        //   tCollectionNum: res.data.tCollectionNum,
-        //   tStartTime: res.data.tStartTime,
-        //   tEndTime: res.data.tEndTime,
-        //   tNickName: res.data.tNickName,
-        //   tSite: res.data.tSite,
-        //   tPhone: res.data.tPhone,
-        //   tContent: res.data.tContent,
-        //   pId: res.data.pId
-        // });
       }
     })
   },
+
+  activityEnshrine：function(){
+
+  }
 
   /**
    * 生命周期函数--监听页面初次渲染完成
