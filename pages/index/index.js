@@ -1,4 +1,4 @@
-
+var app = getApp();
 Page({
   data: {
     imgUrls: [
@@ -12,7 +12,7 @@ Page({
     listInformation: []
   },
   onLoad: function (options) {
-     
+    this.listInformation();
   },
   information:function(){
     wx.navigateTo({
@@ -47,30 +47,12 @@ Page({
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       success(res) {
-        for (var i = 0; i < res.data.length; i++) {
-          var tContent = "listShop[" + i + "].tContent";
-          var tCreateTime = "listShop[" + i + "].tCreateTime";
-          var tImg = "listShop[" + i + "].tImg";
-          var tPraise = "listShop[" + i + "].tPraise";
-          var tEvaluate = "listShop[" + i + "].tEvaluate";
-          var tNickName = "listShop[" + i + "].tNickName";// 用户昵称
-          var tAvatarUrl = "listShop[" + i + "].tAvatarUrl";// 用户头像
-          var tId = "listShop[" + i + "].tId";
-          var imgsrc = app.globalData.src + "/file/download?fileName=" + res.data[i].tImg;
-          if (res.data[i].portrait.length == 0) {
-            imgsrc = "http://www.lisiyang.name/list-shop.jpg"
-          }
-          that.setData({
-            [tContent]: res.data[i].tContent,
-            [tCreateTime]: res.data[i].tCreateTime,
-            [timg]: imgsrc,
-            [tPraise]: res.data[i].tPraise,
-            [tEvaluate]: res.data[i].tEvaluate,
-            [tNickName]: res.data[i].tNickName,
-            [tAvatarUrl]: res.data[i].tAvatarUrl,
-            [tId]: res.data[i].tId
-          });
+        var listInformation = that.data.listInformation;
+        var data = res.data;
+        for (var i = 0; i < data.length; i++) {
+          listInformation.push(data[i]);
         }
+        that.setData({ listInformation: listInformation });
       }
     })
   }

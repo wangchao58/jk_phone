@@ -11,7 +11,7 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: "http://192.168.43.184/personage/addPersonage",
+          url: "http://192.168.199.189/personage/addPersonage",
           method: 'POST',
           header: { 'content-type': 'application/x-www-form-urlencoded' },
           data: { code: res.code },
@@ -44,7 +44,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    // src: "http://192.168.199.189"  //服务器域名
-    src: "http://192.168.43.184"
+    src: "http://192.168.199.189"  //服务器域名
   }
 })

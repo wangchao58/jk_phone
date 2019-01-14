@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
   data: {
     imgUrls: [
@@ -11,7 +12,7 @@ Page({
     listActivity: []
   },
   onLoad: function (options) {
-
+    this.listActivity();
   },
   detailed:function(){
     wx.navigateTo({
@@ -21,7 +22,7 @@ Page({
   /**
    * 活动列表
    */
-  listActivity: function (id) {
+  listActivity: function () {
     var that = this;
     var array = [];
     that.setData({ listActivity: array });
@@ -59,5 +60,5 @@ Page({
 
 
 
-  
+
 })
