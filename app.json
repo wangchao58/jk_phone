@@ -4,10 +4,14 @@
     "pages/index/information/information",
     "pages/index/activity/activity",
     "pages/index/activityDetailed/activityDetailed",
+    "pages/index/signUp/signUp",
+    "pages/index/discuss/discuss",
     "pages/index/shops/shops",
+    "pages/index/shopDetailed/shopDetailed",
     "pages/index/carpool/carpool",
     "pages/publish/publish",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/index/status/status"
   ],
   "window": {
     "backgroundTextStyle": "light",
