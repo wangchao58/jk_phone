@@ -1,17 +1,22 @@
 // pages/index/activityDetailed/activityDetailed.js
+var app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 500,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("-----------------" + options.tId+"-------------------")
+    console.log("-----------------" + wx.getStorageSync("tId")+"-------------------")
     this.activityData();
   },
 
@@ -25,7 +30,7 @@ Page({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: { id: id },
+      data: { tId: id },
       success(res) {
         that.setData({
           tImg: res.data.tImg,

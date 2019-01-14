@@ -18,15 +18,20 @@
   </view>
 </view>
 
-<view class="container mt20" bindtap='detailed' wx:for="{{listShop}}" wx:key="{{item}}" id="{{item.name}}">
+<view class="container mt20" bindtap='detailed' wx:for="{{listActivity}}" wx:key="{{item}}" id="{{item.name}}">
     <view class='list-cont'>
-         <!-- <image src='../../images/pic_04.png' class='hd-img'></image> -->
-         <image src='{{item.tImg}}' class='hd-img'></image>
+         <image src='../../images/pic_04.png' class='hd-img'></image>
+         <!-- <image src='{{item.tImg}}' class='hd-img'></image> -->
          <view class='list-title'>{{item.tHeadline}}</view>
          <view class='list-data'>
-            <view class='left'><text class='cor-red'>¥{{item.tMoney}}</text>起</view>
+            <view class='left' wx:if="{{item.tMoney != null}}">
+              <text class='cor-red'>¥{{item.tMoney}}</text>起
+            </view>
+            <view class='left' wx:if="{{item.tMoney == null}}">
+              <text class='cor-green'>免费</text>
+            </view>
             <view class='right'>{{item.tSite}}</view>
-            <view class='right mr20'>{{item.tSite}}</view>
+            <view class='right mr20'>{{item.tCreateTime}}</view>
          </view>
   </view>
 </view>
