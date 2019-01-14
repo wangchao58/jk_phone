@@ -15,9 +15,9 @@ Page({
   onLoad: function (options) {
     this.listActivity();
   },
-  detailed:function(){
+  detailed:function(e){
     wx.navigateTo({
-      url: '../activityDetailed/activityDetailed'
+      url: '../activityDetailed/activityDetailed?tId='+tId
     })
   },
   /**
@@ -42,10 +42,4 @@ Page({
       }
     })
   }
-
-
-
-
-
-
 })
