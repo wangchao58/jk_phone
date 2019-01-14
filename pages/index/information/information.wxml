@@ -9,10 +9,8 @@
 <view class="container mt20" wx:for="{{listInformation}}" wx:key="{{item}}" id="{{item.name}}">
     <view class='list-cont'>
         <view class='w100 list-top'>
-              <!-- <image src='{{item.tAvatarUrl}}'></image> -->
-              <!-- <view class='left fontSize32'>{{item.tNickName}}</view> -->
-              <image src='../../images/touxiang01.png'></image>
-              <view class='left fontSize32'>caesar</view>
+              <image src='{{item.avatar}}'></image>
+              <view class='left fontSize32'>{{item.pId}}</view>
               <view class='right cor-grey'>{{item.tCreateTime}}</view>
         </view>
         <view class='w100 list-bom'>
