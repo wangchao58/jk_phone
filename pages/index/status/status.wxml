@@ -1,0 +1,8 @@
+<!--pages/index/status/status.wxml-->
+<view class="container">
+    <view class="w100 center mt20">
+          <icon type="{{iconType}}" size="60" color="{{iconColor}}"/>
+    </view>
+    <view class="w100 fontSize36 bold center mt20">报名成功</view>
+    <view class="w100 center mt10 cor-grey" >退款将于3日内到达您的支付账户</view>
+</view>

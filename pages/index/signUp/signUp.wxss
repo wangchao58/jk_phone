@@ -1,0 +1,6 @@
+/* pages/index/signUp/signUp.wxss */
+.section{margin: 0 40rpx; width:670rpx;font-size: 28rpx; padding:20rpx 0;}
+.section-label{float: left; width: 150rpx; height: 62rpx; line-height: 62rpx;  color: #666;}
+.section input{width: 470rpx; background: #F7F7F7; height: 60rpx; line-height: 60rpx; float: left; border: #ccc solid 1rpx; border-radius: 5rpx; padding: 0 20rpx;}
+.section textarea{width: 470rpx; background: #F7F7F7; height:240rpx; line-height: 40rpx; float: left; border: #ccc solid 1rpx; border-radius: 5rpx; padding: 15rpx 20rpx;}
+.section-submit{ border-radius: 10rpx; background: #66AFFF; color: #fff; font-size: 36rpx; text-align: center; width: 360rpx; height: 80rpx; line-height: 80rpx; margin-left: 150rpx; margin-bottom: 30rpx;}

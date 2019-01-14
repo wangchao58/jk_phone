@@ -1,0 +1,95 @@
+<!--pages/index/discuss/discuss.wxml-->
+<view class="container">
+    <view class='list-cont'>
+        <view class='w100 list-top'>
+              <image src='../../images/touxiang01.png'></image>
+              <view class='left fontSize32'>会飞的羊</view>
+              <view class='right cor-grey'>10分钟前</view>
+        </view>
+        <view class='w100 list-bom'>
+              <view class='list-txt w100 left'>《大江大河》里书卷气和技术流扑面而来的宋运辉、“江湖气”与“猴气”集于一身的雷东宝、瘦弱却脑袋灵光的小杨巡，是三个极具青春气息的面孔，更是独属于改革先行者的三副面孔。
+              </view>
+              <view class='list-img w100 left'>
+                 <image src='../../images/pic_001.png'></image>
+                 <image src='../../images/pic_002.png'></image>
+                 <image src='../../images/pic_003.png'></image>
+              </view>
+              <view class='list-num w100 left'>
+                    <view class='left'><image src="../../images/shops-ico02.png" bindtap='discuss' ></image>北京</view>
+                    <view class='right'><image src="../../images/index-ico05.png" ></image>99</view>
+              </view>
+        </view>
+  </view>
+</view>
+<view class="container discuss">
+    <view class='discuss-cont'>
+           <view class='discuss-title w100'>共 157 条评论</view>
+           <view class='discuss-row'>
+                <view class='w100 discuss-top'>
+                      <image src='../../images/touxiang01.png' class='discuss-head'></image>
+                      <view class='left mr20'>吃瓜群众</view>
+                      <view class='right'>10分钟前</view>
+                </view>
+                <view class='discuss-txt'>
+                      <view class='left'>这写的什么啊</view>
+                </view>
+           </view>
+           <view class='discuss-row'>
+                <view class='w100 discuss-top'>
+                      <image src='../../images/touxiang02.png' class='discuss-head'></image>
+                      <view class='left mr20'>吃瓜群众</view>
+                      <view class='right'>10分钟前</view>
+                </view>
+                <view class='discuss-txt'>
+                      <view class='left'>这写的什么啊</view>
+                </view>
+           </view>
+           <view class='discuss-row'>
+                <view class='w100 discuss-top'>
+                      <image src='../../images/touxiang03.png' class='discuss-head'></image>
+                      <view class='left mr20'>吃瓜群众</view>
+                      <view class='right'>30分钟前</view>
+                </view>
+                <view class='discuss-txt'>
+                      <view class='left'>这写的什么啊</view>
+                </view>
+           </view>
+           <view class='discuss-row'>
+                <view class='w100 discuss-top'>
+                      <image src='../../images/touxiang01.png' class='discuss-head'></image>
+                      <view class='left mr20'>吃瓜群众</view>
+                      <view class='right'>一天前</view>
+                </view>
+                <view class='discuss-txt'>
+                      <view class='left'>这写的什么啊</view>
+                </view>
+           </view>
+           <view class='discuss-row'>
+                <view class='w100 discuss-top'>
+                      <image src='../../images/touxiang02.png' class='discuss-head'></image>
+                      <view class='left mr20'>吃瓜群众</view>
+                      <view class='right'>2019-01-08</view>
+                </view>
+                <view class='discuss-txt'>
+                      <view class='left'>这写的什么啊</view>
+                </view>
+           </view>
+           <view class='discuss-row'>
+                <view class='w100 discuss-top'>
+                      <image src='../../images/touxiang03.png' class='discuss-head'></image>
+                      <view class='left mr20'>吃瓜群众</view>
+                      <view class='right'>2019-01-06</view>
+                </view>
+                <view class='discuss-txt'>
+                      <view class='left'>这写的什么啊</view>
+                </view>
+           </view>
+    </view>
+</view>
+<view class="container" style='height:99rpx; background-color:#F7F7F7;'></view>
+<view class="search-box">
+     <view class="section">
+          <input placeholder="请输入评论内容" />
+          <view class='submit-btn'>发送</view>
+    </view>
+</view>
