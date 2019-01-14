@@ -19,7 +19,7 @@
 </view>
 
 <view class="container mt20" >
-    <view class='list-cont' wx:for="{{listActivity}}" wx:key="{{item}}" id="{{item.name}}" bindtap='detailed'>
+    <view class='list-cont' wx:for="{{listActivity}}" wx:key="{{item}}" id="{{item.tId}}" bindtap='detailed'>
          <image src='../../images/pic_04.png' class='hd-img'></image>
          <!-- <image src='{{item.tImg}}' class='hd-img'></image> -->
          <view class='list-title'>{{item.tHeadline}}</view>

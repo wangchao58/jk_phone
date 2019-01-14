@@ -9,13 +9,13 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 500,
-    listActivity: [],
-    tId: ""
+    listActivity: []
   },
   onLoad: function (options) {
     this.listActivity();
   },
   detailed:function(e){
+    var tId = e.currentTarget.id;
     wx.navigateTo({
       url: '../activityDetailed/activityDetailed?tId='+tId
     })
