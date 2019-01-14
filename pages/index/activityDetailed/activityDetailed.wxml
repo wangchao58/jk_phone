@@ -28,8 +28,9 @@
 </view>
 <view class="container mt20">
    <view class='hd-cont'>
-          <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>活动详情</view>
-          <view class='w100 cor-grey fontSize28 hd-txt'>{{tContent}}</view>
+      <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>活动详情</view>
+      <view class='w100 cor-grey fontSize28 hd-txt'>{{tContent}}</view>
+    </view>
 </view>
 
 
