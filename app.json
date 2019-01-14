@@ -7,9 +7,7 @@
     "pages/index/shops/shops",
     "pages/index/carpool/carpool",
     "pages/publish/publish",
-    "pages/personal/personal",
-    "pages/index/shopkeeper",
-    "pages/index/shopkeeper/shopkeeper"
+    "pages/personal/personal"
   ],
   "window": {
     "backgroundTextStyle": "light",
