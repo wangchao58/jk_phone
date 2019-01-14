@@ -44,6 +44,7 @@ App({
   },
   globalData: {
     userInfo: null,
+    mapKey: "VV4BZ-WGU6J-NBQFZ-KBMLJ-5P4LZ-YAFEM",
     src: "http://192.168.199.189"  //服务器域名
   }
 

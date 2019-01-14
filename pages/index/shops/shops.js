@@ -1,66 +1,56 @@
-// pages/index/shops/shops.js
+var QQMapWX = require('../../images/qqmap-wx-jssdk.min.js');
+var qqmapsdk;
+var app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    photoIco:"../../images/shops-ico01.png",
+    imgUrls: [
+      "../../images/001.jpg",
+      "../../images/002.jpg",
+      "../../images/003.jpg"
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 500
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    qqmapsdk = new QQMapWX({
+        key: app.globalData.mapKey
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  detailed: function () {
+    wx.navigateTo({
+      url: '../activityDetailed/activityDetailed'
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  callPhone:function(e){
+    var phone = e.currentTarget.dataset.phone
+    wx.makePhoneCall({
+      phoneNumber: phone
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  //解析地址
+  analyze:function(e){
+    var shopName = e.currentTarget.dataset.name;
+    var shopAddress = e.currentTarget.dataset.address;
+    qqmapsdk.geocoder({
+      address: shopAddress,
+      success: function (res) {
+        const latitude = res.result.location.lat;
+        const longitude = res.result.location.lng;
+        wx.openLocation({
+          latitude,
+          longitude,
+          name: shopName,
+          address: shopAddress
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  detailed: function () {
+    wx.navigateTo({
+      url: '../shopDetailed/shopDetailed'
+    })
   }
 })

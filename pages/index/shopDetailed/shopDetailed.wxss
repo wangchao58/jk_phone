@@ -1,1 +1,13 @@
-/* pages/index/shopDetailed/shopDetailed.wxss */
+.hd-title{ padding: 40rpx 40rpx 20rpx; width: 670rpx; font-size: 36rpx; color: #333; line-height: 44rpx; text-align: left;}
+.hd-label,.hd-cont{padding:0 40rpx; width: 670rpx;}
+.hd-label .left{font-size: 48rpx;}
+.hd-label .right{position: relative; padding-left: 40rpx; color: #666; margin-top:20rpx;}
+.hd-label .right image{position: absolute; left: 0; top: 2rpx; width: 28rpx; height: 28rpx;}
+.hd-data{margin:0 40rpx; width: 670rpx; font-size: 28rpx;padding: 30rpx 0; line-height: 40rpx; color: #666;}
+.hd-data .left{ width: 600rpx;}
+.hd-cont-bt{ padding: 30rpx 0;}
+.hd-txt{ text-align:justify; line-height: 44rpx; padding: 20rpx 0;}
+.bottomIco{ width: 50rpx; text-align: center; position: relative; padding-top: 50rpx; color: #666; float: left; margin: 10rpx 40rpx 0;}
+.bottomIco image{ width: 50rpx; height: 50rpx; position: absolute; top: 0; left: 0;}
+.bottomBox .left{width:40rpx; height: 100rpx;}
+.addressIco{ width: 32rpx; height: 32rpx; float: left; margin-right: 10rpx;}

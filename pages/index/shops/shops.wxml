@@ -1,2 +1,50 @@
 <!--pages/index/shops/shops.wxml-->
-<text>pages/index/shops/shops.wxml</text>
+<view class="container search-box">
+     <view class="section w100">
+          <input placeholder="请输入搜索内容" />
+          <image src='../../images/search_icon.png'></image>
+    </view>
+</view>
+<view class="container">
+  <view class="swiper">
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+    <swiper-item>
+        <image src="{{item}}" class="slide-image" style='width:100%;height:300rpx' />
+    </swiper-item>
+  </block>
+  </swiper>
+  </view>
+</view>
+
+<view class="container mt20">
+    <view class='list-cont'>
+         <image src='../../images/pic_04.png' class='hd-img' bindtap="detailed"></image>
+         <view class='list-title' bindtap="detailed">北京鲸控科技有限公司</view>
+         <view class='list-data'>软件开发和网络推广</view>
+         <view class='list-address' bindtap='analyze' data-address='北京市海淀区黑泉路1号' data-name='北京鲸控科技有限公司'><image src='../../images/shops-ico02.png'></image>北京市海淀区黑泉路1号</view>
+         <image bindtap='callPhone' data-phone='18501335305' class='photoIco' src='{{photoIco}}'></image>
+  </view>
+  <view class='list-cont'>
+         <image src='../../images/pic_05.png' class='hd-img' bindtap="detailed"></image>
+         <view class='list-title' bindtap="detailed">呷哺</view>
+         <view class='list-data'>餐饮</view>
+         <view class='list-address'  bindtap='analyze' data-address='北京市海淀区西三旗桥东金燕龙大厦' data-name='呷哺呷哺'><image src='../../images/shops-ico02.png'></image>北京市海淀区西三旗桥东金燕龙大厦</view>
+         <image bindtap='callPhone' data-phone='18501335305' class='photoIco' src='{{photoIco}}'></image>
+  </view>
+  <view class='list-cont'>
+         <image src='../../images/pic_06.png' class='hd-img' bindtap="detailed"></image>
+         <view class='list-title' bindtap="detailed">北京鲸控科技有限公司</view>
+         <view class='list-data'>软件开发和网络推广</view>
+         <view class='list-address' bindtap='analyze' data-address='北京市海淀区黑泉路1号' data-name='北京鲸控科技有限公司'><image src='../../images/shops-ico02.png'></image>北京市海淀区黑泉路1号</view>
+         <image bindtap='callPhone' data-phone='18501335305' class='photoIco' src='{{photoIco}}'></image>
+  </view>
+  <view class='list-cont'>
+         <image src='../../images/pic_00.png' class='hd-img' bindtap="detailed"></image>
+         <view class='list-title' bindtap="detailed">北京鲸控科技有限公司</view>
+         <view class='list-data'>软件开发和网络推广</view>
+         <view class='list-address' data-address='北京市海淀区黑泉路1号' data-name='北京鲸控科技有限公司' bindtap='analyze'><image src='../../images/shops-ico02.png'></image>北京市海淀区黑泉路1号</view>
+         <image bindtap='callPhone' data-phone='18501335305' class='photoIco' src='{{photoIco}}'></image>
+  </view>
+</view>
