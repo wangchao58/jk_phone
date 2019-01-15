@@ -8,8 +8,7 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
-    duration: 500,
-    tId:""
+    duration: 500
   },
 
   /**
@@ -39,10 +38,9 @@ Page({
   },
 
   activityEnshrine: function (e) {
-    console.log("-----e------" + e.currentTarget.id);
     var tId = e.currentTarget.id;
     wx.navigateTo({
-      url: '../enshrine/enshrine?tId=' + tId
+      url: '../enshrine/enshrine?tId=' + tId+'&tType='+'2'
     })
   },
   

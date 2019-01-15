@@ -11,7 +11,8 @@
     "pages/index/carpool/carpool",
     "pages/publish/publish",
     "pages/personal/personal",
-    "pages/index/status/status"
+    "pages/index/status/status",
+    "pages/index/enshrine/enshrine"
   ],
   "window": {
     "backgroundTextStyle": "light",
