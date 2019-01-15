@@ -2,11 +2,11 @@
 <view class="container">
      <view class="section borderBom">
          <view class='section-label'>手机号码</view>
-         <input placeholder="请输入您的手机号" />
+         <input placeholder="请输入您的手机号" bindinput ="tPhoneInput"/>
     </view>
     <view class="section">
-         <view class='section-label'>自我介绍</view>
-         <textarea placeholder="请输入自我介绍" />
+         <view class='section-label' name="tIntroduction">自我介绍</view>
+         <textarea  placeholder="请输入自我介绍" bindinput="tIntroductionInput"/>
     </view>
     <view class="section">
          <view class='section-submit' bindtap='signUp'>立即报名</view>
