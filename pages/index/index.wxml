@@ -41,6 +41,7 @@
               </view>
         </view>
   </view>
+</view>
 
   <view class="container mt20">
     <view class='list-cont'>
@@ -65,7 +66,6 @@
         </view>
   </view>
 </view>
-
 <view class="container mt20">
     <view class='list-cont'>
         <view class='w100 list-top'>
@@ -83,24 +83,4 @@
               </view>
         </view>
   </view>
-</view>
-
-<view class="container mt20" >
-    <view class='list-cont'>
-        <view class='w100 list-top'>
-              <image src='../images/touxiang03.png'></image>
-              <view class='left fontSize32'>Deveeprasad</view>
-              <view class='right cor-grey'>12-31 22:00</view>
-        </view>
-        <view class='w100 list-bom'>
-              <view class='list-txt w100 left' bindtap='discuss'>《大江大河》里书卷气和技术流扑面而来的宋运辉、“江湖气”与“猴气”集于一身的雷东宝、瘦弱却脑袋灵光的小杨巡，是三个极具青春气息的面孔，更是独...
-              </view>
-              <view class='list-num w100 left'>
-                    <view class='left'><image src="../images/shops-ico02.png" bindtap='discuss' ></image>北京</view>
-                    <view class='right'><image src="../images/index-ico06.png"  bindtap='discuss'></image>3000</view>
-                    <view class='right mr30'><image src="../images/index-ico05.png" ></image>99</view>
-              </view>
-        </view>
-  </view>
-</view>
 </view>
