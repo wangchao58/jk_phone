@@ -15,13 +15,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.activityEnshrine(options.tId, options.tType)
+    this.enshrine(options.tId, options.tType)
   },
 
 /**
  * 收藏
  */
-  activityEnshrine: function (id, tType){
+  enshrine: function (id, tType){
     var userId = wx.getStorageSync('userid');
     var that = this;
     var src = app.globalData.src + "/enshrine/addEnshrine";
