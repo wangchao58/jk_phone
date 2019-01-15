@@ -37,6 +37,14 @@ Page({
       }
     })
   },
+
+  activityEnshrine: function (e) {
+    console.log("-----e------" + e.currentTarget.id);
+    var tId = e.currentTarget.id;
+    wx.navigateTo({
+      url: '../enshrine/enshrine?tId=' + tId
+    })
+  },
   
   /**
    * 生命周期函数--监听页面初次渲染完成
