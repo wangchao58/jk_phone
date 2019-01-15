@@ -41,5 +41,5 @@
      <view class='bottomIco' bindtap='activityEnshrine' id = "{{data.tId}}">
      <image src='../../images/bottom-ico02.png'></image>收藏</view> 
      <view class='bottomIco'><image src='../../images/bottom-ico03.png'></image>分享</view> 
-     <view class='bottomBtn'>立即报名</view> 
+     <view class='bottomBtn' bindtap='activitySignUp'  id = "{{data.tId}}">立即报名</view> 
 </view> 

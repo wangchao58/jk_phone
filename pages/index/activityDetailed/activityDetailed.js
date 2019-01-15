@@ -40,9 +40,9 @@ Page({
     })
   },
 
-/**
- * 活动收藏
- */
+  /**
+   * 活动收藏
+   */
   activityEnshrine: function (e) {
     var that = this;
     var tId = e.currentTarget.id;
@@ -57,6 +57,16 @@ Page({
       });
       // 回调活动详情查询（“true”为标识收藏调用，不进行浏览量的计算）
       that.activityData(tId, "true");
+    })
+  },
+
+  /**
+   * 立即报名
+   */
+  activitySignUp:function(e){
+    var tId = e.currentTarget.id;
+    wx.navigateTo({
+      url: '../signUp/signUp?tId=' + tId
     })
   },
   
