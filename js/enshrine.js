@@ -26,3 +26,4 @@ function enshrine(result) {
 module.exports = {
   enshrine: enshrine
 };
+

@@ -1,5 +1,7 @@
 // pages/index/activityDetailed/activityDetailed.js
 var app = getApp();
+// 引用公共js
+var enshrine = require("../../../js/enshrine.js");
 Page({
   /**
    * 页面的初始数据
@@ -21,14 +23,15 @@ Page({
   /**
  * 活动详情信息
  */
-  activityData: function (id) {
+  activityData: function (id, enshrineViews) {
     var that = this;
     var src = app.globalData.src + "/activity/getActivityByTid";
     wx.request({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: { tId: id },
+      data: { tId: id,
+        enshrineViews: enshrineViews },
       success(res) {
         that.setData({
           data: res.data
@@ -37,10 +40,23 @@ Page({
     })
   },
 
+/**
+ * 活动收藏
+ */
   activityEnshrine: function (e) {
+    var that = this;
     var tId = e.currentTarget.id;
-    wx.navigateTo({
-      url: '../enshrine/enshrine?tId=' + tId+'&tType='+'2'
+    var tType = "2";
+    wx.setStorageSync('tId', tId);
+    wx.setStorageSync('tType', tType);
+
+    //调用公共收藏js方法
+    enshrine.enshrine(function (result) {
+      that.setData({
+        data: result.data
+      });
+      // 回调活动详情查询（“true”为标识收藏调用，不进行浏览量的计算）
+      that.activityData(tId, "true");
     })
   },
   
