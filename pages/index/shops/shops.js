@@ -12,23 +12,84 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
-    duration: 500
+    duration: 500,
+    page:1,
+    rows:10,
+    pages:1,
+    storeList:[]
   },
+   /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
     qqmapsdk = new QQMapWX({
         key: app.globalData.mapKey
     });
+    this.storeList();
   },
-  detailed: function () {
-    wx.navigateTo({
-      url: '../activityDetailed/activityDetailed'
+  /**
+   * 加载列表
+   */
+  storeList: function (page,rows) {
+    var that = this;
+    var src = app.globalData.src + "/store/selectByExampleByPort";
+    if(page == null) {
+      page = that.data.page;
+      rows = that.data.rows;
+    }
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: { 'page': page, 'rows': rows},
+      success(res) {
+        var storeList = that.data.storeList;
+        var data = res.data.tStoreList;
+        that.data.pages = res.data.pages;
+
+        for (var i = 0; i < data.length; i++) {
+          storeList.push(data[i]);
+        }
+        that.setData({ storeList: storeList });
+        // 隐藏加载框
+        wx.hideLoading();
+      }
     })
   },
+
+ 
   callPhone:function(e){
     var phone = e.currentTarget.dataset.phone
     wx.makePhoneCall({
       phoneNumber: phone
     })
+  },
+  /**
+ * 页面相关事件处理函数--监听用户下拉动作
+ */
+  onPullDownRefresh: function (e) {
+
+    wx.showNavigationBarLoading();
+    var that = this;
+    
+  },
+  /**
+  * 页面上拉触底事件的处理函数
+  */
+  onReachBottom: function () {
+    
+    var that = this;
+    var page = that.data.page + 1;
+    that.data.page = page;
+    console.log(page);
+    console.log(that.data.pages);
+    if(page <= that.data.pages) {
+      that.storeList(page, that.data.rows);
+    }
+    
   },
   //解析地址
   analyze:function(e){
@@ -48,9 +109,9 @@ Page({
       }
     })
   },
-  detailed: function () {
+  detailed: function (e) {
     wx.navigateTo({
-      url: '../shopDetailed/shopDetailed'
+      url: '../shopDetailed/shopDetailed?tId='+e.currentTarget.id
     })
   }
 })
