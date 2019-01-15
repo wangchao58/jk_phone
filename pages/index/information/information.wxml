@@ -22,8 +22,14 @@
                  <image src='../../images/pic_003.png'></image>
               </view>
               <view class='list-num w100 left'>
-                    <view class='right'><image src="../../images/index-ico06.png" ></image>{{item.tPraise}}</view>
-                    <view class='right mr30'><image src="../../images/index-ico05.png" ></image>{{item.tEvaluate}}</view>
+                    <view class='right' bindtap='informationPraise'  id = "{{item.tId}}">
+                      <image src="../../images/index-ico06.png" ></image>
+                      {{item.tEvaluate}}
+                    </view>
+                    <view class='right mr30' bindtap='informationPraise'  id = "{{item.tId}}">
+                      <image src="../../images/index-ico05.png" ></image>
+                      {{item.tPraise}}
+                    </view>
               </view>
         </view>
   </view>

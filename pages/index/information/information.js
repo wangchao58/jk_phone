@@ -1,5 +1,7 @@
 // pages/index/information/information.js
 var app = getApp();
+// 引用公共js
+var praise = require("../../../js/praise.js");
 Page({
   /**
    * 页面的初始数据
@@ -39,6 +41,25 @@ Page({
         }
         that.setData({ listInformation: listInformation });
       }
+    })
+  },
+
+  /**
+   * 资讯列表点赞
+   */
+  informationPraise: function (e) {
+    var that = this;
+    var tId = e.currentTarget.id;
+    var tType = '3';
+    wx.setStorageSync('tId', tId);
+    wx.setStorageSync('tType', tType);
+    //调用公共点赞js方法
+    praise.clickPraise(function (result) {
+      that.setData({
+        data: result.data
+      });
+      // 回调资讯列表查询
+      that.listInformation();
     })
   },
 
