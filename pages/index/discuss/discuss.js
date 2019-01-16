@@ -16,7 +16,6 @@ Page({
    * 资讯详情评论页面
    */
   informationData:function(id){
-    console.log("=============+"+id)
     var that = this;
     var src = app.globalData.src + "/information/getInformationByTid";
     wx.request({
