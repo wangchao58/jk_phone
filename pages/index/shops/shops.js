@@ -116,32 +116,14 @@ Page({
   * 用户点击右上角分享
   */
   onShareAppMessage: function () {
-    let that =this;
-      return {
-        title: '店铺分享', // 转发后 所显示的title
-        path: 'pages/index/shops/shops', // 相对的路径
-        success(res){    // 成功后要做的事情
-          console.log('dcxzd1111111111');
-
-          wx.request({
-            url: app.globalData.src +'/share/insertSelective',
-            method: 'POST',
-            header: { 'content-type': 'application/x-www-form-urlencoded' },
-            data: { 'tUserid': '1', 'tUrl': '/share/insertSelective' },
-            success(res) {
-              wx.showToast({
-                title: '分享成功',
-                icon: 'succes',
-                duration: 1000,
-                mask: true
-              })
-            }
-          })
-        },
-        fail: function (res) {
-          // 分享失败
-          console.log(res)
-        }
+    wx.request({
+      url: app.globalData.src + '/share/insertSelective',
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: { 'tUserid': '1', 'tUrl': '/share/insertSelective' },
+      success(res) {
+        
       }
+    })
   }
 })

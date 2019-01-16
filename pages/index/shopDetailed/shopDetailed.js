@@ -1,6 +1,7 @@
 var QQMapWX = require('../../images/qqmap-wx-jssdk.min.js');
 var qqmapsdk;
 var app = getApp();
+var enshrine = require("../../../js/enshrine.js");
 Page({
   data: {
 
@@ -31,6 +32,24 @@ Page({
       }
     })
   },
+  /**
+   * 收藏
+   */
+  activityEnshrine: function (e) {
+    var that = this;
+    var tId = e.currentTarget.id;
+    var tType = "2";
+
+    //调用公共收藏js方法
+    enshrine.enshrine(tId, tType, function (result) {
+      that.setData({
+        //data: result.data
+      });
+      // 回调活动详情查询（“true”为标识收藏调用，不进行浏览量的计算）
+      //that.activityData(tId, "true");
+    })
+  },
+
   callPhone: function (e) {
     var phone = e.currentTarget.dataset.phone
     wx.makePhoneCall({
