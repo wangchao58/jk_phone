@@ -117,9 +117,13 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
+   * 分享
    */
   onShareAppMessage: function () {
-
+    let that = this;
+    return {
+      title: '活动分享', // 转发后 所显示的title
+      path: 'pages/index/activityDetailed/activityDetailed' // 相对的路径
+    }
   }
 })
