@@ -37,16 +37,13 @@
 <view class="container mt20" style='height:100rpx; background-color:#F7F7F7;'></view>
 <view class="bottomBox"> 
      <view class='left'></view> 
-     <view class='bottomIco'><image src='../../images/bottom-ico01.png'></image>首页</view> 
-     <view class='bottomIco' bindtap='activityEnshrine' id = "{{data.tId}}" wx:if="{{data.enshrineId != null}}">
-     <image src='../../images/bottom-ico02.png'></image>收藏</view> 
-     <view class='bottomIco' bindtap='activityEnshrine' id = "{{data.tId}}" wx:if="{{data.enshrineId == null}}">
-     <image src='../../images/bottom-ico03.png'></image>收藏</view> 
+     <button class='bottomIco'><image src='../../images/bottom-ico01.png'></image>首页</button> 
+     <button class='bottomIco' bindtap='activityEnshrine' id = "{{data.tId}}" wx:if="{{data.enshrineId != null}}">
+     <image src='../../images/bottom-ico02.png'></image>收藏</button> 
      <!-- <view class='bottomIco'><image src='../../images/bottom-ico03.png'></image>分享</view>  -->
-     <view class='bottomIco'>
-      <image src='../../images/bottom-ico03.png'></image>
-      <button data-info='caesar'  open-type="share" hover-class='none'>分享</button>
-     </view>
+     <button class='bottomIco' data-info='caesar'  open-type="share" hover-class='none'>
+      <image src='../../images/bottom-ico03.png'></image>分享
+     </button>
      
      <view class='bottomBtn' bindtap='activitySignUp'  id = "{{data.tId}}">立即报名</view> 
 </view> 

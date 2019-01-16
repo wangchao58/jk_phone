@@ -9,6 +9,8 @@
 .hd-data .left{ width: 530rpx;}
 .hd-cont-bt{ padding: 30rpx 0;}
 .hd-txt{ text-align:justify; line-height: 44rpx; padding: 20rpx 0;}
-.bottomIco{ width: 50rpx; text-align: center; position: relative; padding-top: 50rpx; color: #666; float: left; margin: 10rpx 40rpx 0;}
+.bottomIco{ width: 50rpx; text-align: center; position: relative; padding: 54rpx 0 0; color: #666; float: left; margin: 10rpx 40rpx 0;}
 .bottomIco image{ width: 50rpx; height: 50rpx; position: absolute; top: 0; left: 0;}
 .bottomBox .left{width:40rpx; height: 100rpx;}
+button{background-color:#fff;font-size:24rpx;line-height:28rpx;width: 50rpx; border:none;}
+button::after{border: none;}
