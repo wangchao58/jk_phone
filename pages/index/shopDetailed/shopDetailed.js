@@ -33,12 +33,12 @@ Page({
     })
   },
   /**
-   * 收藏
+   * 店铺收藏
    */
   activityEnshrine: function (e) {
     var that = this;
     var tId = e.currentTarget.id;
-    var tType = "2";
+    var tType = "1";
 
     //调用公共收藏js方法
     enshrine.enshrine(tId, tType, function (result) {

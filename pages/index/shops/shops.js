@@ -120,7 +120,7 @@ Page({
       url: app.globalData.src + '/share/insertSelective',
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: { 'tUserid': '1', 'tUrl': '/share/insertSelective' },
+      data: { 'tUserid': wx.getStorageSync('userid'), 'tUrl': '/share/insertSelective' },
       success(res) {
         
       }
