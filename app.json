@@ -10,6 +10,7 @@
     "pages/index/shopDetailed/shopDetailed",
     "pages/index/carpool/carpool",
     "pages/index/carpoolGroup/carpoolGroup",
+    "pages/index/carpoolGroupDetailed/carpoolGroupDetailed",
     "pages/publish/publish",
     "pages/personal/personal",
     "pages/index/status/status"

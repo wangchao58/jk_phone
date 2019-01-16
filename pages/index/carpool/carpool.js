@@ -17,5 +17,10 @@ Page({
     wx.navigateTo({
       url: '../carpoolGroup/carpoolGroup'
     })
+  },
+  detailed: function () {
+    wx.navigateTo({
+      url: '../carpoolGroupDetailed/carpoolGroupDetailed'
+    })
   }
 })

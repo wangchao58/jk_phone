@@ -39,17 +39,17 @@
         <view class='group-title-txt'>附近拼车群</view>
     </view>
     <view class='group-list mt50'>
-         <view class='group-row'>
+         <view class='group-row' bindtap='detailed'>
               <image src='../../images/Group-head1.png'></image>
               <view class='left fontSize32'>北京-衡水拼车群</view>
               <view class='right fontSize28 cor-grey'>30人</view>
          </view>
-         <view class='group-row'>
+         <view class='group-row' bindtap='detailed'>
               <image src='../../images/Group-head1.png'></image>
               <view class='left fontSize32'>北京-衡水拼车群</view>
               <view class='right fontSize28 cor-grey'>30人</view>
          </view>
-         <view class='group-row'>
+         <view class='group-row' bindtap='detailed'>
               <image src='../../images/Group-head1.png'></image>
               <view class='left fontSize32'>北京-衡水拼车群</view>
               <view class='right fontSize28 cor-grey'>30人</view>

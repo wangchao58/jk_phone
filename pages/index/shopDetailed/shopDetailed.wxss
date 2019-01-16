@@ -4,6 +4,7 @@
 .hd-label .right{position: relative; padding-left: 40rpx; color: #666; margin-top:20rpx;}
 .hd-label .right image{position: absolute; left: 0; top: 2rpx; width: 28rpx; height: 28rpx;}
 .hd-data{margin:0 40rpx; width: 670rpx; font-size: 28rpx;padding: 30rpx 0; line-height: 40rpx; color: #666;}
+.hd-data-bt{  float: left; text-align: right; padding-right: 28rpx; min-width: 112rpx; }
 .hd-data .left{ width: 600rpx;}
 .hd-cont-bt{ padding: 30rpx 0;}
 .hd-txt{ text-align:justify; line-height: 44rpx; padding: 20rpx 0;}
