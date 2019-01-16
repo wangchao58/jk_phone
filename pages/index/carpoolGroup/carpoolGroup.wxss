@@ -1,5 +1,10 @@
 /* pages/index/carpoolGroup/carpoolGroup.wxss */
 page{background: #fff;}
+.section{padding: 0 40rpx; width:670rpx;}
+.section { padding-bottom:24rpx; padding-top: 10rpx; position: fixed; top:0;left: 0; background: #fff; z-index: 999;/* box-shadow:0px 3px 6px rgba(123,127,149,0.15);*/} 
+.section input{ height:64rpx; background: #F6F6F6; border-radius:36rpx; float: left; width:520rpx; padding: 0 40rpx; font-size: 28rpx;}
+.section image{width: 44rpx; height: 44rpx; float: right; margin-top:10rpx; }
+.search-box{height:98rpx;}
 .group-list{padding: 0 40rpx; width:670rpx;}
 .group-title{border-bottom: #ddd solid 1px; height:20rpx; width: 400rpx;   margin:50rpx auto 0;}
 .group-title-txt{ height: 32rpx; background: #fff; font-size: 32rpx; width: 200rpx; text-align: center; margin: 0 100rpx;}
