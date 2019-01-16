@@ -25,13 +25,17 @@ Page({
  */
   activityData: function (id, enshrineViews) {
     var that = this;
+    var userId = wx.getStorageSync('userid');
     var src = app.globalData.src + "/activity/getActivityByTid";
     wx.request({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: { tId: id,
-        enshrineViews: enshrineViews },
+      data: { 
+        tId: id,
+        enshrineViews: enshrineViews,
+        pId: userId
+        },
       success(res) {
         that.setData({
           data: res.data

@@ -17,13 +17,15 @@ Page({
    */
   informationData:function(id){
     var that = this;
+    var userId = wx.getStorageSync('userid');
     var src = app.globalData.src + "/information/getInformationByTid";
     wx.request({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: {
-        tId: id
+        tId: id,
+        pId: userId
       },
       success(res) {
         that.setData({
