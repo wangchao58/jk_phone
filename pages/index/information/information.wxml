@@ -6,7 +6,7 @@
     </view>
 </view>
 
-<view class="container mt20" wx:for="{{listInformation}}" wx:key="{{item}}" id="{{item.name}}">
+<view class="container mt20" wx:for="{{listInformation}}" wx:key="{{item}}" id="{{item.tId}}" bindtap='discussDetail' >
     <view class='list-cont'>
         <view class='w100 list-top'>
               <image src='{{item.avatar}}'></image>

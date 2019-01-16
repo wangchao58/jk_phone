@@ -2,36 +2,36 @@
 <view class="container">
     <view class='list-cont'>
         <view class='w100 list-top'>
-              <image src='../../images/touxiang01.png'></image>
-              <view class='left fontSize32'>会飞的羊</view>
-              <view class='right cor-grey'>10分钟前</view>
+              <image src='{{data.avatar}}'></image>
+              <view class='left fontSize32'>{{data.pId}}</view>
+              <view class='right cor-grey'>{{data.tCreateTime}}</view>
         </view>
         <view class='w100 list-bom'>
-              <view class='list-txt w100 left'>《大江大河》里书卷气和技术流扑面而来的宋运辉、“江湖气”与“猴气”集于一身的雷东宝、瘦弱却脑袋灵光的小杨巡，是三个极具青春气息的面孔，更是独属于改革先行者的三副面孔。
-              </view>
+              <view class='list-txt w100 left'>{{data.tContent}}</view>
               <view class='list-img w100 left'>
+              <!-- <image src='{{data.tImg}}'></image> -->
                  <image src='../../images/pic_001.png'></image>
                  <image src='../../images/pic_002.png'></image>
                  <image src='../../images/pic_003.png'></image>
               </view>
               <view class='list-num w100 left'>
                     <view class='left'><image src="../../images/shops-ico02.png" bindtap='discuss' ></image>北京</view>
-                    <view class='right'><image src="../../images/index-ico05.png" ></image>99</view>
+                    <view class='right'><image src="../../images/index-ico05.png" ></image>{{data.tPraise}}</view>
               </view>
         </view>
   </view>
 </view>
 <view class="container discuss">
     <view class='discuss-cont'>
-           <view class='discuss-title w100'>共 157 条评论</view>
-           <view class='discuss-row'>
+           <view class='discuss-title w100'>共 {{discussNum}} 条评论</view>
+           <view class='discuss-row' wx:for="{{discussList}}" wx:key="{{item}}">
                 <view class='w100 discuss-top'>
-                      <image src='../../images/touxiang01.png' class='discuss-head'></image>
-                      <view class='left mr20'>吃瓜群众</view>
-                      <view class='right'>10分钟前</view>
+                      <image src='{{item.avatar}}' class='discuss-head'></image>
+                      <view class='left mr20'>{{item.nickName}}</view>
+                      <view class='right'>{{item.createTime}}</view>
                 </view>
                 <view class='discuss-txt'>
-                      <view class='left'>这写的什么啊</view>
+                      <view class='left'>{{item.tContent}}</view>
                 </view>
            </view>
            <view class='discuss-row'>
@@ -89,7 +89,7 @@
 <view class="container" style='height:99rpx; background-color:#F7F7F7;'></view>
 <view class="search-box">
      <view class="section">
-          <input placeholder="请输入评论内容" />
-          <view class='submit-btn'>发送</view>
+          <input placeholder="请输入评论内容" bindinput="discussInput"/>
+          <view class='submit-btn' bindtap='discussCommit' id = "{{data.tId}}">发送</view>
     </view>
 </view>

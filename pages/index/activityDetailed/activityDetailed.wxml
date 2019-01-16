@@ -2,7 +2,7 @@
 <view class="container pb30" >
      <!-- <image src='{{tImg}}' style='width:100%;height:360rpx;'></image> -->
      <image src='../../images/002.jpg' style='width:100%;height:360rpx;'></image>
-     <view class="hd-title">{{tHeadline}}</view>
+     <view class="hd-title">{{data.tHeadline}}</view>
      <view class="hd-label">
           <view wx:if="{{data.tMoney != null}}"><text class='cor-red'>¥{{data.tMoney}}</text></view>
           <view class="left cor-green" wx:if="{{data.tMoney == null}}">免费</view>

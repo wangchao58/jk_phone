@@ -76,6 +76,16 @@ Page({
       // 回调资讯列表查询
       that.listInformation();
     })
+  },
+
+  /**
+   * 资讯评论
+   */
+  discussDetail: function (e){
+    var tId = e.currentTarget.id;
+    wx.navigateTo({
+      url: 'discuss/discuss?tId=' + tId
+    })
   }
 
 
