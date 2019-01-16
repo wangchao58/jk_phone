@@ -1,0 +1,71 @@
+<!--pages/index/carpoolGroupList/carpoolGroupList.wxml-->
+<view class="container">
+    <view class="tab">
+         <view class="tab-btn tab-active">全部</view>
+         <view class="tab-btn">乘客</view>
+         <view class="tab-btn">车主</view> 
+    </view>
+</view>
+<view class="container">
+      <view class="list">
+           <view class="list-row">
+                <image src="../../images/Group-head1.png"></image>
+                <view class="left">
+                    <view class='cor-bock'><text class='fontSize32'>车主</text>（空位4）</view>
+                    <view class='cor-grey mt10'>2018-12-24 08:00</view>
+                    <view class='cor-grey'>北京—天津</view>
+                </view>
+                <view class="right">
+                    <view class='cor-yellow'>距您0.1公里</view>
+                    <view class='cor-grey mt20'><text class='fontSize32 cor-red'>¥30</text>元/人</view>
+                </view>
+           </view>
+           <view class="list-row">
+                <image src="../../images/Group-head1.png"></image>
+                <view class="left">
+                    <view class='cor-bock'><text class='fontSize32'>车主</text>（空位4）</view>
+                    <view class='cor-grey mt10'>2018-12-24 08:00</view>
+                    <view class='cor-grey'>北京—天津</view>
+                </view>
+                <view class="right">
+                    <view class='cor-yellow'>距您0.1公里</view>
+                    <view class='cor-grey mt20'><text class='fontSize32 cor-red'>¥30</text>元/人</view>
+                </view>
+           </view>
+           <view class="list-row">
+                <image src="../../images/Group-head1.png"></image>
+                <view class="left">
+                    <view class='cor-bock'><text class='fontSize32'>车主</text>（空位4）</view>
+                    <view class='cor-grey mt10'>2018-12-24 08:00</view>
+                    <view class='cor-grey'>北京—天津</view>
+                </view>
+                <view class="right">
+                    <view class='cor-yellow'>距您0.1公里</view>
+                    <view class='cor-grey mt20'><text class='fontSize32 cor-red'>¥30</text>元/人</view>
+                    
+                </view>
+           </view>
+           <view class="list-row">
+                <image src="../../images/Group-head1.png"></image>
+                <view class="left">
+                    <view class='cor-bock'><text class='fontSize32'>乘客</text>（1人）</view>
+                    <view class='cor-grey mt10'>2018-12-24 08:00</view>
+                    <view class='cor-grey'>北京—天津</view>
+                </view>
+                <view class="right">
+                    <view class='cor-yellow mt10'>距您0.1公里</view>
+                </view>
+           </view>
+           <view class="list-row">
+                <image src="../../images/Group-head1.png"></image>
+                <view class="left">
+                    <view class='cor-bock'><text class='fontSize32'>乘客</text>（1人）</view>
+                    <view class='cor-grey mt10'>2018-12-24 08:00</view>
+                    <view class='cor-grey'>北京—天津</view>
+                </view>
+                <view class="right">
+                    <view class='cor-yellow'>距您0.1公里</view>
+                </view>
+           </view>
+      </view>
+</view>

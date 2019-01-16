@@ -1,0 +1,8 @@
+/* pages/index/carpoolGroupList/carpoolGroupList.wxss */
+.tab{width:100%; border-bottom: #E8E8E8 solid 2rpx;height: 82rpx; }
+.tab-btn{width: 33.3333%; float: left; text-align: center; height: 80rpx; line-height: 80rpx; font-size: 28rpx;}
+.tab-active{ border-bottom: #66AFFF solid 4rpx;}
+.list{width:670rpx; padding:0 40rpx;}
+.list-row{border-bottom: #E8E8E8 solid 1rpx; padding: 30rpx 0; width: 100%; float: left;}
+.list-row image{ height: 120rpx; width: 120rpx; float: left; margin-right: 30rpx;}
+.cor-yellow{ color:#F9893D;}

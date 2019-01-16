@@ -11,6 +11,7 @@
     "pages/index/carpool/carpool",
     "pages/index/carpoolGroup/carpoolGroup",
     "pages/index/carpoolGroupDetailed/carpoolGroupDetailed",
+    "pages/index/carpoolGroupList/carpoolGroupList",
     "pages/publish/publish",
     "pages/personal/personal",
     "pages/index/status/status"

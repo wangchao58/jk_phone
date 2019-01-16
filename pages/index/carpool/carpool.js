@@ -22,5 +22,10 @@ Page({
     wx.navigateTo({
       url: '../carpoolGroupDetailed/carpoolGroupDetailed'
     })
+  },
+  carpoolList:function(){
+    wx.navigateTo({
+      url: '../carpoolGroupList/carpoolGroupList'
+    })
   }
 })

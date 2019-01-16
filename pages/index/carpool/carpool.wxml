@@ -30,7 +30,7 @@
                   <input placeholder="请输入终点" />
            </view>
            <image src='../../images/distance-ico.png'></image>
-           <view class='distance-btn'>查询顺路行程</view>
+           <view class='distance-btn' bindtap='carpoolList'>查询顺路行程</view>
     </view>
 </view>
 
