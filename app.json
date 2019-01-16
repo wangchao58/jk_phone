@@ -18,7 +18,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "吃完就走",
+    "navigationBarTitleText": "小鲸通",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

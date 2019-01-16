@@ -99,6 +99,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that = this;
+    return {
+      title: '资讯分享', // 转发后 所显示的title
+      path: 'pages/index/information/information' // 相对的路径
+    }
   }
 })
