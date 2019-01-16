@@ -98,10 +98,8 @@ Page({
     var that = this;
     var tId = e.currentTarget.id;
     var tType = '3';
-    wx.setStorageSync('tId', tId);
-    wx.setStorageSync('tType', tType);
     //调用公共点赞js方法
-    praise.clickPraise(function (result) {
+    praise.clickPraise(tId, tType, function (result) {
       // 回调资讯列表查询
       that.informationData(tId);
       that.discussData(tId);

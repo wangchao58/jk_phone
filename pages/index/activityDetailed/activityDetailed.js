@@ -51,11 +51,9 @@ Page({
     var that = this;
     var tId = e.currentTarget.id;
     var tType = "2";
-    wx.setStorageSync('tId', tId);
-    wx.setStorageSync('tType', tType);
 
     //调用公共收藏js方法
-    enshrine.enshrine(function (result) {
+    enshrine.enshrine(tId,tType,function (result) {
       that.setData({
         data: result.data
       });

@@ -2,10 +2,8 @@ var app = getApp();
 /**
  * 收藏
  */
-function enshrine(result) {
+function enshrine(tId,tType,result) {
   var userId = wx.getStorageSync('userid');
-  var tId = wx.getStorageSync('tId');
-  var tType = wx.getStorageSync('tType');
   var src = app.globalData.src + "/enshrine/addEnshrine";
   wx.request({
     url: src,
