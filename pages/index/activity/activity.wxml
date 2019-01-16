@@ -31,7 +31,7 @@
               <text class='cor-green'>免费</text>
             </view>
             <view class='right'>{{item.tSite}}</view>
-            <view class='right mr20'>{{item.tCreateTime}}</view>
+            <view class='right mr20'>{{item.tStartTime}}</view>
          </view>
   </view>
 </view>
