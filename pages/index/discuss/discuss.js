@@ -47,7 +47,8 @@ Page({
       success(res) {
         that.setData({
           discussList: res.data,
-          discussNum: res.data.length
+          discussNum: res.data.length,
+          discuss: ""
         });
       }
     })

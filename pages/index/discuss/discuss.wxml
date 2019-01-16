@@ -89,7 +89,7 @@
 <view class="container" style='height:99rpx; background-color:#F7F7F7;'></view>
 <view class="search-box">
      <view class="section">
-          <input placeholder="请输入评论内容" bindinput="discussInput"/>
+          <input placeholder="请输入评论内容" value='{{data.discuss}}' bindinput="discussInput"/>
           <view class='submit-btn' bindtap='discussCommit' id = "{{data.tId}}">发送</view>
     </view>
 </view>
