@@ -1,4 +1,6 @@
 var app = getApp();
+// 引用公共js
+var praise = require("../../../js/praise.js");
 Page({
   data: {
     
@@ -14,6 +16,7 @@ Page({
    * 资讯详情评论页面
    */
   informationData:function(id){
+    console.log("=============+"+id)
     var that = this;
     var src = app.globalData.src + "/information/getInformationByTid";
     wx.request({
@@ -85,6 +88,23 @@ Page({
         that.discussData(tId);
       }
     })
-  }
+  },
+
+  /**
+   * 资讯点赞
+   */
+  informationPraise: function (e) {
+    var that = this;
+    var tId = e.currentTarget.id;
+    var tType = '3';
+    wx.setStorageSync('tId', tId);
+    wx.setStorageSync('tType', tType);
+    //调用公共点赞js方法
+    praise.clickPraise(function (result) {
+      // 回调资讯列表查询
+      that.informationData(tId);
+      that.discussData(tId);
+    })
+  },
   
 })
