@@ -9,6 +9,7 @@
     "pages/index/shops/shops",
     "pages/index/shopDetailed/shopDetailed",
     "pages/index/carpool/carpool",
+    "pages/index/carpoolGroup/carpoolGroup",
     "pages/publish/publish",
     "pages/personal/personal",
     "pages/index/status/status"
