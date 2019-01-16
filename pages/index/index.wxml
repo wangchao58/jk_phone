@@ -42,7 +42,7 @@
                     <view class='right'>
                       <image src="../images/index-ico06.png" ></image>{{item.tEvaluate}}
                     </view>
-                    <view class='right mr30' bindtap='informationPraise' id = "{{item.tId}}">
+                    <view class='right mr30'>
                       <image src="../images/index-ico05.png" ></image>{{item.tPraise}}
                     </view>
               </view>
