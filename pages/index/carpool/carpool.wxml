@@ -1,2 +1,60 @@
 <!--pages/index/carpool/carpool.wxml-->
-<text>pages/index/carpool/carpool.wxml</text>
+<view class="container search-box">
+     <view class="section w100">
+          <input placeholder="请输入搜索内容" />
+          <image src='../../images/search_icon.png'></image>
+    </view>
+</view>
+<view class="container">
+  <view class="swiper">
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+    <swiper-item>
+        <image src="{{item}}" class="slide-image" style='width:100%;height:300rpx' />
+    </swiper-item>
+  </block>
+  </swiper>
+  </view>
+</view>
+
+
+<view class="container mt20">
+    <view class='distance'>
+           <view class='distance-row'>
+                  <view class='distance-cir cor-green'></view>
+                  <input placeholder="请输入起点" />
+           </view>
+           <view class='distance-row'>
+                  <view class='distance-cir cor-red'></view>
+                  <input placeholder="请输入终点" />
+           </view>
+           <image src='../../images/distance-ico.png'></image>
+           <view class='distance-btn'>查询顺路行程</view>
+    </view>
+</view>
+
+<view class="container mt20">
+    <view class='group-title'>
+        <view class='group-title-txt'>附近拼车群</view>
+    </view>
+    <view class='group-list mt50'>
+         <view class='group-row'>
+              <image src='../../images/Group-head1.png'></image>
+              <view class='left fontSize32'>北京-衡水拼车群</view>
+              <view class='right fontSize28 cor-grey'>30人</view>
+         </view>
+         <view class='group-row'>
+              <image src='../../images/Group-head1.png'></image>
+              <view class='left fontSize32'>北京-衡水拼车群</view>
+              <view class='right fontSize28 cor-grey'>30人</view>
+         </view>
+         <view class='group-row'>
+              <image src='../../images/Group-head1.png'></image>
+              <view class='left fontSize32'>北京-衡水拼车群</view>
+              <view class='right fontSize28 cor-grey'>30人</view>
+         </view>
+         <view class='group-more left' bindtap='carpoolGroup'>查看更多拼车群</view>
+         <view class='group-clear'></view>
+    </view>
+</view>
