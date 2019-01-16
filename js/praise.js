@@ -2,10 +2,8 @@ var app = getApp();
 /**
  * 点赞
  */
-function clickPraise(result) {
+function clickPraise(tId,tType,result) {
   var userId = wx.getStorageSync('userid');
-  var tId = wx.getStorageSync('tId');
-  var tType = wx.getStorageSync('tType');
   var src = app.globalData.src + "/praise/addPraise";
   wx.request({
     url: src,
