@@ -41,5 +41,46 @@ Page({
         that.setData({ listActivity: listActivity });
       }
     })
+  },
+
+  /**
+     * 列表数据查询获取查询条件
+     */
+  selInput: function (e) {
+    this.setData({
+      selInput: e.detail.value
+    })
+  },
+
+  /**
+   * 活动列表查询数据
+   */
+  selActivity: function () {
+    var that = this;
+    var array = [];
+    that.setData({ listActivity: array });
+    var selInput = this.data.selInput;
+    var src = app.globalData.src + "/activity/getActivityList";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        tHeadline: selInput
+      },
+      success(res) {
+        var listActivity = that.data.listActivity;
+        var data = res.data;
+        for (var i = 0; i < data.length; i++) {
+          listActivity.push(data[i]);
+        }
+        that.setData({ 
+          listActivity: listActivity,
+          tHeadline: ""
+        });
+      }
+    })
   }
+
 })
+

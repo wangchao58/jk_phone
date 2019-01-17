@@ -65,7 +65,7 @@ Page({
   /**
    * 列表查询数据
    */
-  selActivity:function(){
+  selInformation:function(){
     var that = this;
     var selInput = this.data.selInput;
     var array = [];
