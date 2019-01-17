@@ -13,3 +13,4 @@
 .bottomBox .left{width:40rpx; height: 100rpx;}
 button{background-color:#fff;font-size:24rpx;line-height:28rpx;width: 50rpx; border:none;}
 button::after{border: none;}
+.addressIco{ width: 32rpx; height: 32rpx; float: left; margin-right: 10rpx;}

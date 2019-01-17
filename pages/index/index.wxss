@@ -13,7 +13,7 @@ swiper{
 .list-img{ margin-top: 20rpx;}
 .list-img image{width:200rpx; height:200rpx; margin-right:10px; float: left;}
 .list-num{ color: #666; margin-top: 20rpx; line-height: 30rpx;}
-.list-num .right{position: relative; padding-left: 40rpx;}
+.list-num .right,.list-num .left{position: relative; padding-left: 40rpx;}
 .list-num image{width: 30rpx; height: 30rpx; position:absolute; left: 0;}
 .list-num .mr30 image{top:-3rpx;}
 .list-bom{ padding-bottom: 40rpx; float: left;}
