@@ -8,15 +8,6 @@
          <view class='section-label' name="tIntroduction">自我介绍</view>
          <textarea  placeholder="请输入自我介绍" bindinput="tIntroductionInput"/>
     </view>
-
-    <view class="">
-      <form bindsubmit="uploadImg" id = "{{photos}}">
-        <label bindtap="chooseImg">点击选择图片</label>
-        <image src="{{photos}}"></image>
-        <button form-type="submit">提交</button>
-      </form>
-    </view>
-
     <view class="section">
          <view class='section-submit' bindtap='signUp'>立即报名</view>
     </view>

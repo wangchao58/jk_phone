@@ -1,12 +1,10 @@
 // pages/index/signUp/signUp.js
 var app = getApp();
-// 引用公共js
-var fileUpload = require("../../../js/fileUpload.js");
 Page({
   data: {
     tPhone: "",
     tIntroduction: "",
-    tId: ""
+    tId: "",
   },
 
   onLoad: function (options) {
@@ -58,28 +56,5 @@ Page({
         }
       }
     })
-  },
-
-  chooseImg:function(){
-    var that = this;
-    //调用公共收藏js方法
-    fileUpload.chooseImg(function (result) {
-      that.setData({
-        photos: result
-      });
-    })
-  },
-
-  uploadImg:function(e){
-    var that = this;
-    var filePath = e.currentTarget.id;
-    //调用公共收藏js方法
-    fileUpload.uploadImg(filePath, function (result) {
-      that.setData({
-        data: result.data
-      });
-    })
   }
-  
-
 })
