@@ -1,16 +1,26 @@
 var app = getApp();
+var images = new Array(); 
 /**
  * 选择图片
+ * "album":从相册中选择
+ * "camera":拍照
+ * imgNumber：上传图片数（自定义）
  */
-function chooseImg(result) {
+function chooseImg(type, imgNumber, result) {
   wx.chooseImage({
-    count: 9, // 默认9
+    count: imgNumber, // 默认9
     sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-    sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+    sourceType: [type], // 可以指定来源是相册还是相机，默认二者都有
     success: function (res) {
       // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-      var tempFilePaths = res.tempFilePaths
-      result(tempFilePaths)
+      var tempFilePaths = res.tempFilePaths;
+      var addLen = tempFilePaths.length;
+      for (var i = 0; i < addLen; i++) {
+        var str = {};
+        str.pic = tempFilePaths[i];
+        images.push(str);
+      }
+      result(images);
     }
   })
 }
@@ -18,20 +28,35 @@ function chooseImg(result) {
 /**
  * 上传图片
  */
-function uploadImg(filePath, result) {
-  console.log("========" + app.globalData.src + "/file/uploadFile");
-  wx.uploadFile({
-    url: app.globalData.src + "/file/uploadFile", //仅为示例，非真实的接口地址
-    method: 'POST',
-    header: { 'content-type': 'application/x-www-form-urlencoded' },
-    filePath: filePath,
-    name: 'file',
-    // filePath: filePath,
-    // name: 'file',
-    success: function (res) {
-      result(res);
-    }
-  })
+function imageUpload(path, curImgList, result) {
+  for (var i = 0; i < path.length; i++) {
+    wx.showToast({
+      icon: "loading",
+      title: "正在上传"
+    }),
+    wx.uploadFile({
+      url: app.globalData.src + "/file/uploadFile",
+      filePath: path[i].pic,
+      name: 'file',
+      header: { "Content-Type": "multipart/form-data" },
+      formData: {
+        douploadpic: '1'
+      },
+      success: function (res) {
+        result(curImgList.push(res.data));
+      },
+      fail: function (e) {
+        wx.showModal({
+          title: '提示',
+          content: '上传失败',
+          showCancel: false
+        })
+      },
+      complete: function () {
+        wx.hideToast();  //隐藏Toast
+      }
+    })
+  }
 }
 
 
@@ -39,9 +64,6 @@ function uploadImg(filePath, result) {
 //转化成小程序模板语言 这一步非常重要 不然无法正确调用
 
 module.exports = {
-
   chooseImg: chooseImg,
-
-  uploadImg: uploadImg
-
+  imageUpload: imageUpload
 };

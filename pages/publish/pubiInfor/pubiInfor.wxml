@@ -1,14 +1,14 @@
 <view class="details borderTop">
   <view class="w100 mt30 fontSize28">
-     <textarea  placeholder="分享新鲜事" bindblur='textarea' />
+     <textarea  placeholder="分享新鲜事" bindinput="informationInput" />
   </view>
  <view class="w100 mt20 borderBom pb20">
        <view class='chooseImage' bindtap='chooseImage'>
             <image src='../../images/chooseImage.png'></image>
-            <view class='w100 center'>{{previewImg.length}}/3</view>
+            <view class='w100 center'>{{photos.length}}/3</view>
        </view>
-       <view  wx:for="{{previewImg}}" wx:key="{{previewImg}}" class='previewImg' >
-          <image src='{{item}}'></image>
+       <view  wx:for="{{photos}}" wx:key="index" class='previewImg' >
+          <image src='{{item.pic}}'></image>
           <icon type="clear" size="20" color="#f00" id="{{index}}" bindtap='removeimg'/>
        </view>  
   </view>
@@ -22,6 +22,6 @@
   </view>
   <view class="clear"></view>
 </view>
-<view class="time-bottom"  bindtap='appraiseSubmit'>确定提交评价</view>
+<view class="time-bottom"  bindtap='informationSub'>发布信息</view>
 
 

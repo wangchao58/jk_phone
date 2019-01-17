@@ -1,58 +1,113 @@
+var app = getApp();
+// 引用公共js
+var fileUpload = require("../../../js/fileUpload.js");
 Page({
   data: {
-    previewImg: [],
-    textarea: "",
-    anonymous:false
+    photos: [],
+    evalList: [{ tempFilePaths: [], imgList: [] }]
   },
+
   onLoad: function (options) {
 
   },
-  textarea: function (e) {
-    var val = e.detail.value
-    this.setData({ textarea: val })
+
+  // 获取索要发布的资讯信息
+  informationInput: function (e) {
+    this.setData({
+      informationInput: e.detail.value
+    })
   },
-  //选择图片方法
+
+  /**
+   * 选择图片方法
+   */
   chooseImage: function () {
     var that = this;
-    var uuid = that.uuid();
-    var num = that.data.previewImg.length;
-    var count = 3 - num;
-    if (num < 3) {
-      wx.chooseImage({
-        count: count,
-        sizeType: ['original', 'compressed'],
-        sourceType: ['album', 'camera'],
-        success(res) {
-          var tempFilePaths = res.tempFilePaths[0];
-          console.log(tempFilePaths)
-          var imgs=that.data.previewImg;
-          imgs.push(tempFilePaths);
-          that.setData({ previewImg: imgs})
-          // wx.uploadFile({
-          //   url: imgsrc, // 仅为示例，非真实的接口地址
-          //   filePath: tempFilePaths[0],
-          //   name: uuid,
-          //   success(res) {
-          //     const data = res.data
-          //   }
-          // })
+    var num = that.data.photos.length;//已上传图片数
+    var count = 3 - num;//剩余可上传照片数
+    if (num < 3){
+      wx.showActionSheet({
+        itemList: ["从相册中选择", "拍照"],
+        itemColor: "#f7982a",
+        success: function (res) {
+          if (!res.cancel) {
+            if (res.tapIndex == 0) {
+              // 调用公共收藏js方法(从相册中选择)
+              fileUpload.chooseImg("album", count, function (result) {
+                that.setData({
+                  photos: result
+                });
+                // that.upLoadImg(result);
+              })
+            } else if (res.tapIndex == 1) {
+              //调用公共收藏js方法(拍照)
+              fileUpload.chooseImg("camera", imgNumber, function (result) {
+                that.setData({
+                  photos: result
+                });
+                // that.upLoadImg(photos);
+              })
+            }
+          }
         }
       })
-    } else {
+    }else{
       wx.showToast({
         title: '最多上传3张图片',
-        image: '../../images/jinggao.png',
+        // image: '../../images/jinggao.png',
         duration: 2000
       })
     }
   },
+
+  upLoadImg: function (list) {
+    var that = this;
+    this.upload(that, list);
+  },
+
+  /**
+   * 上传多张图片
+   */
+  upload: function (page, path) {
+    var that = this;
+    var curImgList = [];
+    for (var i = 0; i < path.length; i++) {
+      wx.showToast({
+        icon: "loading",
+        title: "正在上传"
+      }),
+      //公共js
+      fileUpload.imageUpload(path, curImgList, function (result) {
+        that.setData({
+          photos: result
+        })
+        if (res.statusCode != 200) {
+          wx.showModal({
+            title: '提示',
+            content: '上传失败',
+            showCancel: false
+          })
+          return;
+        }
+        var data = res.data
+        page.setData({  //上传成功修改显示头像
+          src: path[0]
+        })
+      })
+    }
+  },
+
   //删除已选图片方法
   removeimg: function (e) {
-    var previewImg = this.data.previewImg;
-    var id = e.currentTarget.id
-    previewImg.splice(id, 1)
-    this.setData({ previewImg: previewImg })
+    var photos = this.data.photos;
+    var index = e.currentTarget.id
+    photos.splice(index, 1)
+    this.setData({
+      photos: photos
+    })
+    // this.upLoadImg(photos);
   },
+
   //显示城市
   checkboxChange: function () {
     var anonymous = this.data.anonymous;
@@ -62,16 +117,31 @@ Page({
       this.setData({ anonymous: true })
     }
   },
-  uuid: function () {
-    var s = [];
-    var hexDigits = "0123456789abcdef";
-    for (var i = 0; i < 36; i++) {
-      s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
-    }
-    s[14] = "4";  // bits 12-15 of the time_hi_and_version field to 0010
-    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);  // bits 6-7 of the clock_seq_hi_and_reserved to 01
-    s[8] = s[13] = s[18] = s[23] = "-";
-    var uuid = s.join("");
-    return uuid;
+
+  /**
+   * 发布资讯提交
+   */
+  informationSub: function () {
+    var informationInput = this.data.informationInput;
+    var userId = wx.getStorageSync('userid');
+    var src = app.globalData.src + "/information/addInformation";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        tContent: informationInput,
+        pId: userId
+      },
+      success(res) {
+        if (res.data > 0) {
+          wx.redirectTo({
+            url: '../../index/status/status'
+          })
+        } else {
+          console.log("=================error================")
+        }
+      }
+    })
   }
 })
