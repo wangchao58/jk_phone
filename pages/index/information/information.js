@@ -10,7 +10,7 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 500,
-    listInformation: []
+    listInformation: [] 
   },
 
   /**
@@ -50,6 +50,45 @@ Page({
     var tId = e.currentTarget.id;
     wx.navigateTo({
       url: '../discuss/discuss?tId=' + tId
+    })
+  },
+
+  /**
+   * 列表数据查询获取查询条件
+   */
+  selInput:function(e){
+    this.setData({
+      selInput: e.detail.value
+    })
+  },
+
+  /**
+   * 列表查询数据
+   */
+  selActivity:function(){
+    var that = this;
+    var selInput = this.data.selInput;
+    var array = [];
+    that.setData({ listInformation: array });
+    var src = app.globalData.src + "/information/getInformationList";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        tContent: selInput
+      },
+      success(res) {
+        var listInformation = that.data.listInformation;
+        var data = res.data;
+        for (var i = 0; i < data.length; i++) {
+          listInformation.push(data[i]);
+        }
+        that.setData({ 
+          listInformation: listInformation,
+          tContent: ""
+        });
+      }
     })
   },
 
