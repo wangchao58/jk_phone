@@ -10,5 +10,10 @@ Page({
     wx.navigateTo({
       url: '../carpoolGroupDetailed/carpoolGroupDetailed'
     })
+  },
+  join:function(){
+    wx.navigateTo({
+      url: '../carpoolGroupApply/carpoolGroupApply'
+    })
   }
 })

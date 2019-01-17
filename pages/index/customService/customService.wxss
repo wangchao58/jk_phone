@@ -1,0 +1,21 @@
+/* pages/index/customService/customService.wxss */
+
+.details{
+width: 95%;
+ padding:20rpx 2.5% 30rpx; 
+ background: #fff; 
+ color: #333;
+ }
+.details .w100{margin-left:2.5%;margin-right:2.5%; width: 90%; padding-left:2.5%;padding-right:2.5%; text-align: center;}
+.details .w100 image{width:240rpx; height:240rpx; margin-top: 50rpx;}
+.time-bottom{
+    height:90rpx;
+     line-height:90rpx; 
+    width:360rpx;
+    font-size:32rpx;
+    background: #66AFFF;
+    text-align: center; 
+    color:#fff;
+    border-radius:6rpx;
+    margin: 60rpx 0 0 190rpx;
+  }

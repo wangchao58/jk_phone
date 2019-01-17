@@ -12,6 +12,8 @@
     "pages/index/carpoolGroup/carpoolGroup",
     "pages/index/carpoolGroupDetailed/carpoolGroupDetailed",
     "pages/index/carpoolGroupList/carpoolGroupList",
+    "pages/index/carpoolGroupApply/carpoolGroupApply",
+    "pages/index/customService/customService",
     "pages/publish/publish",
     "pages/publish/pubiInfor/pubiInfor",
     "pages/personal/personal",
