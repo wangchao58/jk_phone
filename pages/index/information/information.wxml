@@ -1,8 +1,8 @@
 <!--pages/index/information/information.wxml-->
 <view class="container search-box">
-     <view class="section w100">
-          <input placeholder="请输入搜索内容" />
-          <image src='../../images/search_icon.png'></image>
+     <view class="section w100" >
+          <input placeholder="请输入搜索内容" value='{{tContent}}' bindinput="selInput"/>
+          <image src='../../images/search_icon.png' bindtap='selActivity'></image>
     </view>
 </view>
 
