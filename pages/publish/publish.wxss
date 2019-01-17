@@ -1,1 +1,4 @@
 /* pages/publish/publish.wxss */
+page{background: #fff;}
+.fabu{width: 600rpx; padding: 100rpx 75rpx;}
+.fabu .part{ font-size: 36rpx; width: 240rpx; height: 240rpx; line-height: 240rpx; border: #1C426F solid 2px; text-align: center; margin-top: 50rpx;}

@@ -1,0 +1,29 @@
+
+.details{
+width: 95%;
+ padding:20rpx 2.5% 30rpx; 
+ background: #fff; 
+ color: #333;
+ }
+.details .w100{margin-left:2.5%;margin-right:2.5%;float: left; width: 90%; padding-left:2.5%;padding-right:2.5%;}
+textarea{width: 100%; height:200rpx; line-height: 36rpx;}
+.chooseImage{ float: left; width: 108rpx; height: 108rpx; border: #9B9FA2 dashed 1rpx;}
+.chooseImage image{width: 36rpx; height: 36rpx; margin:28rpx 0 0 36rpx;}
+.chooseImage view{ color: #9B9FA2; margin-top:4rpx; font-size: 20rpx;}
+.previewImg{float: left; width: 110rpx; height: 110rpx; margin-left:20rpx; position: relative; }
+.previewImg image{ width: 110rpx; height: 110rpx;}
+.previewImg icon{position: absolute; top:-18rpx; right: -18rpx;}
+
+   .time-bottom{
+    height:90rpx;
+     line-height:90rpx; 
+    width:360rpx;
+    font-size:32rpx;
+    background: #66AFFF;
+    text-align: center; 
+    color:#fff;
+    border-radius:6rpx;
+    margin: 60rpx 0 0 190rpx;
+  }
+  .checkbox{ width: 34rpx; height: 34rpx; border-radius: 50%; border:#ddd solid 1rpx; margin-right:10rpx;}
+  .checkbox image{ width: 36rpx; height: 36rpx; margin: -1rpx 0 0 -1rpx;}

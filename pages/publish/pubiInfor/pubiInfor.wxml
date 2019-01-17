@@ -1,0 +1,27 @@
+<view class="details borderTop">
+  <view class="w100 mt30 fontSize28">
+     <textarea  placeholder="分享新鲜事" bindblur='textarea' />
+  </view>
+ <view class="w100 mt20 borderBom pb20">
+       <view class='chooseImage' bindtap='chooseImage'>
+            <image src='../../images/chooseImage.png'></image>
+            <view class='w100 center'>{{previewImg.length}}/3</view>
+       </view>
+       <view  wx:for="{{previewImg}}" wx:key="{{previewImg}}" class='previewImg' >
+          <image src='{{item}}'></image>
+          <icon type="clear" size="20" color="#f00" id="{{index}}" bindtap='removeimg'/>
+       </view>  
+  </view>
+  <view class="w100 mt30">
+       <view class='left' bindtap="checkboxChange">
+            <view class='checkbox left'>
+                  <image src='../../images/duigou-cir.png' hidden='{{anonymous}}'></image>
+            </view>
+            <view class="left lh36">显示城市</view>
+       </view>
+  </view>
+  <view class="clear"></view>
+</view>
+<view class="time-bottom"  bindtap='appraiseSubmit'>确定提交评价</view>
+
+

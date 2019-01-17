@@ -13,6 +13,7 @@
     "pages/index/carpoolGroupDetailed/carpoolGroupDetailed",
     "pages/index/carpoolGroupList/carpoolGroupList",
     "pages/publish/publish",
+    "pages/publish/pubiInfor/pubiInfor",
     "pages/personal/personal",
     "pages/index/status/status"
   ],
