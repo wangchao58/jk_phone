@@ -122,26 +122,41 @@ Page({
    * 发布资讯提交
    */
   informationSub: function () {
+    var that = this;
     var informationInput = this.data.informationInput;
-    var userId = wx.getStorageSync('userid');
-    var src = app.globalData.src + "/information/addInformation";
-    wx.request({
-      url: src,
-      method: 'POST',
-      header: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: {
-        tContent: informationInput,
-        pId: userId
-      },
-      success(res) {
-        if (res.data > 0) {
-          wx.redirectTo({
-            url: '../../index/status/status'
-          })
-        } else {
-          console.log("=================error================")
+    if (null != informationInput){
+      var userId = wx.getStorageSync('userid');
+      var src = app.globalData.src + "/information/addInformation";
+      wx.request({
+        url: src,
+        method: 'POST',
+        header: { 'content-type': 'application/x-www-form-urlencoded' },
+        data: {
+          tContent: informationInput,
+          pId: userId
+        },
+        success(res) {
+          if (res.data > 0) {
+            wx.showToast({
+              title: "发布成功"
+            })
+          } else {
+            wx.showToast({
+              title: "发布失败"
+            })
+          }
         }
-      }
-    })
+      })
+    }else{
+      // wx.showModal({
+      //   title: '提示',
+      //   content: '发布内容不能为空',
+      //   showCancel: false
+      // })
+      wx.showToast({
+        title: "内容不能为空"
+      })
+    }
+    
   }
 })
