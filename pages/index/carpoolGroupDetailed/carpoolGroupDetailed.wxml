@@ -38,4 +38,4 @@
    </view>
 </view>
 <view class="container mt20" style='height:100rpx;'></view>
-<view class='join'>联系管理员拉我进群</view>
+<view class='join' bindtap='customService'>联系管理员拉我进群</view>

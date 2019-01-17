@@ -1,0 +1,34 @@
+<!--pages/index/carpoolGroupApply/carpoolGroupApply.wxml-->
+<view class="container">
+     <view class="section borderBom">
+         <view class='section-label'>群名称</view>
+         <input placeholder="请输入群名称" />
+    </view>
+    <view class="section">
+         <view class='section-label'>群介绍</view>
+          <input placeholder="描述拼车范围（100字以内）" />
+    </view>
+    <view class="section">
+         <view class='section-label'>拼车线路</view>
+          <input placeholder="请输入拼车线路" />
+    </view>
+    <view class="section">
+         <view class='section-label'>群所在地</view>
+          <input placeholder="请输入群所在地" />
+    </view>
+    <view class="section">
+         <view class='section-label'>群主手机</view>
+          <input placeholder="请输入手机号码" />
+    </view>
+    <view class="section borderN">
+         <view class='section-label'>群主微信</view>
+          <input placeholder="请输入微信号码" />
+    </view>
+    </view>
+    <view class="section borderN">
+         点击下一步表示您已阅读并同意<text>《入驻须知》</text>及<text>《免责声明》</text>
+    </view>
+    <view class="section borderN">
+         <view class='section-submit' bindtap='customService'>提交审核，下一步</view>
+    </view>
+
