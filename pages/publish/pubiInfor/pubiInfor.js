@@ -37,7 +37,7 @@ Page({
                 that.setData({
                   photos: result
                 });
-                // that.upLoadImg(result);
+                that.upLoadImg(result);
               })
             } else if (res.tapIndex == 1) {
               //调用公共收藏js方法(拍照)
@@ -45,7 +45,7 @@ Page({
                 that.setData({
                   photos: result
                 });
-                // that.upLoadImg(photos);
+                that.upLoadImg(photos);
               })
             }
           }
@@ -71,30 +71,12 @@ Page({
   upload: function (page, path) {
     var that = this;
     var curImgList = [];
-    for (var i = 0; i < path.length; i++) {
-      wx.showToast({
-        icon: "loading",
-        title: "正在上传"
-      }),
-      //公共js
-      fileUpload.imageUpload(path, curImgList, function (result) {
-        that.setData({
-          photos: result
-        })
-        if (res.statusCode != 200) {
-          wx.showModal({
-            title: '提示',
-            content: '上传失败',
-            showCancel: false
-          })
-          return;
-        }
-        var data = res.data
-        page.setData({  //上传成功修改显示头像
-          src: path[0]
-        })
+    //公共js
+    fileUpload.imageUpload(path, curImgList, function (result) {
+      that.setData({
+        photos: result
       })
-    }
+    })
   },
 
   //删除已选图片方法
@@ -105,7 +87,7 @@ Page({
     this.setData({
       photos: photos
     })
-    // this.upLoadImg(photos);
+    this.upLoadImg(photos);
   },
 
   //显示城市
