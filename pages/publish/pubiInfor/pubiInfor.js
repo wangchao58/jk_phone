@@ -37,7 +37,7 @@ Page({
                 that.setData({
                   photos: result
                 });
-                that.upLoadImg(result);
+                // that.upLoadImg(result);
               })
             } else if (res.tapIndex == 1) {
               //调用公共收藏js方法(拍照)
@@ -45,7 +45,7 @@ Page({
                 that.setData({
                   photos: result
                 });
-                that.upLoadImg(photos);
+                // that.upLoadImg(photos);
               })
             }
           }
@@ -87,7 +87,7 @@ Page({
     this.setData({
       photos: photos
     })
-    this.upLoadImg(photos);
+    // this.upLoadImg(photos);
   },
 
   //显示城市
