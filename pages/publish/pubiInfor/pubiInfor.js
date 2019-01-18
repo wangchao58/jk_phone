@@ -1,6 +1,8 @@
 var app = getApp();
 // 引用公共js
 var fileUpload = require("../../../js/fileUpload.js");
+var QQMapWX = require('../../../pages/images/qqmap-wx-jssdk.min.js');
+var qqmapsdk; 
 Page({
   data: {
     photos: [],
@@ -8,7 +10,10 @@ Page({
   },
 
   onLoad: function (options) {
-
+    qqmapsdk = new QQMapWX({
+      key: app.globalData.mapKey
+    });
+    this.thisCity();
   },
 
   // 获取索要发布的资讯信息
@@ -90,14 +95,36 @@ Page({
     // this.upLoadImg(photos);
   },
 
-  //显示城市
+  /**
+   * 是否显示城市
+   */
   checkboxChange: function () {
     var anonymous = this.data.anonymous;
     if (anonymous) {
       this.setData({ anonymous: false })
+      this.thisCity();
     } else {
-      this.setData({ anonymous: true })
+      this.setData({ 
+        anonymous: true,
+        city: '' 
+      })
     }
+  },
+
+  /**
+   * 获取当前城市名称
+   */
+  thisCity: function () {
+    var that = this;
+    qqmapsdk.reverseGeocoder({
+      location: {
+        latitude: wx.getStorageSync('latitude'),
+        longitude: wx.getStorageSync('longitude')
+      },
+      success: function (res) {
+        that.setData({ city: res.result.address_component.city })
+      }
+    });
   },
 
   /**
@@ -106,8 +133,11 @@ Page({
   informationSub: function () {
     var that = this;
     var informationInput = this.data.informationInput;
+    var city = this.data.city;
     if (null != informationInput){
       var userId = wx.getStorageSync('userid');
+      var longitude = wx.getStorageSync('longitude');
+      var latitude = wx.getStorageSync('latitude');
       var src = app.globalData.src + "/information/addInformation";
       wx.request({
         url: src,
@@ -115,7 +145,9 @@ Page({
         header: { 'content-type': 'application/x-www-form-urlencoded' },
         data: {
           tContent: informationInput,
-          pId: userId
+          pId: userId,
+          tCoordinate: longitude + "," + latitude,//坐标，经纬度
+          city: city
         },
         success(res) {
           if (res.data > 0) {
@@ -130,11 +162,6 @@ Page({
         }
       })
     }else{
-      // wx.showModal({
-      //   title: '提示',
-      //   content: '发布内容不能为空',
-      //   showCancel: false
-      // })
       wx.showToast({
         title: "内容不能为空"
       })
