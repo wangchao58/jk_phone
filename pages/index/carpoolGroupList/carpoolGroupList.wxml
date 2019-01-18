@@ -8,7 +8,7 @@
 </view>
 <view class="container">
       <view class="list">
-           <view class="list-row">
+           <view class="list-row" bindtap='listDetailed'>
                 <image src="../../images/Group-head1.png"></image>
                 <view class="left">
                     <view class='cor-bock'><text class='fontSize32'>车主</text>（空位4）</view>
@@ -20,7 +20,7 @@
                     <view class='cor-grey mt20'><text class='fontSize32 cor-red'>¥30</text>元/人</view>
                 </view>
            </view>
-           <view class="list-row">
+           <view class="list-row" bindtap='listDetailed'>
                 <image src="../../images/Group-head1.png"></image>
                 <view class="left">
                     <view class='cor-bock'><text class='fontSize32'>车主</text>（空位4）</view>
@@ -32,7 +32,7 @@
                     <view class='cor-grey mt20'><text class='fontSize32 cor-red'>¥30</text>元/人</view>
                 </view>
            </view>
-           <view class="list-row">
+           <view class="list-row" bindtap='listDetailed'>
                 <image src="../../images/Group-head1.png"></image>
                 <view class="left">
                     <view class='cor-bock'><text class='fontSize32'>车主</text>（空位4）</view>
@@ -45,7 +45,7 @@
                     
                 </view>
            </view>
-           <view class="list-row">
+           <view class="list-row" bindtap='listDetailed'>
                 <image src="../../images/Group-head1.png"></image>
                 <view class="left">
                     <view class='cor-bock'><text class='fontSize32'>乘客</text>（1人）</view>
@@ -56,7 +56,7 @@
                     <view class='cor-yellow mt10'>距您0.1公里</view>
                 </view>
            </view>
-           <view class="list-row">
+           <view class="list-row" bindtap='listDetailed'>
                 <image src="../../images/Group-head1.png"></image>
                 <view class="left">
                     <view class='cor-bock'><text class='fontSize32'>乘客</text>（1人）</view>

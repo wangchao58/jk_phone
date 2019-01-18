@@ -12,6 +12,7 @@
     "pages/index/carpoolGroup/carpoolGroup",
     "pages/index/carpoolGroupDetailed/carpoolGroupDetailed",
     "pages/index/carpoolGroupList/carpoolGroupList",
+    "pages/index/carpoolListDetailed/carpoolListDetailed",
     "pages/index/carpoolGroupApply/carpoolGroupApply",
     "pages/index/customService/customService",
     "pages/publish/publish",
