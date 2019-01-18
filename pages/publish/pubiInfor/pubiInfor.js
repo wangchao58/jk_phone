@@ -46,7 +46,7 @@ Page({
               })
             } else if (res.tapIndex == 1) {
               //调用公共收藏js方法(拍照)
-              fileUpload.chooseImg("camera", imgNumber, function (result) {
+              fileUpload.chooseImg("camera", count, function (result) {
                 that.setData({
                   photos: result
                 });
