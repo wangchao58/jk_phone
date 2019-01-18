@@ -72,23 +72,32 @@ Page({
     var that = this;
     var tId = e.currentTarget.id;
     var tContent = this.data.tContent;
-    var userId = wx.getStorageSync('userid');
-    var src = app.globalData.src + "/evaluate/addEvaluate";
-    wx.request({
-      url: src,
-      method: 'POST',
-      header: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: {
-        tOtherId: tId,
-        tContent: tContent,
-        pId: userId,
-        tType: "3"
-      },
-      success(res) {
-        that.informationData(tId);
-        that.discussData(tId);
-      }
-    })
+    if (undefined != tContent){
+      var userId = wx.getStorageSync('userid');
+      var src = app.globalData.src + "/evaluate/addEvaluate";
+      wx.request({
+        url: src,
+        method: 'POST',
+        header: { 'content-type': 'application/x-www-form-urlencoded' },
+        data: {
+          tOtherId: tId,
+          tContent: tContent,
+          pId: userId,
+          tType: "3"
+        },
+        success(res) {
+          that.informationData(tId);
+          that.discussData(tId);
+          wx.showToast({
+            title: "评论成功"
+          })
+        }
+      })
+    }else{
+      wx.showToast({
+        title: "评论内容为空"
+      })
+    }
   },
 
   /**

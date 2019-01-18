@@ -107,7 +107,7 @@ Page({
       this.setData({ 
         anonymous: true,
         city: '' 
-      })
+      }) 
     }
   },
 

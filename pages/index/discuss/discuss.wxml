@@ -42,56 +42,6 @@
                       <view class='left'>{{item.tContent}}</view>
                 </view>
            </view>
-           <view class='discuss-row'>
-                <view class='w100 discuss-top'>
-                      <image src='../../images/touxiang02.png' class='discuss-head'></image>
-                      <view class='left mr20'>吃瓜群众</view>
-                      <view class='right'>10分钟前</view>
-                </view>
-                <view class='discuss-txt'>
-                      <view class='left'>这写的什么啊</view>
-                </view>
-           </view>
-           <view class='discuss-row'>
-                <view class='w100 discuss-top'>
-                      <image src='../../images/touxiang03.png' class='discuss-head'></image>
-                      <view class='left mr20'>吃瓜群众</view>
-                      <view class='right'>30分钟前</view>
-                </view>
-                <view class='discuss-txt'>
-                      <view class='left'>这写的什么啊</view>
-                </view>
-           </view>
-           <view class='discuss-row'>
-                <view class='w100 discuss-top'>
-                      <image src='../../images/touxiang01.png' class='discuss-head'></image>
-                      <view class='left mr20'>吃瓜群众</view>
-                      <view class='right'>一天前</view>
-                </view>
-                <view class='discuss-txt'>
-                      <view class='left'>这写的什么啊</view>
-                </view>
-           </view>
-           <view class='discuss-row'>
-                <view class='w100 discuss-top'>
-                      <image src='../../images/touxiang02.png' class='discuss-head'></image>
-                      <view class='left mr20'>吃瓜群众</view>
-                      <view class='right'>2019-01-08</view>
-                </view>
-                <view class='discuss-txt'>
-                      <view class='left'>这写的什么啊</view>
-                </view>
-           </view>
-           <view class='discuss-row'>
-                <view class='w100 discuss-top'>
-                      <image src='../../images/touxiang03.png' class='discuss-head'></image>
-                      <view class='left mr20'>吃瓜群众</view>
-                      <view class='right'>2019-01-06</view>
-                </view>
-                <view class='discuss-txt'>
-                      <view class='left'>这写的什么啊</view>
-                </view>
-           </view>
     </view>
 </view>
 <view class="container" style='height:99rpx; background-color:#F7F7F7;'></view>
