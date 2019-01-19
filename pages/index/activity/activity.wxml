@@ -2,7 +2,7 @@
 <view class="container search-box">
      <view class="section w100">
           <input placeholder="请输入搜索内容" value='{{tHeadline}}' bindinput="selInput"/>
-          <image src='../../images/search_icon.png' bindtap='listActivity'></image>
+          <image src='../../images/search_icon.png' bindtap='selActivity'></image>
     </view>
 </view>
 <view class="container">

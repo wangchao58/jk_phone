@@ -11,6 +11,9 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 500,
+    page: 1,
+    rows: 10,
+    pages: 1,
     listInformation: []
   },
   onLoad: function (options) {
@@ -39,22 +42,40 @@ Page({
   /**
    * 资讯列表
    */
-  listInformation: function () {
+  listInformation: function (page, rows) {
     var that = this;
-    var array = [];
-    that.setData({ listInformation: array });
     var src = app.globalData.src + "/information/getInformationList";
+    if (page == null) {
+      page = that.data.page;
+      rows = that.data.rows;
+    }
+
+    wx.showLoading({
+      title: '玩命加载中',
+    })
     wx.request({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        'page': page,
+        'rows': rows
+      },
       success(res) {
         var listInformation = that.data.listInformation;
-        var data = res.data;
-        for (var i = 0; i < data.length; i++) {
-          listInformation.push(data[i]);
+        var data = res.data.tInformation;
+        that.data.pages = res.data.pages;
+
+        if (data.length != 0) {
+          for (var i = 0; i < data.length; i++) {
+            listInformation.push(data[i]);
+          }
+          that.setData({ listInformation: listInformation });
+        } else {
+          that.setData({ listInformation: [] });
         }
-        that.setData({ listInformation: listInformation });
+        // 隐藏加载框
+        wx.hideLoading();
       }
     })
   },
@@ -86,6 +107,18 @@ Page({
     wx.navigateTo({
       url: 'discuss/discuss?tId=' + tId
     })
+  },
+
+  /**
+  * 页面上拉触底事件的处理函数
+  */
+  onReachBottom: function () {
+    var that = this;
+    var page = that.data.page + 1;
+    that.data.page = page;
+    if (page <= that.data.pages) {
+      that.listInformation(page, that.data.rows);
+    }
   }
 
 
