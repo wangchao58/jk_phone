@@ -21,55 +21,22 @@ Page({
   },
 
   /**
-   * 资讯列表
-   */
-  listInformation: function () {
-    var that = this;
-    var array = [];
-    that.setData({ listInformation: array });
-    var src = app.globalData.src + "/information/getInformationList";
-    wx.request({
-      url: src,
-      method: 'POST',
-      header: { 'content-type': 'application/x-www-form-urlencoded' },
-      success(res) {
-        var listInformation = that.data.listInformation;
-        var data = res.data;
-        for (var i = 0; i < data.length; i++) {
-          listInformation.push(data[i]);
-        }
-        that.setData({ listInformation: listInformation });
-      }
-    })
-  },
-
-  /**
-   * 资讯评论
-   */
-  discussDetail: function (e) {
-    var tId = e.currentTarget.id;
-    wx.navigateTo({
-      url: '../discuss/discuss?tId=' + tId
-    })
-  },
-
-  /**
    * 列表数据查询获取查询条件
    */
-  selInput:function(e){
+  selInput: function (e) {
     this.setData({
       selInput: e.detail.value
     })
   },
 
   /**
-   * 列表查询数据
+   * 资讯列表
    */
-  selInformation:function(){
+  listInformation: function () {
     var that = this;
-    var selInput = this.data.selInput;
     var array = [];
     that.setData({ listInformation: array });
+    var selInput = this.data.selInput;
     var src = app.globalData.src + "/information/getInformationList";
     wx.request({
       url: src,
@@ -84,10 +51,7 @@ Page({
         for (var i = 0; i < data.length; i++) {
           listInformation.push(data[i]);
         }
-        that.setData({ 
-          listInformation: listInformation,
-          tContent: ""
-        });
+        that.setData({ listInformation: listInformation });
       }
     })
   },
