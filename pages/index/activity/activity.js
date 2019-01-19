@@ -82,16 +82,7 @@ Page({
    */
   selActivity: function () {
     var that = this;
-    var selInput = this.data.selInput;
-    if (selInput != null && selInput != '') {
-      that.listActivity(1, 10);
-    } else {
-      wx.showToast({
-        title: '请输入要搜索的内容',
-        icon: 'none',
-        duration: 2000
-      })
-    }
+    that.listActivity(1, 10);
   },
 
   /**

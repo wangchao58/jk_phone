@@ -10,6 +10,9 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 500,
+    page: 1,
+    rows: 10,
+    pages: 1,
     listInformation: [] 
   },
 
@@ -32,29 +35,53 @@ Page({
   /**
    * 资讯列表
    */
-  listInformation: function () {
+  listInformation: function (page, rows) {
     var that = this;
-    var array = [];
-    that.setData({ listInformation: array });
     var selInput = this.data.selInput;
     var src = app.globalData.src + "/information/getInformationList";
+    if (page == null) {
+      page = that.data.page;
+      rows = that.data.rows;
+    }
+    wx.showLoading({
+      title: '玩命加载中',
+    })
     wx.request({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: {
-        tContent: selInput
+        'tContent': selInput,
+        'page': page,
+        'rows': rows
       },
       success(res) {
         var listInformation = that.data.listInformation;
-        var data = res.data;
-        for (var i = 0; i < data.length; i++) {
-          listInformation.push(data[i]);
+        var data = res.data.tInformation;
+        that.data.pages = res.data.pages;
+
+        if (data.length != 0) {
+          for (var i = 0; i < data.length; i++) {
+            listInformation.push(data[i]);
+          }
+          that.setData({ listInformation: listInformation });
+        } else {
+          that.setData({ listInformation: [] });
         }
-        that.setData({ listInformation: listInformation });
+        // 隐藏加载框
+        wx.hideLoading();
       }
     })
   },
+
+  /**
+   * 条件查询
+   */
+  selInformation: function () {
+    var that = this;
+    that.listInformation(1, 10);
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -92,13 +119,6 @@ Page({
   },
 
   /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
@@ -106,6 +126,18 @@ Page({
     return {
       title: '资讯分享', // 转发后 所显示的title
       path: 'pages/index/information/information' // 相对的路径
+    }
+  },
+
+  /**
+  * 页面上拉触底事件的处理函数
+  */
+  onReachBottom: function () {
+    var that = this;
+    var page = that.data.page + 1;
+    that.data.page = page;
+    if (page <= that.data.pages) {
+      that.listInformation(page, that.data.rows);
     }
   }
 })
