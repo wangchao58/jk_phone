@@ -5,5 +5,6 @@
               发布资讯</view>
               <view class="part zixun right" bindtap='pubActivity'>发布活动</view>
               <view class="part zixun left" bindtap='pubShop'>发布商铺</view>
-              <view class="part zixun right">发布拼车</view>
+              <view class="part zixun right" bindtap='pubPassengers'>发布拼车(乘客)</view>
+              <view class="part zixun left" bindtap='pubCarOwner'>发布拼车(车主)</view>
        </view>

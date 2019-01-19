@@ -19,6 +19,8 @@
     "pages/publish/pubiInfor/pubiInfor",
     "pages/publish/pubiActivity/pubActivity",
     "pages/publish/pubShop/pubShop",
+    "pages/publish/pubPassengers/pubPassengers",
+    "pages/publish/pubCarOwner/pubCarOwner",
     "pages/personal/personal",
     "pages/index/status/status"
   ],

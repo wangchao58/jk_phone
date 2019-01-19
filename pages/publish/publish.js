@@ -19,5 +19,15 @@ Page({
     wx.navigateTo({
       url: 'pubShop/pubShop'
     })
+  },
+  pubPassengers:function(){
+    wx.navigateTo({
+      url: 'pubPassengers/pubPassengers'
+    })
+  },
+  pubCarOwner: function () {
+    wx.navigateTo({
+      url: 'pubCarOwner/pubCarOwner'
+    })
   }
 })
