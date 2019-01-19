@@ -18,6 +18,7 @@
     "pages/publish/publish",
     "pages/publish/pubiInfor/pubiInfor",
     "pages/publish/pubiActivity/pubActivity",
+    "pages/publish/pubShop/pubShop",
     "pages/personal/personal",
     "pages/index/status/status"
   ],

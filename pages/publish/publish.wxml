@@ -4,6 +4,6 @@
               <image src='../images/index-ico01.png'></image>
               发布资讯</view>
               <view class="part zixun right" bindtap='pubActivity'>发布活动</view>
-              <view class="part zixun left">发布商铺</view>
+              <view class="part zixun left" bindtap='pubShop'>发布商铺</view>
               <view class="part zixun right">发布拼车</view>
        </view>
