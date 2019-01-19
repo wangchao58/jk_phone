@@ -1,9 +1,9 @@
 <!--pages/publish/publish.wxml-->
-<view class="container" >
        <view class="fabu">
-              <view class="part zixun left" bindtap='pubiInfor'>资讯</view>
-              <view class="part zixun right">活动</view>
-              <view class="part zixun left">商铺</view>
-              <view class="part zixun right">拼车</view>
+              <view class="part zixun left" bindtap='pubiInfor'>
+              <image src='../images/index-ico01.png'></image>
+              发布资讯</view>
+              <view class="part zixun right" bindtap='pubActivity'>发布活动</view>
+              <view class="part zixun left">发布商铺</view>
+              <view class="part zixun right">发布拼车</view>
        </view>
-</view>
