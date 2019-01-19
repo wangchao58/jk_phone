@@ -3,9 +3,9 @@
      <view class='detailed'>
           <view class='detailed-head'>
                     <image src='../../images/Group-head1.png'></image>
-                    <view class='fontSize32'>北京-衡水拼车群</view>
-                    <view class='cor-grey mt10'>分类：入驻群</view>
-                    <view class='cor-grey'>群人数：12</view>
+                    <view class='fontSize32'>{{data.tGroupName}}</view>
+                    <view class='cor-grey mt10'>分类：{{data.tSort}}</view>
+                    <view class='cor-grey'>浏览量：{{data.tViewsNum}}</view>
           </view>
      </view>
 </view>
@@ -13,28 +13,28 @@
 <view class="container">
    <view class='hd-data borderBom'>
         <view class='hd-data-bt'>群主</view>
-        <view class='left'>发飙的羊</view>
+        <view class='left'>{{data.tGroupLord}}</view>
    </view>
    <view class='hd-data borderBom'>
         <view class='hd-data-bt'>发布时间</view>
-        <view class='left'>2018-12-24 08:00</view>
+        <view class='left'>{{data.tGroupLord}}</view>
    </view>
    <view class='hd-data borderBom'>
         <view class='hd-data-bt'>归属地</view>
-        <view class='left'>北京</view>
+        <view class='left'>{{data.tAttribution}}</view>
    </view>
    <view class='hd-data'>
         <view class='hd-data-bt'>加群要求</view>
-        <view class='left'>颜值高、信用好</view>
+        <view class='left'>{{data.tClaim}}</view>
    </view>
 </view>
 
 <view class="container mt20">
    <view class='hd-cont'>
           <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>群介绍</view>
-          <view class='w100 borderBom  cor-grey fontSize28 hd-txt'>Win10的设置UWP整合过去分散在系统各处的菜单，并进一步简化、分类与合并，选项更加齐全，逻辑更加清晰，更方便用户上手。大一统的理念是进步性的。 但是（先不谈启动慢、易崩溃的问题）设置界面排版太过粗糙，居中对齐却使项目菜单长短不一，排版不注重留白，滚动条、大选框、大图标完全针对触摸屏设计，对绝大多数的鼠标用户而言并不友好，不仅浪费视觉空间，还显著增加鼠标操作移动距离。</view>
+          <view class='w100 borderBom  cor-grey fontSize28 hd-txt'>{{data.tIntroduction}}</view>
           <view class='w100 cor-bock fontSize28 hd-cont-bt'>加群说明:</view>
-          <view class='w100 borderBom  cor-grey fontSize28 hd-txt' style='margin-top:-30rpx;'>Win10的设置UWP整合过去分散在系统各处的菜单，并进一步简化、分类与合并，选项更加齐全，逻辑更加清晰，更方便用户上手。大一统的理念是进步性的。 </view>
+          <view class='w100 borderBom  cor-grey fontSize28 hd-txt' style='margin-top:-30rpx;'>{{data.tExplain}} </view>
    </view>
 </view>
 <view class="container mt20" style='height:100rpx;'></view>

@@ -25,7 +25,6 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: { tId: id },
       success(res) {
-        console.log(res.data);
         that.setData({
           data: res.data
         });

@@ -82,8 +82,6 @@ Page({
     var that = this;
     var page = that.data.page + 1;
     that.data.page = page;
-    console.log(page);
-    console.log(that.data.pages);
     if(page <= that.data.pages) {
       that.storeList(page, that.data.rows);
     }

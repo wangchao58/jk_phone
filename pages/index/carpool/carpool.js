@@ -10,8 +10,10 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 500,
+    tPoint: '',
     page: 1,
     rows: 3,
+    carGroupList:[],
     pages: 1
   },
   onLoad: function (options) {
@@ -37,7 +39,6 @@ Page({
       success(res) {
         var carGroupList = that.data.carGroupList;
         var data = res.data.carGroupList;
-        //console.log(data);
         that.data.pages = res.data.pages;
         for (var i = 0; i < data.length; i++) {
           carGroupList.push(data[i]);
@@ -53,14 +54,19 @@ Page({
       url: '../carpoolGroup/carpoolGroup'
     })
   },
-  detailed: function () {
+  detailed: function (e) {
+    var tId = e.currentTarget.id;
     wx.navigateTo({
-      url: '../carpoolGroupDetailed/carpoolGroupDetailed'
+      url: '../carpoolGroupDetailed/carpoolGroupDetailed?tId=' + tId
     })
   },
-  carpoolList:function(){
+  carpoolList:function(e){
+    var that = this;
+    var tPoint = e.detail.value.tPoint; 
+    var tDestination = e.detail.value.tDestination; 
+    
     wx.navigateTo({
-      url: '../carpoolGroupList/carpoolGroupList'
+      url: '../carpoolGroupList/carpoolGroupList?tPoint=' + tPoint + '&tDestination=' + tDestination
     })
   },
   /**

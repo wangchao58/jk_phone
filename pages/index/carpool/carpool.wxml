@@ -1,10 +1,10 @@
 <!--pages/index/carpool/carpool.wxml-->
-<view class="container search-box">
+<!-- <view class="container search-box">
      <view class="section w100">
           <input placeholder="请输入搜索内容" />
           <image src='../../images/search_icon.png'></image>
     </view>
-</view>
+</view> -->
 <view class="container">
   <view class="swiper">
   <swiper indicator-dots="{{indicatorDots}}"
@@ -18,22 +18,22 @@
   </view>
 </view>
 
-
-<view class="container mt20">
-    <view class='distance'>
-           <view class='distance-row'>
-                  <view class='distance-cir cor-green'></view>
-                  <input placeholder="请输入起点" />
-           </view>
-           <view class='distance-row'>
-                  <view class='distance-cir cor-red'></view>
-                  <input placeholder="请输入终点" />
-           </view>
-           <image src='../../images/distance-ico.png'></image>
-           <view class='distance-btn' bindtap='carpoolList'>查询顺路行程</view>
-    </view>
-</view>
-
+<form bindsubmit="carpoolList">
+  <view class="container mt20">
+      <view class='distance'>
+            <view class='distance-row'>
+                    <view class='distance-cir cor-green'></view>
+                    <input placeholder="请输入起点" name="tPoint" value="" />
+            </view>
+            <view class='distance-row'>
+                    <view class='distance-cir cor-red'></view>
+                    <input placeholder="请输入终点"  name="tDestination" value='' />
+            </view>
+            <image src='../../images/distance-ico.png'></image>
+            <button class='distance-btn' formType="submit" >查询顺路行程</button> 
+      </view>
+  </view>
+</form>
 <view class="container mt20">
     <view class='group-title'>
         <view class='group-title-txt'>附近拼车群</view>
@@ -42,7 +42,7 @@
          <view class='group-row'  bindtap='detailed' id='{{item.tId}}'>
               <image src='../../images/Group-head1.png'></image>
               <view class='left fontSize32'>{{item.tGroupName}}</view>
-              <view class='right fontSize28 cor-grey'>30人</view>
+              <view class='right fontSize28 cor-grey'></view>
          </view>
          
          <view class='group-more left' bindtap='carpoolGroup'>查看更多拼车群</view>
