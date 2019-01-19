@@ -1,6 +1,13 @@
 <!--pages/index/carpoolGroupApply/carpoolGroupApply.wxml-->
 <view class="container">
      <view class="section borderBom">
+         <view class='section-label' style='line-height:80rpx;'>群头像</view>
+         <view class='section-head'>
+            <image src='../../images/pic_05.png'></image>
+            <view class='left head-set'>修改头像</view>
+       </view>
+    </view>
+     <view class="section borderBom">
          <view class='section-label'>群名称</view>
          <input placeholder="请输入群名称" />
     </view>

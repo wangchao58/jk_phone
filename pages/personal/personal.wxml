@@ -1,2 +1,8 @@
 <!--pages/personal/personal.wxml-->
-<text>pages/personal/personal.wxml</text>
+<view class="container"> 
+    <view class='myhead'> 
+        <image src='../images/002.jpg' class='myheadbg'></image> 
+        <image src='../images/pic_002.png' class='myheadimg'></image> 
+        <view class='myname'>李思洋</view> 
+    </view> 
+</view> 

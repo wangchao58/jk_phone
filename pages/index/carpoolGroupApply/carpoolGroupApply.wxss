@@ -5,3 +5,5 @@
 .section-submit{ border-radius: 10rpx; background: #66AFFF; color: #fff; font-size: 36rpx; text-align: center; width: 360rpx; height: 80rpx; line-height: 80rpx; margin-left: 150rpx; margin-bottom: 30rpx;}
 .borderN{border: none;}
 .borderN text{ color: #F9893D;}
+.section-head image{height: 80rpx; width: 80rpx; border-radius:5px; float: left; margin-right: 30rpx;}
+.head-set{color:#66AFFF; border:#66AFFF solid 1rpx; height:78rpx; line-height:78rpx; padding: 0 20rpx; border-radius: 3rpx;}
