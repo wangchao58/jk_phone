@@ -6,3 +6,33 @@
         <view class='myname'>李思洋</view> 
     </view> 
 </view> 
+<view class="container mt20"> 
+    <view class="section">
+         <view class='section-label'><image src='../images/index-ico08.png'></image>消息通知</view>
+         <image src='../images/right-btn.png' class="right-btn"></image>
+    </view>
+    <view class="section">
+         <view class='section-label'><image src='../images/index-ico08.png'></image>我的活动</view>
+         <image src='../images/right-btn.png' class="right-btn"></image>
+    </view>
+    <view class="section">
+         <view class='section-label'><image src='../images/index-ico08.png'></image>我的店铺</view>
+         <image src='../images/right-btn.png' class="right-btn"></image>
+    </view>
+    <view class="section">
+         <view class='section-label'><image src='../images/index-ico08.png'></image>我的行程</view>
+         <image src='../images/right-btn.png' class="right-btn"></image>
+    </view>
+    <view class="section">
+         <view class='section-label'><image src='../images/index-ico08.png'></image>我的收藏</view>
+         <image src='../images/right-btn.png' class="right-btn"></image>
+    </view>
+    <view class="section">
+         <view class='section-label'><image src='../images/index-ico08.png'></image>我的分享</view>
+         <image src='../images/right-btn.png' class="right-btn"></image>
+    </view>
+    <view class="section">
+         <view class='section-label'><image src='../images/index-ico08.png'></image>投诉建议</view>
+         <image src='../images/right-btn.png' class="right-btn"></image>
+    </view>
+</view>

@@ -5,7 +5,6 @@ Page({
          { name: "车主", cont: true, active: "" }]
   },
   onLoad: function (options) {
-
     console.log(options.tDestination);
     console.log(options.tPoint);
   },
