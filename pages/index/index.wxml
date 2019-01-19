@@ -36,9 +36,10 @@
                  <image src='../images/pic_003.png'></image>
               </view>
               <view class='list-num w100 left'>
-                    <view class='left'>
-                      <image src="../images/shops-ico02.png" bindtap='discuss' ></image>北京
+                   <view class='left' wx:if="{{item.city != null && item.city != ''}}">
+                      <image src="../images/shops-ico02.png" bindtap='discuss' ></image>{{item.city}}
                     </view>
+                    <view class='left' wx:if="{{item.city == null || item.city == ''}}"></view>
                     <view class='right'>
                       <image src="../images/index-ico06.png" ></image>{{item.tEvaluate}}
                     </view>

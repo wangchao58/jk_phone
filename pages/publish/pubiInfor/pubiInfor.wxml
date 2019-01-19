@@ -8,8 +8,7 @@
             <view class='w100 center'>{{photos.length}}/3</view>
        </view>
        <view  wx:for="{{photos}}" wx:key="index" class='previewImg' >
-          <image src='{{item.pic}}'></image>
-          <!-- <image src='{{photos.url}}'></image>{{photos.url}} -->
+          <image src='{{photos[index]}}'></image>
           <icon type="clear" size="20" color="#f00" id="{{index}}" bindtap='removeimg'/>
        </view>  
   </view>
