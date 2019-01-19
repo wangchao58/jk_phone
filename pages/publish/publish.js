@@ -9,5 +9,10 @@ Page({
     wx.navigateTo({
       url: 'pubiInfor/pubiInfor'
     })
+  },
+  pubActivity:function(){
+    wx.navigateTo({
+      url: 'pubiActivity/pubActivity'
+    })
   }
 })

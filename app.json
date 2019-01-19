@@ -17,6 +17,7 @@
     "pages/index/customService/customService",
     "pages/publish/publish",
     "pages/publish/pubiInfor/pubiInfor",
+    "pages/publish/pubiActivity/pubActivity",
     "pages/personal/personal",
     "pages/index/status/status"
   ],
