@@ -2,14 +2,22 @@
       <view class='chooseImage' bindtap='chooseImage'>
             <view class='chooseImage-txt'>上传封面</view>
             <image src='' class='banner-img' hidden='{{imgShow}}'></image>
-      </view>
-      <view class="section mt20">
+       </view>
+       <view class="section mt20">
          <view class='section-label'>活动名称</view>
          <input placeholder="请输入活动名称" />
+      </view>
+    <view class="section">
+        <view class='section-label'>开始时间</view>
+          <picker mode="date" value="{{startdate}}" start="2015-09-01"  end="2017-09-01" bindchange="startDateChange" > <view class="picker">{{startdate}}</view> </picker>
+          <view class="picker-line">-</view>
+        <picker mode="time" value="{{starttime}}" start="09:01" end="21:01" bindchange="startTimeChange" ><view class="picker">{{starttime}}</view></picker>
     </view>
     <view class="section">
-         <view class='section-label'>举办时间</view>
-          <input placeholder="请输入活动日期" />
+         <view class='section-label'>结束时间</view>
+          <picker mode="date" value="{{enddate}}" start="2015-09-01"  end="2017-09-01" bindchange="endDateChange" > <view class="picker">{{enddate}}</view> </picker>
+          <view class="picker-line">-</view>
+        <picker mode="time" value="{{endtime}}" start="09:01" end="21:01" bindchange="endTimeChange" ><view class="picker">{{endtime}}</view></picker>
     </view>
     <view class="section">
          <view class='section-label'>活动地点</view>

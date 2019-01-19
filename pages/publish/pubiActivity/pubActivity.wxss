@@ -25,3 +25,5 @@ width:670rpx;
 .section-submit{ border-radius: 10rpx; background: #66AFFF; color: #fff; font-size: 36rpx; text-align: center; width: 360rpx; height: 80rpx; line-height: 80rpx; margin-left: 150rpx; margin-bottom: 30rpx;}
 .borderN{border: none;}
 .borderN text{ color: #F9893D;}
+picker,.picker-line{float: left; margin:0 10rpx;height:62rpx;line-height:62rpx;}
+.picker-line{ color: #999;}
