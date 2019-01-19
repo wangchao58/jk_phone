@@ -76,5 +76,18 @@ Page({
       }
     })
   },
-  
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    wx.request({
+      url: app.globalData.src + '/shopDetailed/shopDetailed',
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: { 'tUserid': wx.getStorageSync('userid'), 'tUrl': '/share/insertSelective' },
+      success(res) {
+
+      }
+    })
+  }
 })

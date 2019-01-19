@@ -10,7 +10,7 @@
 </view>
 <view class="container">
    <view class='hd-data borderTop'  bindtap='analyze' data-address='{{data.tSite}}' data-name='{{data.tStoreName}}' >
-        <image src="../../images/shops-ico02.png" class='addressIco'></image>
+        <!-- <image src="../../images/shops-ico02.png" class='addressIco'></image> -->
         <view class='left'>{{data.tSite}}</view>
    </view>
 </view>

@@ -43,10 +43,10 @@ function imageUpload(path, curImgList, result) {
         douploadpic: '1'
       },
       success: function (res) {
-        console.log(res.data)
+        // console.log(res.data)
         var data = JSON.parse(res.data);
-        result(curImgList.push(res.data));
-        // result(data);
+        //result(curImgList.push(res.data));
+        result(data);
       },
       complete: function () {
         wx.hideToast();  //隐藏Toast
