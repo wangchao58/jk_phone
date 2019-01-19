@@ -1,2 +1,32 @@
-<!--pages/publish/pubShop/pubShop.wxml-->
-<text>pages/publish/pubShop/pubShop.wxml</text>
+<view class="details borderTop">
+      <view class='chooseImage' bindtap='chooseImage'>
+            <view class='chooseImage-txt'>上传封面</view>
+            <image src='' class='banner-img' hidden='{{imgShow}}'></image>
+       </view>
+       <view class="section mt20">
+         <view class='section-label'>店铺名称</view>
+         <input placeholder="请输入店铺名称" />
+      </view>
+    <view class="section">
+         <view class='section-label'>店铺地址</view>
+          <input placeholder="请输入店铺地址" />
+    </view>
+    <view class="section">
+         <view class='section-label'>联系电话</view>
+          <input placeholder="请输入电话号码" />
+    </view>
+    <view class="section">
+         <view class='section-label'>微信号</view>
+          <input placeholder="请输入微信号码" />
+    </view>
+    <view class="section borderN">
+         <view class='section-label'>店铺介绍</view>
+         <textarea  placeholder="请输入店铺介绍" />
+     </view>
+  <view class="clear"></view>
+</view>
+<view class="time-bottom"  bindtap='informationSub'>发布</view>
+<view class='w100' style="height:100rpx;"></view>
+
+
+

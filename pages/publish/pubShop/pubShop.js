@@ -1,66 +1,35 @@
-// pages/publish/pubShop/pubShop.js
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    imgShow: true,
+    startdate: "开始日期",
+    starttime: "开始时间",
+    enddate: "结束日期",
+    endtime: "结束时间"
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  startDateChange(e) {
+    this.setData({
+      startdate: e.detail.value
+    });
+    this.bindTimeChange()
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  startTimeChange(e) {
+    this.setData({
+      starttime: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  endDateChange(e) {
+    this.setData({
+      enddate: e.detail.value
+    });
+    this.bindTimeChange()
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  endTimeChange(e) {
+    this.setData({
+      endtime: e.detail.value
+    })
   }
 })
