@@ -1,5 +1,6 @@
 var app = getApp();
 var images = new Array(); 
+
 /**
  * 选择图片
  * "album":从相册中选择
@@ -28,12 +29,13 @@ function chooseImg(type, imgNumber, result) {
 /**
  * 上传图片
  */
-function imageUpload(path, curImgList, result) {
+function imageUpload(path, result) {
+  var fileNameList = [];
+  wx.showToast({
+    icon: "loading",
+    title: "正在上传"
+  })
   for (var i = 0; i < path.length; i++) {
-    wx.showToast({
-      icon: "loading",
-      title: "正在上传"
-    }),
     wx.uploadFile({
       url: app.globalData.src + "/file/uploadFile",
       filePath: path[i].pic,
@@ -43,10 +45,10 @@ function imageUpload(path, curImgList, result) {
         douploadpic: '1'
       },
       success: function (res) {
-        // console.log(res.data)
         var data = JSON.parse(res.data);
-        //result(curImgList.push(res.data));
-        result(data);
+        var url = "http://127.0.0.1/file/download?fileName=" + data.fileName;
+        fileNameList.push(url);
+        result(fileNameList);
       },
       complete: function () {
         wx.hideToast();  //隐藏Toast

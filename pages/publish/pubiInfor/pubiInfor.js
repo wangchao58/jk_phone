@@ -6,6 +6,7 @@ var qqmapsdk;
 Page({
   data: {
     photos: [],
+    curImgList:[],
     evalList: [{ tempFilePaths: [], imgList: [] }]
   },
 
@@ -50,7 +51,7 @@ Page({
                 that.setData({
                   photos: result
                 });
-                that.upLoadImg(photos);
+                that.upLoadImg(result);
               })
             }
           }
@@ -59,7 +60,6 @@ Page({
     }else{
       wx.showToast({
         title: '最多上传3张图片',
-        // image: '../../images/jinggao.png',
         duration: 2000
       })
     }
@@ -75,14 +75,10 @@ Page({
    */
   upload: function (page, path) {
     var that = this;
-    var curImgList = [];
     //公共js
-    fileUpload.imageUpload(path, curImgList, function (result) {
-     
-      var url = "http://127.0.0.1/file/download?fileName=" + result.fileName
-
+    fileUpload.imageUpload(path, function (result) {
       that.setData({
-        photos: url
+        photos: result
       })
     })
   },
@@ -95,7 +91,7 @@ Page({
     this.setData({
       photos: photos
     })
-    this.upLoadImg(photos);
+    // this.upLoadImg(photos);
   },
 
   /**
@@ -136,8 +132,9 @@ Page({
   informationSub: function () {
     var that = this;
     var informationInput = this.data.informationInput;
-    var city = this.data.city;
     if (null != informationInput){
+      var city = that.data.city;
+      var photosUrl = that.data.photos;
       var userId = wx.getStorageSync('userid');
       var longitude = wx.getStorageSync('longitude');
       var latitude = wx.getStorageSync('latitude');
@@ -150,7 +147,8 @@ Page({
           tContent: informationInput,
           pId: userId,
           tCoordinate: longitude + "," + latitude,//坐标，经纬度
-          city: city
+          city: city,
+          tImg: photosUrl
         },
         success(res) {
           if (res.data > 0) {
