@@ -1,13 +1,13 @@
 <!--pages/index/carpoolGroupList/carpoolGroupList.wxml-->
 <view class="container">
     <view class="tab">
-         <view class="tab-btn tab-active">全部</view>
-         <view class="tab-btn">乘客</view>
-         <view class="tab-btn">车主</view> 
+    <block wx:for="{{tabData}}" wx:key="{{tabData}}">
+         <view class="tab-btn {{item.active}}" bindtap='tab' id="{{item.name}}">{{item.name}}</view>
+</block>
     </view>
 </view>
 <view class="container">
-      <view class="list">
+      <view class="list" hidden='{{tabData[0].cont}}'>
            <view class="list-row" bindtap='listDetailed'>
                 <image src="../../images/Group-head1.png"></image>
                 <view class="left">
@@ -68,4 +68,6 @@
                 </view>
            </view>
       </view>
+      <view class="list" hidden='{{tabData[1].cont}}'>22222222</view>
+      <view class="list" hidden='{{tabData[2].cont}}'>33333333</view>
 </view>
