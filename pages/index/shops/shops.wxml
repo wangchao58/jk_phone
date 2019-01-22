@@ -1,8 +1,8 @@
 <!--pages/index/shops/shops.wxml-->
 <view class="container search-box">
      <view class="section w100">
-          <input placeholder="请输入搜索内容" />
-          <image src='../../images/search_icon.png'></image>
+          <input placeholder="请输入搜索内容" name="tStoreName" bindinput="selInput" value="{{tStoreName}}"/>
+          <image src='../../images/search_icon.png' bindtap="tStoreInquire"></image>
     </view>
 </view>
 <view class="container">

@@ -3,9 +3,9 @@
 <view class="container"> 
      <view class='detailed'> 
           <view class='detailed-head'> 
-                    <image class='head-img' src='../../images/Group-head1.png'></image> 
-                    <view class='fontSize32 left' style='line-height:60rpx;'>车主<text class='fontSize28 cor-grey'>（空位4）</text></view> 
-                    <button class='right'><image src='../../images/bottom-ico03.png'></image></button> 
+            <image class='head-img' src='../../images/Group-head1.png'></image> 
+            <view class='fontSize32 left' style='line-height:60rpx;'>车主<text class='fontSize28 cor-grey'>（空位4）</text></view> 
+            <button class='right'><image src='../../images/bottom-ico03.png'></image></button> 
           </view> 
      </view> 
 </view> 
@@ -13,38 +13,38 @@
 <view class="container"> 
    <view class='hd-data borderBom'> 
         <view class='hd-data-bt'>出发时间</view> 
-        <view class='left'>2018-12-24 08:00</view> 
+        <view class='left'>{{data.tDepart}}</view> 
    </view> 
    <view class='hd-data borderBom'> 
         <view class='hd-data-bt'>车型</view> 
-        <view class='left'>长城h5(SUV)</view> 
+        <view class='left'>{{data.tCarType}}</view> 
    </view> 
    <view class='hd-data borderBom'> 
         <view class='hd-data-bt'>起点</view> 
-        <view class='left'>北京</view> 
+        <view class='left'>{{data.tPoint}}</view> 
    </view> 
    <view class='hd-data borderBom'> 
         <view class='hd-data-bt'>终点</view> 
-        <view class='left'>天津</view> 
+        <view class='left'>{{data.tDestination}}</view> 
    </view> 
    <view class='hd-data borderBom'> 
         <view class='hd-data-bt'>途经</view> 
-        <view class='left'>蓟县、武清</view> 
+        <view class='left'>{{data.tWay}}</view> 
    </view> 
    <view class='hd-data'> 
         <view class='hd-data-bt'>价格</view> 
-        <view class='left'>¥30元/人</view> 
+        <view class='left'>¥{{data.tFare}}元/人</view> 
    </view> 
 </view> 
 <view class="detailed-title">车主信息</view> 
 <view class="container"> 
    <view class='hd-data borderBom'> 
         <view class='hd-data-bt'>微信号</view> 
-        <view class='left'>185****5305</view> 
+        <view class='left'>{{data.tPhone}}</view> 
    </view> 
    <view class='hd-data borderBom'> 
         <view class='hd-data-bt'>电话号码</view> 
-        <view class='left'>185****5305</view> 
+        <view class='left'>{{data.tPhone}}</view> 
         <image class="phone-ico" src='../../images/shops-ico01.png'></image> 
    </view> 
 </view> 

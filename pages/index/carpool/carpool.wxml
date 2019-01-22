@@ -38,8 +38,8 @@
     <view class='group-title'>
         <view class='group-title-txt'>附近拼车群</view>
     </view>
-    <view class='group-list mt50' wx:for="{{carGroupList}}" wx:key="item" >
-         <view class='group-row'  bindtap='detailed' id='{{item.tId}}'>
+    <view class='group-list mt50' >
+         <view class='group-row'  bindtap='detailed' wx:for="{{carGroupList}}" wx:key="item"  id='{{item.tId}}'>
               <image src='../../images/Group-head1.png'></image>
               <view class='left fontSize32'>{{item.tGroupName}}</view>
               <view class='right fontSize28 cor-grey'></view>

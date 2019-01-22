@@ -22,9 +22,9 @@
     </view>
     <view class="section">
         <view class='section-label'>出发时间</view>
-          <picker mode="date" value="{{startdate}}" start="2015-09-01"  end="2017-09-01" bindchange="startDateChange" > <view class="picker">{{startdate}}</view> </picker>
+          <picker mode="date" value="{{startdate}}" start=" "  end=" " bindchange="startDateChange" > <view class="picker">{{startdate}}</view> </picker>
           <view class="picker-line">-</view>
-        <picker mode="time" value="{{starttime}}" start="09:01" end="21:01" bindchange="startTimeChange" ><view class="picker">{{starttime}}</view></picker>
+        <picker mode="time" value="{{starttime}}" start=" " end=" " bindchange="startTimeChange" ><view class="picker">{{starttime}}</view></picker>
     </view>
     <view class="section">
          <view class='section-label'>乘车人数</view>

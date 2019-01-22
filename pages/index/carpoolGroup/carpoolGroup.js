@@ -12,6 +12,7 @@ Page({
     this.carGroupList(1, 10,'');
   },
   carGroupList: function (page, rows, tGroupName) {
+   
     var that = this;
     var src = app.globalData.src + "/carGroup/selectByExampleByPort";
     if (page == null) {
@@ -21,12 +22,16 @@ Page({
     wx.showLoading({
       title: '玩命加载中',
     })
+    
     wx.request({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: { 'page': page, 'rows': rows, 'tGroupName': tGroupName },
       success(res) {
+        if (tGroupName != '' && page==1) {
+          that.setData({ carGroupList: [] });
+        }
         var carGroupList = that.data.carGroupList;
         var data = res.data.carGroupList;
         that.data.pages = res.data.pages;
@@ -34,6 +39,7 @@ Page({
           carGroupList.push(data[i]);
         }
         that.setData({ carGroupList: carGroupList });
+        
         // 隐藏加载框
         wx.hideLoading();
       }
@@ -42,7 +48,6 @@ Page({
   carGroupInquire: function (e) {
     var that = this;
     var tGroupName = that.data.tGroupName; 
-    console.log(tGroupName);
     if (tGroupName != null && tGroupName !='') {
       this.carGroupList(1, 10, tGroupName);
     } else {
@@ -60,10 +65,21 @@ Page({
   },
   detailed:function(e){
     var tId = e.currentTarget.id;
-    //console.log(tId);
     wx.navigateTo({
       url: '../carpoolGroupDetailed/carpoolGroupDetailed?tId='+tId
     })
+  },
+  /**
+  * 页面上拉触底事件的处理函数
+  */
+  onReachBottom: function () {
+    var that = this;
+    var page = that.data.page + 1;
+    that.data.page = page;
+    if (page <= that.data.pages) {
+      var tGroupName = that.data.tGroupName; 
+      that.carGroupList(page, that.data.rows, tGroupName);
+    }
   },
   join:function(){
     wx.navigateTo({

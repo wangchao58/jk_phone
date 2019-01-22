@@ -25,12 +25,12 @@ Page({
     qqmapsdk = new QQMapWX({
         key: app.globalData.mapKey
     });
-    this.storeList();
+    this.storeList(1, 10, '');
   },
   /**
    * 加载列表
    */
-  storeList: function (page,rows) {
+  storeList: function (page, rows, tStoreName) {
     var that = this;
     var src = app.globalData.src + "/store/selectByExampleByPort";
     if(page == null) {
@@ -44,8 +44,11 @@ Page({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: { 'page': page, 'rows': rows},
+      data: { 'page': page, 'rows': rows, 'tStoreName': tStoreName},
       success(res) {
+        if (tStoreName != '' && page == 1) {
+          that.setData({ storeList: [] });
+        }
         var storeList = that.data.storeList;
         var data = res.data.tStoreList;
         that.data.pages = res.data.pages;
@@ -59,8 +62,24 @@ Page({
       }
     })
   },
-
- 
+  selInput: function (e) {
+    this.setData({
+      tStoreName: e.detail.value
+    })
+  },
+  tStoreInquire: function (e) {
+    var that = this;
+    var tStoreName = that.data.tStoreName;
+    if (tStoreName != null && tStoreName != '') {
+      this.storeList(1, 10, tStoreName);
+    } else {
+      wx.showToast({
+        title: '请输入要搜索的内容',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+  },
   callPhone:function(e){
     var phone = e.currentTarget.dataset.phone
     wx.makePhoneCall({
@@ -78,12 +97,12 @@ Page({
   * 页面上拉触底事件的处理函数
   */
   onReachBottom: function () {
-    
     var that = this;
+    var tStoreName = that.data.tStoreName;
     var page = that.data.page + 1;
     that.data.page = page;
     if(page <= that.data.pages) {
-      that.storeList(page, that.data.rows);
+      that.storeList(page, that.data.rows, tStoreName);
     }
     
   },

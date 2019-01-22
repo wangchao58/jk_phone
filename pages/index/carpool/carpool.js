@@ -64,7 +64,6 @@ Page({
     var that = this;
     var tPoint = e.detail.value.tPoint; 
     var tDestination = e.detail.value.tDestination; 
-    
     wx.navigateTo({
       url: '../carpoolGroupList/carpoolGroupList?tPoint=' + tPoint + '&tDestination=' + tDestination
     })

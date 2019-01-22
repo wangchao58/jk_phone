@@ -1,9 +1,40 @@
 var app = getApp();
+var QQMapWX = require('../../../js/qqmap-wx-jssdk.js');
+// 实例化API核心类
+var qqmapsdk = new QQMapWX({
+  key: app.globalData.mapKey // 必填
+});
 Page({
   data: {
   },
   onLoad: function (options) {
-    this.driving()
+    var that = this;
+    that.carOwnerEntity(options.id)
+    this.driving();
+  },
+  /**
+   * 加载列表
+   */
+  carOwnerEntity: function (id) {
+    var that = this;
+    var src = app.globalData.src + "/carOwner/selectByPrimaryKey";
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: { 'tId': id },
+      success(res) {
+        //that.setData({ carOwnerList: carOwnerList });
+        that.setData({
+          data: res.data
+        });
+        // 隐藏加载框
+        wx.hideLoading();
+      }
+    })
   },
   //事件回调函数
   driving: function () {
@@ -12,7 +43,7 @@ Page({
     //网络请求设置
     var opt = {
       //WebService请求地址，from为起点坐标，to为终点坐标，开发key为必填
-      url: 'https://apis.map.qq.com/ws/direction/v1/driving/?from=40.068829,116.428415&to=39.828050,116.436195&key=' + mapKey,
+      url: 'https://apis.map.qq.com/ws/direction/v1/driving/?from=39.989221,116.306076&to=39.828050,116.436195&key=' + mapKey,
       method: 'GET',
       dataType: 'json',
       //请求成功回调
@@ -42,5 +73,5 @@ Page({
     };
     wx.request(opt);
   },
-
+ 
 })
