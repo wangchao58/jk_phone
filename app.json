@@ -22,6 +22,7 @@
     "pages/publish/pubPassengers/pubPassengers",
     "pages/publish/pubCarOwner/pubCarOwner",
     "pages/personal/personal",
+    "pages/personal/propose/propose",
     "pages/index/status/status"
   ],
   "window": {

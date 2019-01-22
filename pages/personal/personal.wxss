@@ -7,3 +7,4 @@
 .section-label{float: left; padding-left:45rpx;  height: 62rpx; line-height: 62rpx;  color: #666; position: relative;}
 .section-label image{position:absolute; left: 0; top: 16rpx; height:32rpx; width:32rpx;}
 .right-btn{ float: right; width: 32rpx; height: 32rpx; margin-top:15rpx;}
+.borderN{ border-bottom:none;}
