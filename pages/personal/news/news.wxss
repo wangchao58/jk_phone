@@ -1,1 +1,8 @@
 /* pages/personal/news/news.wxss */
+
+.list{width:710rpx;padding:0 20rpx; float: left;}
+.list-row{ padding: 20rpx 0; width: 100%; float: left; background: #fff; position: relative; margin-top:80rpx; border-radius: 10rpx;}
+.list-data{line-height:36rpx;width:650rpx;float: left;margin:0 30rpx; padding:20rpx 0; color:#666;}
+.pubTime{position: absolute; top: -40rpx; left:50%; width: 240rpx; margin-left: -120rpx; text-align: center; color: #999;}
+.list-top{width:650rpx; float: left; margin:0 30rpx; padding: 20rpx 0;border-bottom: #F7F7F7 solid 1rpx; line-height: 32rpx;}
+.list-top .left{ font-size: 32rpx;}

@@ -7,7 +7,7 @@
     </view> 
 </view> 
 <view class="container mt20"> 
-    <view class="section">
+    <view class="section" bindtap='news'>
          <view class='section-label'><image src='../images/index-ico08.png'></image>消息通知</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view>
