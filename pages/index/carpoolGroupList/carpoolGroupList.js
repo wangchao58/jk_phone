@@ -7,14 +7,15 @@ var qqmapsdk = new QQMapWX({
 Page({
   data: {
     tabData:[
-      {id:0, name:"全部",cont:false,active:"tab-active"},
-      {id:1, name: "乘客", cont: true, active: "" },
+      {id: 0, name:"全部",cont:false,active:"tab-active"},
+      {id: 1, name: "乘客", cont: true, active: "" },
       {id: 2, name: "车主", cont: true, active: "" }],
     page: 1,
     rows: 10,
     pages: 1,
     carOwnerList: [],
     tPoint:'',
+    tOwner:'',
     tDestination:''
   },
   onLoad: function (options) {
@@ -26,6 +27,7 @@ Page({
   tab:function(e){
     var that=this;
     var id = e.currentTarget.id;
+    that.data.tOwner = id;
     that.carOwnerList(that.data.tPoint, that.data.tDestination, 1, 10, id);
     for(var i=0;i < that.data.tabData.length;i++){
       var active ="tabData["+i+"].active";
@@ -59,10 +61,11 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: { 'page': page, 'rows': rows, 'tPoint': tPoint, 'tDestination': tDestination, 'tOwner': tOwner},
       success(res) {
-        // if (res.data.tCarOwnerList.length==0) {
-        //   
-        // }
-        that.setData({ carOwnerList: [] });
+        
+        if (page==1) {
+          that.setData({ carOwnerList: [] });
+        }
+        
         var carOwnerList = that.data.carOwnerList;
         var data = res.data.tCarOwnerList;
         that.data.pages = res.data.pages;
@@ -85,7 +88,8 @@ Page({
     var page = that.data.page + 1;
     that.data.page = page;
     if (page <= that.data.pages) {
-      that.carOwnerList(page, that.data.rows);
+      that.carOwnerList(that.data.tPoint,
+        that.data.tDestination, page, that.data.rows, that.data.tOwner);
     }
 
   },
