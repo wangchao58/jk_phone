@@ -29,5 +29,10 @@ Page({
     wx.navigateTo({
       url: 'myShops/myShops'
     })
+  },
+  myCollects:function(){
+    wx.navigateTo({
+      url: 'myCollects/myCollects'
+    })
   }
 })

@@ -1,10 +1,23 @@
 <!--pages/publish/publish.wxml-->
        <view class="fabu">
               <view class="part zixun left" bindtap='pubiInfor'>
-              <image src='../images/index-ico01.png'></image>
-              发布资讯</view>
-              <view class="part zixun right" bindtap='pubActivity'>发布活动</view>
-              <view class="part zixun left" bindtap='pubShop'>发布商铺</view>
-              <view class="part zixun right" bindtap='pubPassengers'>发布拼车(乘客)</view>
-              <view class="part zixun left" bindtap='pubCarOwner'>发布拼车(车主)</view>
+                    <image src='../images/publish-ico01.png'></image>
+                    <view>发布资讯</view>
+              </view>
+              <view class="part zixun right" bindtap='pubActivity'>
+                    <image src='../images/publish-ico02.png'></image>
+                    <view>发布活动</view>
+               </view>
+              <view class="part zixun left" bindtap='pubShop'>
+                    <image src='../images/publish-ico03.png'></image>
+                    <view>发布商铺</view>
+               </view>
+              <view class="part zixun right" bindtap='pubPassengers'>
+                    <image src='../images/publish-ico04.png'></image>
+                    <view>发布拼车(乘客)</view>
+               </view>
+              <view class="part zixun left" bindtap='pubCarOwner'>
+                    <image src='../images/publish-ico04.png'></image>
+                    <view>发布拼车(车主)</view>
+               </view>
        </view>

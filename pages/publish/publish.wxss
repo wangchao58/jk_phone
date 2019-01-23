@@ -1,4 +1,5 @@
 /* pages/publish/publish.wxss */
-.fabu{width: 600rpx; padding: 100rpx 75rpx;}
-.fabu .part{ color: #333; font-size:28rpx; width: 240rpx; height: 240rpx; text-align: center; margin-top: 50rpx; background: #fff; border-radius: 10rpx; position: relative;}
-.part image{width: 100rpx; height: 100rpx; position: absolute; left: 70rpx; top: 30rpx;}
+.fabu{width: 680rpx; padding:20rpx 35rpx;}
+.fabu .part{ color: #333; font-size:28rpx; width:320rpx; height: 280rpx; text-align: center; margin:10rpx; background: #fff; border-radius: 10rpx; position: relative;}
+.part image{width: 160rpx; height: 160rpx; position: absolute; left: 80rpx; top: 30rpx;}
+.part view{ margin-top:210rpx;}

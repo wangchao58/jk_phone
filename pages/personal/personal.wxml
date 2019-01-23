@@ -23,7 +23,7 @@
          <view class='section-label'><image src='../images/index-ico08.png'></image>我的行程</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view>
-    <view class="section">
+    <view class="section" bindtap='myCollects'>
          <view class='section-label'><image src='../images/index-ico08.png'></image>我的收藏</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view>

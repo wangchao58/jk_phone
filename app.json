@@ -28,6 +28,7 @@
     "pages/personal/myActivityDetailed/myActivityDetailed",
     "pages/personal/myShops/myShops",
     "pages/personal/myShopsEdit/myShopsEdit",
+    "pages/personal/myCollects/myCollects",
     "pages/index/status/status"
   ],
   "window": {
