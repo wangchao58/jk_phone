@@ -1,32 +1,37 @@
-<view class="details borderTop">
-      <view class='chooseImage' bindtap='chooseImage'>
-            <view class='chooseImage-txt'>上传封面</view>
-            <image src='' class='banner-img' hidden='{{imgShow}}'></image>
-       </view>
-       <view class="section mt20">
-         <view class='section-label'>店铺名称</view>
-         <input placeholder="请输入店铺名称" />
+<form bindsubmit="shopForm">
+  <view class="details borderTop">
+    <view class='chooseImage' bindtap='chooseImage'>
+        <view class='chooseImage-txt' hidden='{{font}}'>上传封面</view>
+        <view  wx:for="{{photos}}" wx:key="index" class='previewImg' >
+          <image src='{{photos[index]}}' class='banner-img' hidden='{{imgShow}}'></image>
+          <icon type="clear" size="20" color="#f00" id="{{index}}" bindtap='removeimg'/>
+        </view>
       </view>
-    <view class="section">
-         <view class='section-label'>店铺地址</view>
-          <input placeholder="请输入店铺地址" />
+    <view class="section mt20">
+      <view class='section-label'>店铺名称</view>
+      <input placeholder="请输入店铺名称"  name="tStoreName" />
     </view>
     <view class="section">
-         <view class='section-label'>联系电话</view>
-          <input placeholder="请输入电话号码" />
+        <view class='section-label'>店铺地址</view>
+          <input placeholder="请输入店铺地址" name="tSite" />
     </view>
     <view class="section">
-         <view class='section-label'>微信号</view>
-          <input placeholder="请输入微信号码" />
+        <view class='section-label'>联系电话</view>
+          <input placeholder="请输入电话号码" name="tPhone" />
+    </view>
+    <view class="section">
+        <view class='section-label'>微信号</view>
+          <input placeholder="请输入微信号码" name="tWechat"  />
     </view>
     <view class="section borderN">
-         <view class='section-label'>店铺介绍</view>
-         <textarea  placeholder="请输入店铺介绍" />
-     </view>
-  <view class="clear"></view>
-</view>
-<view class="time-bottom"  bindtap='informationSub'>发布</view>
-<view class='w100' style="height:100rpx;"></view>
+        <view class='section-label'>店铺介绍</view>
+        <textarea  placeholder="请输入店铺介绍"  name="tExplain" />
+    </view>
+    <view class="clear"></view>
+  </view>
+  
+  <button type="primary" form-type="submit">发布</button>
+  <view class='w100' style="height:100rpx;"></view>
 
-
+</form>
 

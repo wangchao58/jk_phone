@@ -26,6 +26,26 @@ function chooseImg(type, imgNumber, result) {
   })
 }
 
+
+/**
+ * 选择图片
+ * "album":从相册中选择
+ * "camera":拍照
+ * imgNumber：上传图片数（1张）
+ */
+function chooseImgByOne(type, imgNumber, result) {
+  wx.chooseImage({
+    count: imgNumber, // 默认9
+    sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+    sourceType: [type], // 可以指定来源是相册还是相机，默认二者都有
+    success: function (res) {
+      // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+      var tempFilePaths = res.tempFilePaths;
+      result(tempFilePaths);
+    }
+  })
+}
+
 /**
  * 上传图片
  */
@@ -46,7 +66,7 @@ function imageUpload(path, result) {
       },
       success: function (res) {
         var data = JSON.parse(res.data);
-        var url = "http://127.0.0.1/file/download?fileName=" + data.fileName;
+        var url = app.globalData.src + "/file/download?fileName=" + data.fileName;
         fileNameList.push(url);
         result(fileNameList);
       },
@@ -63,5 +83,6 @@ function imageUpload(path, result) {
 
 module.exports = {
   chooseImg: chooseImg,
+  chooseImgByOne: chooseImgByOne,
   imageUpload: imageUpload
 };
