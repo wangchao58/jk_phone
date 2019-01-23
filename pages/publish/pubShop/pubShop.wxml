@@ -4,7 +4,6 @@
         <view class='chooseImage-txt' hidden='{{font}}'>上传封面</view>
         <view  wx:for="{{photos}}" wx:key="index" class='previewImg' >
           <image src='{{photos[index]}}' class='banner-img' hidden='{{imgShow}}'></image>
-          <icon type="clear" size="20" color="#f00" id="{{index}}" bindtap='removeimg'/>
         </view>
       </view>
     <view class="section mt20">
@@ -29,9 +28,9 @@
     </view>
     <view class="clear"></view>
   </view>
-  
+    <view class='w100' style="height:100rpx;"></view>
   <button type="primary" form-type="submit">发布</button>
-  <view class='w100' style="height:100rpx;"></view>
+
 
 </form>
 
