@@ -26,7 +26,7 @@
          <image class='collect' src='../../images/bottom-ico02.png'></image>
   </view>
   
-  <view class='list-cont'>
+  <view class='list-cont'>  
          <image src='../../images/pic_04.png' class='hd-img'></image>
          <!-- <image src='{{item.tImg}}' class='hd-img'></image> -->
          <view class='list-title'>活动名称</view>
