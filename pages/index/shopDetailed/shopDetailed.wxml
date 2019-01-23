@@ -1,5 +1,5 @@
 <view class="container pb30">
-     <image src='../../images/002.jpg' style='width:100%;height:360rpx;'></image>
+     <image src='{{data.tPicture}}' style='width:100%;height:360rpx;'></image>
      <view class="hd-title">
      {{data.tStoreName}}
      </view>
