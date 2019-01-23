@@ -1,2 +1,41 @@
 <!--pages/personal/news/news.wxml-->
-<text>pages/personal/news/news.wxml</text>
+<view class="list">
+           <view class="list-row">
+                <view class='list-top'>
+                     <view class='left'>活动申请</view>
+                </view>
+                <view class='list-data'>
+                     您的活动申请已通过！请准时去参加活动哦
+                </view>
+                <view class='pubTime'>2018-11-11 16:15</view>
+           </view> 
+           <view class="list-row">
+                <view class='list-top'>
+                     <view class='left'>活动申请</view>
+                </view>
+                <view class='list-data'>
+                     您的活动申请已通过！请准时去参加活动哦
+                </view>
+                <view class='pubTime'>2018-11-11 16:15</view>
+           </view> 
+           <view class="list-row">
+                <view class='list-top'>
+                     <view class='left'>活动申请</view>
+                </view>
+                <view class='list-data'>
+                     您的活动申请已通过！请准时去参加活动哦
+                </view>
+                <view class='pubTime'>2018-11-11 16:15</view>
+           </view> 
+           <view class="list-row">
+                <view class='list-top'>
+                     <view class='left'>系统消息</view>
+                </view>
+                <view class='list-data'>
+                     您的活动申请已通过！请准时去参加活动哦
+                </view>
+                <view class='pubTime'>2018-11-11 16:15</view>
+           </view> 
+</view>     
+
+

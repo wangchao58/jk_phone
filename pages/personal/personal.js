@@ -7,6 +7,12 @@ Page({
 
   },
   //投诉建议
+  news: function () {
+    wx.navigateTo({
+      url: 'news/news'
+    })
+  },
+  //投诉建议
   propose:function(){
     wx.navigateTo({
       url: 'propose/propose'
