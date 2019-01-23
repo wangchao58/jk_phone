@@ -1,0 +1,17 @@
+/* pages/personal/myActivityDetailed/myActivityDetailed.wxss */
+.hd-title{ padding: 40rpx 40rpx 20rpx; font-size: 32rpx; color: #666; line-height: 44rpx;width: 670rpx; }
+.hd-label,.hd-cont{padding:0 40rpx; width: 670rpx;}
+.hd-label .left{font-size: 48rpx;}
+.hd-label .right{position: relative; padding-left: 40rpx; color: #666; margin-top:20rpx;}
+.hd-label .right image{position: absolute; left: 0; top: 2rpx; width: 28rpx; height: 28rpx;}
+.hd-data{margin:0 40rpx; width: 670rpx; font-size: 28rpx;padding: 30rpx 0; line-height: 40rpx; color: #666;}
+.hd-data-bt{  float: left; text-align: right; padding-right: 28rpx; min-width: 112rpx; }
+.hd-data .left{ width: 530rpx;}
+.hd-cont-bt{ padding: 30rpx 0;}
+.hd-txt{ text-align:justify; line-height: 44rpx; padding: 20rpx 0;}
+.join{ width: 100%; float: left; padding:20rpx 0;border-top: #F7F7F7 solid 1rpx;}
+.join image{width: 60rpx; height: 60rpx; border-radius: 5rpx; float: left;}
+.join-nr{ float: left; width:432rpx; margin-left: 20rpx;}
+.join-data{ color: #999; margin-top: 10rpx; line-height: 32rpx;}
+.join-btn{float:right; color: #fff; background:#66AFFF; width: 120rpx; text-align: center; height: 40rpx; line-height: 40rpx; border-radius:6rpx;}
+.join-pass{ color: #66AFFF; background:#fff;}

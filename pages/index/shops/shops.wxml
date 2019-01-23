@@ -5,7 +5,7 @@
           <image src='../../images/search_icon.png' bindtap="tStoreInquire"></image>
     </view>
 </view>
-<view class="container">
+<view class="container" style="margin-bottom:20rpx;">
   <view class="swiper">
   <swiper indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" >
@@ -18,7 +18,7 @@
   </view>
 </view>
 
-<view class="container mt20" wx:for="{{storeList}}" wx:key="item" >
+<view class="container" wx:for="{{storeList}}" wx:key="item" >
     <view class='list-cont'>
          <image src='../../images/pic_04.png' class='hd-img' bindtap="detailed"></image>
          <view class='list-title' bindtap="detailed" id='{{item.tId}}'>{{item.tStoreName}}</view>

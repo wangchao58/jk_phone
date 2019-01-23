@@ -23,6 +23,11 @@
     "pages/publish/pubCarOwner/pubCarOwner",
     "pages/personal/personal",
     "pages/personal/propose/propose",
+    "pages/personal/news/news",
+    "pages/personal/myActivity/myActivity",
+    "pages/personal/myActivityDetailed/myActivityDetailed",
+    "pages/personal/myShops/myShops",
+    "pages/personal/myShopsEdit/myShopsEdit",
     "pages/index/status/status"
   ],
   "window": {

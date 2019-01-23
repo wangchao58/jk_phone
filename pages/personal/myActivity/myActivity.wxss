@@ -1,0 +1,15 @@
+/* pages/personal/myActivity/myActivity.wxss */
+.tab{width:100%; border-bottom: #E8E8E8 solid 2rpx;height: 82rpx; }
+.tab-btn{width:50%; float: left; text-align: center; height: 80rpx; line-height: 80rpx; font-size: 28rpx;}
+.tab-active{ border-bottom: #66AFFF solid 4rpx;}
+
+.list{width:710rpx;padding:0 20rpx; float: left;}
+.list-row{ padding: 30rpx 0; width: 100%; float: left; background: #fff; position: relative; margin-top:80rpx; border-radius: 10rpx;}
+.list-row image{ height: 160rpx; width: 160rpx; float: left; margin-right: 30rpx; margin-left: 30rpx;}
+.list-title{font-size: 32rpx; height: 120rpx; line-height: 40rpx}
+.list-data{line-height:36rpx; color: #666;}
+.list-data .right{ margin-top: 4rpx;}
+.list-data .cor-red,.list-data .cor-green{ font-size: 32rpx; margin-right: 5rpx;}
+.pubTime{position: absolute; top: -40rpx; left:50%; width: 240rpx; margin-left: -120rpx; text-align: center; color: #999;}
+.list-bom{width:650rpx; float: left; margin:20rpx 30rpx 0; padding: 20rpx 0 0;border-top: #F7F7F7 solid 1rpx; line-height: 32rpx; color: #999;}
+.list-bom .left{ font-size: 32rpx;}

@@ -1,0 +1,50 @@
+<!--pages/personal/myActivity/myActivity.wxml-->
+<view class="container">
+    <view class="tab">
+    <block wx:for="{{tabData}}" wx:key="{{tabData}}">
+         <view class="tab-btn {{item.active}}" bindtap='tab' id="{{item.id}}">{{item.name}}</view>
+</block>
+    </view>
+</view>
+<view class="list">
+           <view class="list-row" bindtap='myActivityDetailed' id='{{item.tId}}'>
+                <image src="../../images/Group-head1.png"></image>
+                <view class='list-title'>活动名称</view>
+                <view class='list-data'>
+                    <view class='left'>
+                      <text class='cor-red'>¥30</text>起
+                    </view>
+                    <!-- <view class='left' wx:if="{{item.tMoney != null}}">
+                      <text class='cor-red'>¥{{item.tMoney}}</text>起
+                    </view>
+                    <view class='left' wx:if="{{item.tMoney == null}}">
+                      <text class='cor-green'>免费</text>
+                    </view> -->
+                    <view class='right mr30'>北京朝阳</view>
+                    <view class='right mr20'>02-06</view>
+                </view>
+                <view class='list-bom'>
+                     <view class='left cor-green'>报名中</view>
+                     <view class='right'>76人已报名</view>
+                </view>
+                <view class='pubTime'>2018-11-11 16:15</view>
+           </view> 
+
+           <view class="list-row" bindtap='myActivityDetailed' id='{{item.tId}}'>
+                <image src="../../images/Group-head1.png"></image>
+                <view class='list-title'>活动名称</view>
+                <view class='list-data'>
+                    <view class='left'>
+                      <text class='cor-green'>免费</text>
+                    </view>
+                    <view class='right mr30'>北京朝阳</view>
+                    <view class='right mr20'>02-06</view>
+                </view>
+                <view class='list-bom'>
+                     <view class='left'>已结束</view>
+                     <view class='right'>200人已报名</view>
+                </view>
+                <view class='pubTime'>2018-11-11  16:15</view>
+           </view>    
+</view>     
+
