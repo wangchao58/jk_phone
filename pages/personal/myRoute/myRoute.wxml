@@ -1,0 +1,8 @@
+<!--pages/personal/myRoute/myRoute.wxml-->
+<view class="container">
+    <view class="tab">
+    <block wx:for="{{tabData}}" wx:key="{{tabData}}">
+         <view class="tab-btn {{item.active}}" bindtap='tab' id="{{item.id}}">{{item.name}}</view>
+</block>
+    </view>
+</view>

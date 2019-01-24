@@ -1,0 +1,4 @@
+/* pages/personal/myRoute/myRoute.wxss */
+.tab{width:100%; border-bottom: #E8E8E8 solid 2rpx;height: 82rpx; }
+.tab-btn{width:33.3333%; float: left; text-align: center; height: 80rpx; line-height: 80rpx; font-size: 28rpx;}
+.tab-active{ border-bottom: #66AFFF solid 4rpx;}

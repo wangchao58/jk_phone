@@ -30,9 +30,16 @@ Page({
       url: 'myShops/myShops'
     })
   },
+  //我的收藏
   myCollects:function(){
     wx.navigateTo({
       url: 'myCollects/myCollects'
+    })
+  },
+  //我的行程
+  myRoute:function(){
+    wx.navigateTo({
+      url: 'myRoute/myRoute'
     })
   }
 })

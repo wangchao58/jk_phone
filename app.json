@@ -29,6 +29,7 @@
     "pages/personal/myShops/myShops",
     "pages/personal/myShopsEdit/myShopsEdit",
     "pages/personal/myCollects/myCollects",
+    "pages/personal/myRoute/myRoute",
     "pages/index/status/status"
   ],
   "window": {
