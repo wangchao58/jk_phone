@@ -7,4 +7,4 @@
          <view class='section-submit' bindtap='signUp'>提交</view> 
     </view> 
 </view> 
-<view class='buttonB' bindtap=''>联系客服</view> 
+<view class='buttonB' bindtap='callPhone'>联系客服</view> 
