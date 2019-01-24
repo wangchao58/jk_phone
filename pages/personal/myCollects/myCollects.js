@@ -24,5 +24,24 @@ Page({
         })
       }
     }
+  },
+  remove:function(){
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除该收藏么',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  callPhone: function (e) {
+    var phone = e.currentTarget.dataset.phone
+    wx.makePhoneCall({
+      phoneNumber: phone
+    })
   }
 })

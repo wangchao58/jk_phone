@@ -5,11 +5,14 @@
 
 .list-cont{ padding: 20rpx 0; position: relative;width:670rpx;border-bottom: #eee solid 1rpx;}
 .list-cont .cor-red{ font-size: 32rpx; margin-right: 5rpx;}
-.list-title{font-size: 32rpx; line-height: 40rpx;float: left;overflow:hidden; text-overflow: ellipsis; white-space: nowrap;width: 400rpx}
-.list-data{line-height:32rpx; height:64rpx; overflow:hidden; color: #999; float: left; width: 400rpx; margin-top:5rpx;}
+.list-title{font-size: 32rpx; line-height: 40rpx;float: left;}
+.gs .list-title{overflow:hidden; text-overflow: ellipsis; white-space: nowrap;width: 400rpx;}
+.hd .list-title{width:480rpx; height: 80rpx; overflow: hidden; margin-bottom:45rpx; }
+.list-data{line-height:32rpx;  overflow:hidden; color: #999; float: left; width: 400rpx; margin-top:5rpx;}
 .list-data .right{ margin-top: 4rpx;}
+.gs .list-data{height:64rpx;}
 .hd-img{width: 160rpx; height: 160rpx; float: left;border-radius: 10rpx; margin-right:30rpx;}
 .photoIco,.collect{width: 44rpx; height: 44rpx; position: absolute; right: 0; top:20rpx;}
-.collect{top:136rpx;}
+.collect{top:138rpx;}
 .list-address{ float:left; position: relative; font-size: 28rpx; color: #666; line-height: 32rpx; height: 32rpx;margin-top: 15rpx;overflow:hidden; text-overflow: ellipsis; white-space: nowrap;width: 480rpx}
 .list-address image{ width: 32rpx; height: 32rpx; float: left; margin-right: 10rpx;}
