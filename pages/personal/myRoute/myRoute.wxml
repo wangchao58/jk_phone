@@ -6,3 +6,79 @@
 </block>
     </view>
 </view>
+<view class="list" hidden='{{tabData[0].cont}}'>
+           <view class="list-row">
+                <view class='list-top' bindtap='routeDetailed'>
+                     <view class='left'>北京 - 天津</view>
+                     <view class='right cor-green'>待出发</view>
+                </view>
+                <view class='list-data'>
+                     <view class='list-data-bt'>
+                          出发时间：2018-11-11 16:15
+                     </view>
+                     <view class='list-data-bt'>
+                          车主电话：18610299903
+                          <image src='../../images/shops-ico01.png' bindtap='callPhone'></image>
+                     </view>
+                </view>
+                <view class='pubTime'>2018-11-11 16:15</view>
+           </view>  
+
+            <view class="list-row" >
+                <view class='list-top' bindtap='routeDetailed'>
+                     <view class='left'>北京 - 天津</view>
+                     <view class='right cor-grey'>已完成</view>
+                </view>
+                <view class='list-data'>
+                     <view class='list-data-bt'>
+                          出发时间：2018-11-11 16:15
+                     </view>
+                     <view class='list-data-bt'>
+                          车主电话：18610299903
+                          <image src='../../images/shops-ico01.png' bindtap='callPhone'></image>
+                     </view>
+                </view>
+                <view class='pubTime'>2018-11-11 16:15</view>
+           </view>  
+
+            <view class="list-row" >
+                <view class='list-top' bindtap='routeDetailed'>
+                     <view class='left'>北京 - 天津</view>
+                     <view class='right  cor-red'>已取消</view>
+                </view>
+                <view class='list-data'>
+                     <view class='list-data-bt'>
+                          出发时间：2018-11-11 16:15
+                     </view>
+                     <view class='list-data-bt'>
+                          车主电话：18610299903
+                          <image src='../../images/shops-ico01.png' bindtap='callPhone'></image>
+                     </view>
+                </view>
+                <view class='pubTime'>2018-11-11 16:15</view>
+           </view>  
+</view>  
+<view class="list" hidden='{{tabData[1].cont}}'>
+            <view class="list-row">
+                <view class='list-top' bindtap='routeDetailed'>
+                     <view class='left'>北京 - 天津</view>
+                     <view class='right  cor-grey'>已完成</view>
+                </view>
+                <view class='list-data'>
+                     <view class='list-data-bt'>
+                          出发时间：2018-11-11 16:15
+                     </view>
+                     <view class='list-data-bt'>
+                          乘客电话：18610299903
+                          <image src='../../images/shops-ico01.png' bindtap='callPhone'></image>
+                           <view class='right cor-blue' bindtap='routeDetailed'>查看预约信息</view> 
+                     </view>
+                     <view class='list-data-bt'>
+                          乘客电话：15601103993
+                          <image src='../../images/shops-ico01.png' bindtap='callPhone'></image>
+                          <view class='right cor-blue' bindtap='routeDetailed'>查看预约信息</view> 
+                     </view>
+                </view>
+                <view class='pubTime'>2018-11-11 16:15</view>
+           </view>  
+</view>  
