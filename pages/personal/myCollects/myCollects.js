@@ -43,5 +43,15 @@ Page({
     wx.makePhoneCall({
       phoneNumber: phone
     })
+  },
+  detailed: function () {
+    wx.navigateTo({
+      url: '../../index/shopDetailed/shopDetailed'
+    })
+  },
+  activity: function () {
+    wx.navigateTo({
+      url: '../../index/activityDetailed/activityDetailed'
+    })
   }
 })

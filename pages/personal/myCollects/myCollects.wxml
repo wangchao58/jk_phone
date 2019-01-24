@@ -29,9 +29,9 @@
   </view>
   
   <view class='list-cont hd'>  
-         <image src='../../images/pic_04.png' class='hd-img'></image>
+         <image src='../../images/pic_04.png' class='hd-img' bindtap='activity'></image>
          <!-- <image src='{{item.tImg}}' class='hd-img'></image> -->
-         <view class='list-title'>活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称</view>
+         <view class='list-title' bindtap='activity'>活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称活动名称</view>
          <view class='list-data'>
             <view class='left'>
               <text class='cor-red'>¥30</text>起
