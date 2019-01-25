@@ -7,12 +7,12 @@
     </view>
     <view class='myOperate'>
        <view class='operate' bindtap='praise'>
-            <view class='operate-num'><image src='../images/index-ico05.png'></image></view>
+            <view class='operate-num'><image src='../images/personal-ico09.png'></image></view>
             <view class='operate-txt'>赞</view>
             
        </view>
        <view class='operate'>
-          <view class='operate-num'><image src='../images/index-ico06.png'></image></view>
+          <view class='operate-num'><image src='../images/personal-ico10.png'></image></view>
           <view class='operate-txt'>评论</view>
          
        </view>
