@@ -35,7 +35,7 @@
          <view class='section-label'><image src='../images/personal-ico02.png'></image>消息通知</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view>
-    <view class="section" bindtap='myActivity'>
+    <view class="section" bindtap='myInformation'>
          <view class='section-label'><image src='../images/personal-ico01.png'></image>我的资讯</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view>

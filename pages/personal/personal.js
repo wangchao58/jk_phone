@@ -105,5 +105,11 @@ Page({
     wx.navigateTo({
       url: 'myRoute/myRoute'
     })
+  },
+  //我的资讯
+  myInformation:function(){
+    wx.navigateTo({
+      url: 'myInformation/myInformation'
+    })
   }
 })

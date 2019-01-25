@@ -30,7 +30,7 @@ page{
 .cor-red{color: #C30008;}
 .cor-green{color: #2CD057;}
 .cor-grey{color: #999;}
-.cor-blue{color: #1C426F;}
+.cor-blue{color: #66AFFF;}
 .cor-bock{color:#666;}
 .w100{ width: 100%; }
 .w90{ width:90%; }
