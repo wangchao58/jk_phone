@@ -144,9 +144,11 @@ Page({
    * 发布资讯提交
    */
   informationSub: function () {
+    
+    
     var that = this;
     var informationInput = this.data.informationInput;
-    if (null != informationInput){
+    if (null != informationInput && app.globalData.userInfo){
       var city = that.data.city;
       var photosUrl = that.data.photos;
       var userId = wx.getStorageSync('userid');
@@ -181,9 +183,12 @@ Page({
         }
       })
     }else{
-      wx.showToast({
-        title: "内容不能为空"
+      wx.showModal({
+        title: '友情提示',
+        content: '内容不能为空或未登录',
+       
       })
+     
     }
     
   }

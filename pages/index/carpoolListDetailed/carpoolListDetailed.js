@@ -50,7 +50,8 @@ Page({
     //网络请求设置
     var opt = {
       //WebService请求地址，from为起点坐标，to为终点坐标，开发key为必填
-      url: 'https://apis.map.qq.com/ws/direction/v1/driving/?from=39.989221,116.306076&to=39.828050,116.436195&key=' + mapKey,
+      // url: 'https://apis.map.qq.com/ws/direction/v1/driving/?from=39.989221,116.306076&to=39.828050,116.436195&key=' + mapKey,
+      url: 'https://apis.map.qq.com/ws/direction/v1/driving/?from=&to=&key=' + mapKey,
       method: 'GET',
       dataType: 'json',
       //请求成功回调

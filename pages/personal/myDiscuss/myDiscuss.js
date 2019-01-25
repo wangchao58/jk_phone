@@ -1,11 +1,15 @@
 // pages/personal/myDiscuss/myDiscuss.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    page: 1,
+    rows: 10,
+    pages: 1,
+    evaluateList:[]
   },
 
   /**
@@ -13,6 +17,65 @@ Page({
    */
   onLoad: function (options) {
 
+    this.evaluateList(1,10);
+  },
+  /**
+     * 评论列表
+     */
+  evaluateList: function (page, rows) {
+    var that = this;
+    var userid = wx.getStorageSync('userid');
+    var src = app.globalData.src + "/evaluate/selTEvaluateListByPort";
+    if (page == null) {
+      page = that.data.page;
+      rows = that.data.rows;
+    }
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        'fId': userid,
+        'page': page,
+        'rows': rows
+      },
+      success(res) {
+        var evaluateList = that.data.evaluateList;
+        var data = res.data.listEvaluate;
+        that.data.pages = res.data.pages;
+
+        if (data.length != 0) {
+          for (var i = 0; i < data.length; i++) {
+            evaluateList.push(data[i]);
+          }
+          that.setData({
+            evaluateList: evaluateList
+          });
+        } else {
+          that.setData({
+            evaluateList: []
+          });
+        }
+        // 隐藏加载框
+        wx.hideLoading();
+      }
+    })
+  },
+
+  /**
+  * 点赞评论
+  */
+  discussDetail: function (e) {
+    var tId = e.currentTarget.id;
+    console.log(tId);
+    wx.navigateTo({
+      url: '../../index/discuss/discuss?tId=' + tId
+    })
   },
 
   /**
@@ -54,7 +117,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    var that = this;
+    var page = that.data.page + 1;
+    that.data.page = page;
+    if (page <= that.data.pages) {
+      that.evaluateList(page, that.data.rows);
+    }
   },
 
   /**

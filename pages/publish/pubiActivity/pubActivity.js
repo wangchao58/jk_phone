@@ -122,7 +122,7 @@ Page({
       })
       return ;
     }
-    if (null != tHeadline) {
+    if (null != tHeadline && app.globalData.userInfo) {
       var userId = wx.getStorageSync('userid');
       var photosUrl = that.data.photos;
       var src = app.globalData.src + "/activity/addActivity";
@@ -158,8 +158,10 @@ Page({
         }
       })
     } else {
-      wx.showToast({
-        title: "内容不能为空"
+      wx.showModal({
+        title: '友情提示',
+        content: '内容不能为空或未登录',
+
       })
     }
   }

@@ -43,7 +43,11 @@ Page({
       }
     })
   },
-
+  toIndex: function (e) {
+    wx.switchTab({
+      url: '../index'
+    })
+  },
   /**
    * 活动收藏
    */
@@ -54,6 +58,14 @@ Page({
 
     //调用公共收藏js方法
     enshrine.enshrine(tId,tType,function (result) {
+      if (result.data >= 1) {
+        wx.showToast({
+          title: '成功',
+          icon: 'error',
+          duration: 1000,
+          mask: true
+        })
+      }
       that.setData({
         data: result.data
       });

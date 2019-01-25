@@ -10,7 +10,7 @@
 <view class="container">
     <view class='group-list' wx:for="{{carGroupList}}" wx:key="item" >
          <view class='group-row' bindtap='detailed' id='{{item.tId}}'>
-              <image src='../../images/Group-head1.png'></image>
+              <image src='{{item.tGroupImg}}'></image>
               <view class='left fontSize32'>{{item.tGroupName}}</view>
               <view class='right fontSize28 cor-grey'></view>
          </view>

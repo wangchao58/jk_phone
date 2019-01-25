@@ -1,41 +1,45 @@
 <!--pages/index/carpoolGroupApply/carpoolGroupApply.wxml-->
-<view class="container">
-     <view class="section borderBom">
-         <view class='section-label' style='line-height:80rpx;'>群头像</view>
-         <view class='section-head'>
-            <image src='../../images/pic_05.png'></image>
-            <view class='left head-set'>修改头像</view>
-       </view>
+<form bindsubmit="carGroupForm">
+  <view class="container">
+    <view class="section borderBom">
+      <view class='section-label' style='line-height:80rpx;'>群头像</view>
+      <view class='section-head'>
+        <image src='{{groupImg}}'></image>
+        <view class='left head-set' bindtap='chooseImage'>修改头像</view>
+      </view>
     </view>
-     <view class="section borderBom">
-         <view class='section-label'>群名称</view>
-         <input placeholder="请输入群名称" />
-    </view>
-    <view class="section">
-         <view class='section-label'>群介绍</view>
-          <input placeholder="描述拼车范围（100字以内）" />
+    <view class="section borderBom">
+      <view class='section-label'>群名称</view>
+      <input placeholder="请输入群名称" name="tGroupName"/>
     </view>
     <view class="section">
-         <view class='section-label'>拼车线路</view>
-          <input placeholder="请输入拼车线路" />
+      <view class='section-label'>群介绍</view>
+      <input placeholder="描述拼车范围（100字以内）" name="tIntroduction"/>
     </view>
     <view class="section">
-         <view class='section-label'>群所在地</view>
-          <input placeholder="请输入群所在地" />
+      <view class='section-label'>拼车线路</view>
+      <input placeholder="请输入拼车线路" name="tExplain" />
     </view>
     <view class="section">
-         <view class='section-label'>群主手机</view>
-          <input placeholder="请输入手机号码" />
+      <view class='section-label'>群所在地</view>
+      <input placeholder="请输入群所在地" name="tAttribution"/>
+    </view>
+    <view class="section">
+      <view class='section-label'>群主手机</view>
+      <input placeholder="请输入手机号码" name="tGroupLord"/>
     </view>
     <view class="section borderN">
-         <view class='section-label'>群主微信</view>
-          <input placeholder="请输入微信号码" />
+      <view class='section-label'>群主微信</view>
+      <input placeholder="请输入微信号码" name="tGroupCode"/>
     </view>
-    </view>
-    <view class="section borderN">
-         点击下一步表示您已阅读并同意<text>《入驻须知》</text>及<text>《免责声明》</text>
-    </view>
-    <view class="section borderN">
-         <view class='section-submit' bindtap='customService'>提交审核，下一步</view>
-    </view>
+  </view>
+  <view class="section borderN">
+    点击下一步表示您已阅读并同意
+    <text>《入驻须知》</text>及
+    <text>《免责声明》</text>
+  </view>
+  <view class="section borderN">
+    <button class='section-submit' form-type="submit">提交审核，下一步</button>
+  </view>
 
+</form>

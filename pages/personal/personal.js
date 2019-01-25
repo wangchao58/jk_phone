@@ -16,7 +16,7 @@ Page({
     } 
   },
   bindGetUserInfo(e) {
-    console.log(e.detail.userInfo)
+    
     app.globalData.userInfo = e.detail.userInfo
     // const userInfo = res.userInfo
     // const nickName = userInfo.nickName
@@ -44,7 +44,7 @@ Page({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: { tId: userid, nickname: nickName, avatarurl: topImg, tSex:userInfo.gender },
+      data: { tId: userid, nickname: nickName, avatarurl: topImg, tSex:userInfo.gender  },
       success(res) {
         if (res.data == 0) { console.log("修改头像姓名失败!") }
         that.information(userid)

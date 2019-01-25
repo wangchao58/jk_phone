@@ -23,7 +23,7 @@ Page({
       })
       return ;
     }
-    if (null != tLinkman) {
+    if (null != tLinkman && app.globalData.userInfo) {
       var userId = wx.getStorageSync('userid');
       var src = app.globalData.src + "/carOwner/insertSelective";
       wx.request({
@@ -59,8 +59,10 @@ Page({
         }
       })
     } else {
-      wx.showToast({
-        title: "内容不能为空"
+      wx.showModal({
+        title: '友情提示',
+        content: '内容不能为空或未登录',
+
       })
     }
   },

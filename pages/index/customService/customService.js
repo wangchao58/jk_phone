@@ -22,6 +22,29 @@ Page({
 
   },
 
+  copyTBL: function (e) {
+    var self = this;
+    wx.setClipboardData({
+      data: '2009988890',
+      success: function (res) {
+        // self.setData({copyTip:true}),
+        wx.showModal({
+          title: '提示',
+          content: '复制成功,去添加客服',
+          success: function (res) {
+            if (res.confirm) {
+              wx.redirectTo({
+                url: '../carpool/carpool'
+              })
+              console.log('确定')
+            } else if (res.cancel) {
+              console.log('取消')
+            }
+          }
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

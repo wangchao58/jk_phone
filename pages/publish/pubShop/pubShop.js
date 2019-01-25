@@ -21,7 +21,7 @@ Page({
   shopForm: function (e) {
     var that = this;
     var tStoreName = e.detail.value.tStoreName;
-    if (null != tStoreName) {
+    if (null != tStoreName && app.globalData.userInfo) {
       var userId = wx.getStorageSync('userid');
       var photosUrl = that.data.photos;
       console.log(photosUrl[0]);
@@ -55,8 +55,10 @@ Page({
         }
       })
     } else {
-      wx.showToast({
-        title: "内容不能为空"
+      wx.showModal({
+        title: '友情提示',
+        content: '内容不能为空或未登录',
+
       })
     }
   },

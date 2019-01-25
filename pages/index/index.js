@@ -84,6 +84,8 @@ Page({
    * 首页资讯点赞
    */
   informationPraise: function (e) {
+    var index = e.currentTarget.dataset.index;
+    
     var that = this;
     var tId = e.currentTarget.id;
     var tType= '3';
@@ -91,12 +93,34 @@ Page({
     wx.setStorageSync('tType', tType);
     //调用公共点赞js方法
     praise.clickPraise(tId,tType,function (result) {
-      that.setData({
-        data: result.data,
-        listInformation: [] 
-      });
+      // that.setData({
+      //   data: result.data,
+      //   listInformation: [] 
+      // });
       // 回调资讯列表查询
-      that.listInformation();
+      //that.listInformation();
+      
+        console.log(result.data);
+        var message = that.data.listInformation;
+        for (let i in message) { //遍历列表数据
+          if (i == index) { //根据下标找到目标
+            var collectStatus = true
+            if (message[i].tPraise <= result.data) { //如果是没点赞+1
+              collectStatus = true
+            } else {
+              collectStatus = false
+            }
+            wx.showToast({
+              title: collectStatus ? '点赞成功' : '取消成功',
+            })
+            message[i].tPraise = result.data
+            
+            
+          }
+        }
+        that.setData({
+          listInformation: message
+        })
     })
   },
 

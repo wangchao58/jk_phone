@@ -4,7 +4,6 @@ var app = getApp();
  */
 function clickPraise(tId,tType,result) {
   var userId = wx.getStorageSync('userid');
-  console.log(userId);
   var src = app.globalData.src + "/praise/addPraise";
   wx.request({
     url: src,

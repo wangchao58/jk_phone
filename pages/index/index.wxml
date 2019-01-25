@@ -1,52 +1,55 @@
 <!--index.wxml-->
 <view class="container">
   <view class="swiper">
-  <swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}" wx:key="{{item}}">
-    <swiper-item>
-        <image src="{{item}}" class="slide-image" style='width:100%;height:300rpx' />
-    </swiper-item>
-  </block>
-  </swiper>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" style='width:100%;height:300rpx' />
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
 </view>
 <view class="container mt20">
-    <view class='w100 nav'>
-            <view class='nav-btn' bindtap='information'><image src="../images/index-ico01.png" ></image>资讯</view>
-            <view class='nav-btn' bindtap='activity'><image src="../images/index-ico02.png" ></image>活动</view>
-            <view class='nav-btn' bindtap='shops'><image src="../images/index-ico03.png" ></image>商铺</view>
-            <view class='nav-btn' bindtap='carpool'><image src="../images/index-ico04.png" ></image>拼车</view>
-    </view>
+  <view class='w100 nav'>
+    <view class='nav-btn' bindtap='information'>
+      <image src="../images/index-ico01.png"></image>资讯</view>
+    <view class='nav-btn' bindtap='activity'>
+      <image src="../images/index-ico02.png"></image>活动</view>
+    <view class='nav-btn' bindtap='shops'>
+      <image src="../images/index-ico03.png"></image>商铺</view>
+    <view class='nav-btn' bindtap='carpool'>
+      <image src="../images/index-ico04.png"></image>拼车</view>
+  </view>
 </view>
 
-<view class="container mt20" wx:for="{{listInformation}}" wx:key="{{item}}" >
-    <view class='list-cont'>
-        <view class='w100 list-top' id="{{item.tId}}" bindtap='discussDetail'>
-              <image src='{{item.avatar}}'></image>
-              <view class='left fontSize32'>{{item.pId}}</view>
-              <view class='right cor-grey'>{{item.tCreateTime}}</view>
+<view class="container mt20" wx:for="{{listInformation}}" wx:key="{{item}}">
+  <view class='list-cont'>
+    <view class='w100 list-top' id="{{item.tId}}" bindtap='discussDetail'>
+      <image src='{{item.avatar}}'></image>
+      <view class='left fontSize32'>{{item.pId}}</view>
+      <view class='right cor-grey'>{{item.tCreateTime}}</view>
+    </view>
+    <view class='w100 list-bom'>
+      <view class='list-txt w100 left' id="{{item.tId}}" bindtap='discussDetail'>{{item.tContent}}</view>
+      <view class='list-img w100 left' id="{{item.tId}}" bindtap='discussDetail'>
+        <view wx:for="{{item.listImg}}" wx:for-item="items" wx:key="{{items}}">
+          <image src='{{items}}'></image>
         </view>
-        <view class='w100 list-bom'>
-              <view class='list-txt w100 left' id="{{item.tId}}" bindtap='discussDetail'>{{item.tContent}}</view>
-              <view class='list-img w100 left' id="{{item.tId}}" bindtap='discussDetail'>
-                <view wx:for="{{item.listImg}}" wx:for-item="items" wx:key="{{items}}" >
-                  <image src='{{items}}'></image>
-                </view>
-                 
-              </view>
-              <view class='list-num w100 left'>
-                   <view class='left' wx:if="{{item.city != null && item.city != ''}}">
-                      <image src="../images/shops-ico02.png" bindtap='discuss' ></image>{{item.city}}
-                    </view>
-                    <view class='left' wx:if="{{item.city == null || item.city == ''}}"></view>
-                    <view class='right' bindtap='discussDetail' id="{{item.tId}}">
-                      <image src="../images/index-ico06.png" ></image>{{item.tEvaluate}}
-                    </view>
-                    <view class='right mr30' bindtap='informationPraise' id='{{item.tId}}'>
-                      <image src="../images/index-ico05.png" ></image>{{item.tPraise}}
-                    </view>
-              </view>
+
+      </view>
+      <view class='list-num w100 left'>
+        <view class='left' wx:if="{{item.city != null && item.city != ''}}">
+          <image src="../images/shops-ico02.png" bindtap='discuss'></image>{{item.city}}
         </view>
+        <view class='left' wx:if="{{item.city == null || item.city == ''}}"></view>
+        <view class='right' bindtap='discussDetail' id="{{item.tId}}">
+          <image src="../images/index-ico06.png"></image>{{item.tEvaluate}}
+        </view>
+        <view class='right mr30' bindtap='informationPraise' data-index='{{index}}' id='{{item.tId}}'>
+          <image src="../images/index-ico05.png"></image>{{item.tPraise}}
+        </view>
+      </view>
+    </view>
   </view>
 </view>
