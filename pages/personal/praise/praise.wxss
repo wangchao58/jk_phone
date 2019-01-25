@@ -1,0 +1,10 @@
+page{background: #fff;}
+.discuss-cont{padding: 0 40rpx; width:670rpx;}
+.discuss{ background: none;}
+.discuss-row{ border-bottom: #eee solid 1rpx;width: 100%; padding:20rpx 0; float: left; line-height: 30rpx;}
+.discuss-title{ padding: 30rpx 0; font-size: 28rpx;}
+.discuss-head{width: 84rpx; height:84rpx; border-radius:8rpx; float: left; margin-right:16rpx;}
+.discuss-txt{ width: 300rpx; padding-top: 6rpx;}
+.discuss-name{overflow: hidden;text-overflow: ellipsis; white-space: nowrap;width:300rpx; font-size: 28rpx;}
+.discuss-nr{ width: 120rpx; height:84rpx; overflow: hidden; line-height:28rpx; }
+.discuss-nr image{ width: 84rpx; height:84rpx; float: right;}

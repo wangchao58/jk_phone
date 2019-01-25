@@ -9,7 +9,7 @@
     </view>
   
     <view class='myOperate'>
-       <view class='operate'>
+       <view class='operate' bindtap='praise'>
             <view class='operate-num'><image src='../images/index-ico05.png'></image></view>
             <view class='operate-txt'>赞</view>
             

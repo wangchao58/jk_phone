@@ -111,5 +111,10 @@ Page({
     wx.navigateTo({
       url: 'myInformation/myInformation'
     })
+  },
+  praise:function(){
+    wx.navigateTo({
+      url: 'praise/praise'
+    })
   }
 })
