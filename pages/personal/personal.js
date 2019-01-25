@@ -116,5 +116,10 @@ Page({
     wx.navigateTo({
       url: 'praise/praise'
     })
+  },
+  myDiscuss:function(){
+    wx.navigateTo({
+      url: 'myDiscuss/myDiscuss'
+    })
   }
 })

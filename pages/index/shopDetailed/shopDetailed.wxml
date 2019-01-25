@@ -20,7 +20,56 @@
           <view class='w100 cor-grey fontSize28 hd-txt'>{{data.tExplain}}</view>
    </view>
 </view>
-<view class="container mt20" style='height:100rpx; background-color:#F7F7F7;'></view>
+
+<view class="container mt20">
+   <view class='hd-cont'>
+          <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>商铺评价</view>
+          <view class='w100 borderBom hd-data-nr'>
+            <view class='hd-data-bt'>我要评价</view>
+            <view class='hd-data-txt'><textarea placeholder="请输入您的评价" /></view>
+            <view class='hd-data-bt w100'>
+                  <view class='hd-data-btn'>提交评价</view>
+            </view>
+          </view>
+   </view>
+   <view class='discuss-cont'>
+           <view class='discuss-row'>
+                      <image src='../../images/touxiang01.png' class='discuss-head'></image>
+                      <view class='left discuss-txt'>
+                            <view class='discuss-name'>鲸控科技</view>
+                            <view class='mt20'><text class='cor-blue'>回复了鲸控科技：</text>兄弟说话要有依据啊兄弟说话要有依据啊</view>
+                      </view>
+                      <view class='right discuss-nr'>01-25 09:32</view>
+           </view>
+           <view class='discuss-row'>
+                      <image src='../../images/touxiang02.png' class='discuss-head'></image>
+                      <view class='left discuss-txt'>
+                            <view class='discuss-name'>海底捞月 </view>
+                            <view class='mt20'>兄弟说话要有依据啊兄弟说话要有依据啊</view>
+                      </view>
+                      <view class='right discuss-nr'>01-25 09:32</view>
+           </view>
+           <view class='discuss-row'>
+                      <image src='../../images/touxiang03.png' class='discuss-head'></image>
+                      <view class='left discuss-txt'>
+                            <view class='discuss-name'>海底捞月 </view>
+                            <view class='mt20'>兄弟说话要有依据啊兄弟说话要有依据啊</view>
+                      </view>
+                      <view class='right discuss-nr'>01-25 09:32</view>
+           </view>
+           <view class='discuss-row'>
+                      <image src='../../images/touxiang01.png' class='discuss-head'></image>
+                      <view class='left discuss-txt'>
+                            <view class='discuss-name'>海底捞月 </view>
+                            <view class='mt20'>兄弟说话要有依据啊兄弟说话要有依据啊</view>
+                      </view>
+                      <view class='right discuss-nr'>01-25 09:32</view>
+           </view>
+    </view>
+</view>
+
+
+<view class="container" style='height:96rpx;'></view>
 <view class="bottomBox">
      <view class='left'></view>
      <button class='bottomIco'><image src='../../images/bottom-ico01.png'></image>首页</button>

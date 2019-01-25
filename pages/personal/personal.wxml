@@ -14,7 +14,7 @@
             <view class='operate-txt'>赞</view>
             
        </view>
-       <view class='operate'>
+       <view class='operate' bindtap='myDiscuss'>
           <view class='operate-num'><image src='../images/personal-ico10.png'></image></view>
           <view class='operate-txt'>评论</view>
          

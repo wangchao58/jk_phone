@@ -33,6 +33,7 @@
     "pages/personal/myRouteDetailed/myRouteDetailed",
     "pages/personal/myInformation/myInformation",
     "pages/personal/praise/praise",
+    "pages/personal/myDiscuss/myDiscuss",
     "pages/index/status/status"
   ],
   "window": {

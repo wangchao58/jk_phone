@@ -1,0 +1,48 @@
+<view class="container discuss">
+    <view class='discuss-cont'>
+           <view class='discuss-row'>
+                      <image src='../../images/touxiang01.png' class='discuss-head'></image>
+                      <view class='left discuss-txt'>
+                            <view class='discuss-name'>鲸控科技</view>
+                            <view class='mt20'><text class='cor-blue'>回复了你：</text>兄弟说话要有依据啊兄弟说话要有依据啊</view>
+                            <view class='cor-grey'>2019-01-25 09:32</view>
+                      </view>
+                      <view class='right discuss-nr'><image src='../../images/pic_002.png'></image></view>
+           </view>
+           <view class='discuss-row'>
+                      <image src='../../images/touxiang02.png' class='discuss-head'></image>
+                      <view class='left discuss-txt'>
+                            <view class='discuss-name'>海底捞月 </view>
+                            <view class='mt20'><text class='cor-blue'>回复了你：</text>兄弟说话要有依据啊兄弟说话要有依据啊</view>
+                            <view class='cor-grey'>2019-01-25 09:32</view>
+                      </view>
+                      <view class='right discuss-nr'>黑白色调黑白色调黑白色调黑白色调黑白色调黑白色调</view>
+           </view>
+           <view class='discuss-row'>
+                      <image src='../../images/touxiang03.png' class='discuss-head'></image>
+                      <view class='left discuss-txt'>
+                            <view class='discuss-name'>海底捞月 </view>
+                            <view class='mt20'><text class='cor-blue'>回复了你：</text>兄弟说话要有依据啊兄弟说话要有依据啊</view>
+                            <view class='cor-grey'>2019-01-25 09:32</view>
+                      </view>
+                      <view class='right discuss-nr'>黑白色调黑白色调黑白色调黑白色调黑白色调黑白色调</view>
+           </view>
+           <view class='discuss-row'>
+                      <image src='../../images/touxiang01.png' class='discuss-head'></image>
+                      <view class='left discuss-txt'>
+                            <view class='discuss-name'>海底捞月 </view>
+                            <view class='mt20'><text class='cor-blue'>回复了你：</text>兄弟说话要有依据啊兄弟说话要有依据啊</view>
+                            <view class='cor-grey'>2019-01-25 09:32</view>
+                      </view>
+                      <view class='right discuss-nr'>黑白色调黑白色调黑白色调黑白色调黑白色调黑白色调</view>
+           </view>
+    </view>
+</view>
+<view class="container" style='height:99rpx;'></view>
+<view class="search-box">
+     <view class="section">
+          <input placeholder="请输入评论内容" value='{{data.discuss}}' bindinput="discussInput"/>
+          <view class='submit-btn' bindtap='discussCommit' id = "{{data.tId}}">发送</view>
+    </view>
+</view>
+
