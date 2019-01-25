@@ -6,20 +6,19 @@
     </view>
 </view>
 
-<view class="container mt20" wx:for="{{listInformation}}" wx:key="{{item}}" id="{{item.tId}}" bindtap='discussDetail' >
+<view class="container mt20" wx:for="{{listInformation}}" wx:key="{{item}}"  >
     <view class='list-cont'>
-        <view class='w100 list-top'>
-              <image src='{{item.avatar}}'></image>
+        <view class='w100 list-top' id="{{item.tId}}" bindtap='discussDetail'>
+              <image src='{{item.avatar}}' ></image>
               <view class='left fontSize32'>{{item.pId}}</view>
               <view class='right cor-grey'>{{item.tCreateTime}}</view>
         </view>
         <view class='w100 list-bom'>
               <view class='list-txt w100 left'>{{item.tContent}}</view>
-              <view class='list-img w100 left'>
-                 <!-- <image src='{{item.tImg}}'></image> -->
-                 <image src='../../images/pic_001.png'></image>
-                 <image src='../../images/pic_002.png'></image>
-                 <image src='../../images/pic_003.png'></image>
+              <view class='list-img w100 left' id="{{item.tId}}" bindtap='discussDetail'>
+                 <view wx:for="{{item.listImg}}" wx:for-item="items" wx:key="{{items}}" >
+                  <image src='{{items}}'></image>
+                </view>
               </view>
               <view class='list-num w100 left'>
                     <view class='left' wx:if="{{item.city != null && item.city != ''}}">

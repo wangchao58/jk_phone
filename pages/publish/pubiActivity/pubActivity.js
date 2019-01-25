@@ -110,6 +110,18 @@ Page({
   activityForm: function (e) {
     var that = this;
     var tHeadline = e.detail.value.tHeadline;
+    if (that.data.startdate == '开始日期' || that.data.starttime == '开始时间' ){
+      wx.showToast({
+        title: "开始日期不能为空"
+      })
+      return ;
+    }
+    if (that.data.enddate == '结束日期' || that.data.endtime == '结束时间') {
+      wx.showToast({
+        title: "结束日期不能为空"
+      })
+      return ;
+    }
     if (null != tHeadline) {
       var userId = wx.getStorageSync('userid');
       var photosUrl = that.data.photos;
@@ -134,6 +146,9 @@ Page({
           if (res.data > 0) {
             wx.showToast({
               title: "发布成功"
+            })
+            wx.navigateTo({
+              url: '../../index/activity/activity'
             })
           } else {
             wx.showToast({

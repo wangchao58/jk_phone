@@ -1,54 +1,58 @@
 <!--pages/index/activityDetailed/activityDetailed.wxml-->
-<view class="container pb30" >
-     <!-- <image src='{{tImg}}' style='width:100%;height:360rpx;'></image> -->
-     <image src='../../images/002.jpg' style='width:100%;height:360rpx;'></image>
-     <view class="hd-title">{{data.tHeadline}}</view>
-     <view class="hd-label">
-          <view wx:if="{{data.tMoney != null}}"><text class='cor-red'>¥{{data.tMoney}}</text></view>
-          <view class="left cor-green" wx:if="{{data.tMoney == null}}">免费</view>
-          <view class="right"><image src="../../images/index-ico08.png" ></image>{{data.tCollectionNum}}</view>
-          <view class="right mr30"><image src="../../images/index-ico07.png" ></image>{{data.tViewsNum}}</view>
-     </view>
+<view class="container pb30">
+  <image src='{{data.tImg}}' style='width:100%;height:360rpx;'></image>
+  <!-- <image src='../../images/002.jpg' style='width:100%;height:360rpx;'></image> -->
+  <view class="hd-title">{{data.tHeadline}}</view>
+  <view class="hd-label">
+    <view wx:if="{{data.tMoney != null}}">
+      <text class='cor-red'>¥{{data.tMoney}}</text>
+    </view>
+    <view class="left cor-green" wx:if="{{data.tMoney == null}}">免费</view>
+    <view class="right">
+      <image src="../../images/index-ico08.png"></image>{{data.tCollectionNum}}</view>
+    <view class="right mr30">
+      <image src="../../images/index-ico07.png"></image>{{data.tViewsNum}}</view>
+  </view>
 </view>
 <view class="container mt20">
-   <view class='hd-data borderBom'>
-        <view class='hd-data-bt'>活动时间</view>
-        <view class='left'>{{data.tStartTime}} - {{data.tEndTime}}</view>
-   </view>
-   <view class='hd-data borderBom'>
-        <view class='hd-data-bt'>活动地点</view>
-        <view class='left'>{{data.tSite}}</view>
-   </view>
-   <view class='hd-data borderBom'>
-        <view class='hd-data-bt'>发布者</view>
-        <view class='left'>{{data.pId}}</view>
-   </view>
-   <view class='hd-data'>
-        <view class='hd-data-bt'>手机号码</view>
-        <view class='left'>{{data.tPhone}}</view>
-   </view>
+  <view class='hd-data borderBom'>
+    <view class='hd-data-bt'>活动时间</view>
+    <view class='left'>{{data.tStartTime}} - {{data.tEndTime}}</view>
+  </view>
+  <view class='hd-data borderBom'>
+    <view class='hd-data-bt'>活动地点</view>
+    <view class='left'>{{data.tSite}}</view>
+  </view>
+  <view class='hd-data borderBom'>
+    <view class='hd-data-bt'>发布者</view>
+    <view class='left'>{{data.pId}}</view>
+  </view>
+  <view class='hd-data'>
+    <view class='hd-data-bt'>手机号码</view>
+    <view class='left'>{{data.tPhone}}</view>
+  </view>
 </view>
-<view class="container mt20" >
-   <view class='hd-cont'>
-      <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>活动详情</view>
-      <view class='w100 cor-grey fontSize28 hd-txt'>{{data.tContent}}</view>
-    </view>
+<view class="container mt20">
+  <view class='hd-cont'>
+    <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>活动详情</view>
+    <view class='w100 cor-grey fontSize28 hd-txt'>{{data.tContent}}</view>
+  </view>
 </view>
 <view class="container mt20" style='height:100rpx; background-color:#F7F7F7;'></view>
-<view class="bottomBox"> 
-     <view class='left'></view> 
-     <button class='bottomIco' bindtap='home'>
-      <image src='../../images/bottom-ico01.png'></image>
-      首页
-     </button> 
-     <button class='bottomIco' bindtap='activityEnshrine' id = "{{data.tId}}" wx:if="{{data.enshrineId != null}}">
-     <image src='../../images/bottom-ico02.png'></image>收藏</button>
-     <button class='bottomIco' bindtap='activityEnshrine' id = "{{data.tId}}" wx:if="{{data.enshrineId == null}}">
-     <image src='../../images/bottom-ico03.png'></image>收藏</button>  
-     <!-- <view class='bottomIco'><image src='../../images/bottom-ico03.png'></image>分享</view>  -->
-     <button class='bottomIco' data-info='caesar'  open-type="share" hover-class='none'>
-      <image src='../../images/bottom-ico03.png'></image>分享
-     </button>
-     
-     <view class='bottomBtn' bindtap='activitySignUp'  id = "{{data.tId}}">立即报名</view> 
-</view> 
+<view class="bottomBox">
+  <view class='left'></view>
+  <button class='bottomIco' bindtap='home'>
+    <image src='../../images/bottom-ico01.png'></image>
+    首页
+  </button>
+  <button class='bottomIco' bindtap='activityEnshrine' id="{{data.tId}}" wx:if="{{data.enshrineId != null}}">
+    <image src='../../images/bottom-ico02.png'></image>收藏</button>
+  <button class='bottomIco' bindtap='activityEnshrine' id="{{data.tId}}" wx:if="{{data.enshrineId == null}}">
+    <image src='../../images/bottom-ico03.png'></image>收藏</button>
+  <!-- <view class='bottomIco'><image src='../../images/bottom-ico03.png'></image>分享</view>  -->
+  <button class='bottomIco' data-info='caesar' open-type="share" hover-class='none'>
+    <image src='../../images/bottom-ico03.png'></image>分享
+  </button>
+
+  <view class='bottomBtn' bindtap='activitySignUp' id="{{data.tId}}">立即报名</view>
+</view>

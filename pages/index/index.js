@@ -90,9 +90,10 @@ Page({
     wx.setStorageSync('tId', tId);
     wx.setStorageSync('tType', tType);
     //调用公共点赞js方法
-    praise.clickPraise(function (result) {
+    praise.clickPraise(tId,tType,function (result) {
       that.setData({
-        data: result.data
+        data: result.data,
+        listInformation: [] 
       });
       // 回调资讯列表查询
       that.listInformation();
