@@ -1,26 +1,36 @@
 <!--pages/index/carpoolGroupList/carpoolGroupList.wxml-->
 <view class="container">
-    <view class="tab">
+  <view class="tab">
     <block wx:for="{{tabData}}" wx:key="{{tabData}}">
-         <view class="tab-btn {{item.active}}" bindtap='tab' id="{{item.id}}">{{item.name}}</view>
-</block>
-    </view>
+      <view class="tab-btn {{item.active}}" bindtap='tab' id="{{item.id}}">{{item.name}}</view>
+    </block>
+  </view>
 </view>
 <view class="container">
-      <view class="list" wx:for="{{carOwnerList}}" wx:key="item" >
-           <view class="list-row" bindtap='listDetailed' id='{{item.tId}}'>
-                <image src="../../images/Group-head1.png"></image>
-                <view class="left">
-                    <view class='cor-bock'><text class='fontSize32'>车主</text>（空位{{item.tVacantSeat}}）</view>
-                    <view class='cor-grey mt10'>{{item.tDepart}}</view>
-                    <view class='cor-grey'>{{item.tPoint}}—{{item.tDestination}}</view>
-                </view>
-                <view class="right">
-                    <view class='cor-yellow'></view>
-                    <view class='cor-grey mt20'><text class='fontSize32 cor-red'>¥{{item.tFare}}</text>元/人</view>
-                </view>
-           </view>
-           
+  <view class="list" wx:for="{{carOwnerList}}" wx:key="item">
+    <view class="list-row" bindtap='listDetailed' id='{{item.tId}}'>
+      <image src="../../images/Group-head1.png"></image>
+      <view class="left">
+        <view class='cor-bock'>
+
+          <view wx:if="{{item.tOwner==1}}">
+            <text class='fontSize32'>乘客</text>（乘车人数{{item.tVacantSeat}}）
+          </view>
+          <view wx:else>
+            <text class='fontSize32'>车主</text>（剩余车位{{item.tVacantSeat}}）
+          </view>
+
+        </view>
+        <view class='cor-grey mt10'>{{item.tDepart}}</view>
+        <view class='cor-grey'>{{item.tPoint}}—{{item.tDestination}}</view>
       </view>
-     
+      <view class="right">
+        <view class='cor-yellow'></view>
+        <view class='cor-grey mt20'>
+          <text class='fontSize32 cor-red'>¥{{item.tFare}}</text>元/人</view>
+      </view>
+    </view>
+
+  </view>
+
 </view>

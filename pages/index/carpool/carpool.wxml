@@ -7,45 +7,44 @@
 </view> -->
 <view class="container">
   <view class="swiper">
-  <swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}" wx:key="{{item}}">
-    <swiper-item>
-        <image src="{{item}}" class="slide-image" style='width:100%;height:300rpx' />
-    </swiper-item>
-  </block>
-  </swiper>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" style='width:100%;height:300rpx' />
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
 </view>
 
 <form bindsubmit="carpoolList">
   <view class="container mt20">
-      <view class='distance'>
-            <view class='distance-row'>
-                    <view class='distance-cir cor-green'></view>
-                    <input placeholder="请输入起点" name="tPoint" value="" />
-            </view>
-            <view class='distance-row'>
-                    <view class='distance-cir cor-red'></view>
-                    <input placeholder="请输入终点"  name="tDestination" value='' />
-            </view>
-            <image src='../../images/distance-ico.png'></image>
-            <button class='distance-btn' formType="submit" >查询顺路行程</button> 
+    <view class='distance'>
+      <view class='distance-row'>
+        <view class='distance-cir cor-green'></view>
+        <input placeholder="请输入起点"   name="tPoint" value="{{tPoint}}" bindblur="tPointInputEvent"/>
       </view>
+      <view class='distance-row'>
+        <view class='distance-cir cor-red'></view>
+        <input placeholder="请输入终点"    name="tDestination" value='{{tDestination}}' bindblur="tDestinationInputEvent"/>
+      </view>
+      <image src='../../images/distance-ico.png' bindtap='exchange'></image>
+      <button class='distance-btn' formType="submit">查询顺路行程</button>
+    </view>
   </view>
 </form>
 <view class="container mt20">
-    <view class='group-title'>
-        <view class='group-title-txt'>附近拼车群</view>
+  <view class='group-title'>
+    <view class='group-title-txt'>附近拼车群</view>
+  </view>
+  <view class='group-list mt50'>
+    <view class='group-row' bindtap='detailed' wx:for="{{carGroupList}}" wx:key="item" id='{{item.tId}}'>
+      <image src='../../images/Group-head1.png'></image>
+      <view class='left fontSize32'>{{item.tGroupName}}</view>
+      <view class='right fontSize28 cor-grey'></view>
     </view>
-    <view class='group-list mt50' >
-         <view class='group-row'  bindtap='detailed' wx:for="{{carGroupList}}" wx:key="item"  id='{{item.tId}}'>
-              <image src='../../images/Group-head1.png'></image>
-              <view class='left fontSize32'>{{item.tGroupName}}</view>
-              <view class='right fontSize28 cor-grey'></view>
-         </view>
-         
-         <view class='group-more left' bindtap='carpoolGroup'>查看更多拼车群</view>
-         <view class='group-clear'></view>
-    </view>
+
+    <view class='group-more left' bindtap='carpoolGroup'>查看更多拼车群</view>
+    <view class='group-clear'></view>
+  </view>
 </view>

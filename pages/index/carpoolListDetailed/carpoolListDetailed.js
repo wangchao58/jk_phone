@@ -36,6 +36,13 @@ Page({
       }
     })
   },
+  callPhone: function (e) {
+    var phone = e.currentTarget.dataset.phone;
+    console.log(phone);
+    wx.makePhoneCall({
+      phoneNumber: phone
+    })
+  },
   //事件回调函数
   driving: function () {
     var _this = this;

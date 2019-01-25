@@ -20,9 +20,11 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    that.data.tPoint = options.tPoint;
-    that.data.tDestination = options.tDestination;
-    this.carOwnerList(options.tPoint, options.tDestination,1,10,0);
+    if (options.tPoint != null && options.tDestination != null) {
+      that.data.tPoint = options.tPoint;
+      that.data.tDestination = options.tDestination;
+    }
+    this.carOwnerList(that.data.tPoint, that.data.tDestination,1,10,0);
   },
   tab:function(e){
     var that=this;

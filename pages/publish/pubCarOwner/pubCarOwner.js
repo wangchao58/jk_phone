@@ -51,6 +51,9 @@ Page({
             wx.showToast({
               title: "发布成功"
             })
+            wx.navigateTo({
+              url: '../../index/carpoolGroupList/carpoolGroupList'
+            })
           } else {
             wx.showToast({
               title: "发布失败"

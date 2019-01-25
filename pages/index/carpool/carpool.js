@@ -13,6 +13,7 @@ Page({
     tPoint: '',
     page: 1,
     rows: 3,
+    tDestination: '',
     carGroupList:[],
     pages: 1
   },
@@ -47,6 +48,26 @@ Page({
         // 隐藏加载框
         wx.hideLoading();
       }
+    })
+  },
+  //page中添加属性（事件）
+  tPointInputEvent: function (e) {
+    this.setData({
+      tPoint: e.detail.value
+    })
+  },
+  //page中添加属性（事件）
+  tDestinationInputEvent: function (e) {
+    this.setData({
+      tDestination: e.detail.value
+    })
+  },
+  exchange: function (e) {
+    var tPoint =  this.data.tPoint;
+    var tDestination = this.data.tDestination; 
+    this.setData({
+      tPoint: tDestination,
+      tDestination: tPoint
     })
   },
   carpoolGroup: function () {

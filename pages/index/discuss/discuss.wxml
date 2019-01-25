@@ -1,53 +1,53 @@
 <!--pages/index/discuss/discuss.wxml-->
 <view class="container">
-    <view class='list-cont'>
-        <view class='w100 list-top'>
-              <image src='{{data.avatar}}'></image>
-              <view class='left fontSize32'>{{data.pId}}</view>
-              <view class='right cor-grey'>{{data.tCreateTime}}</view>
+  <view class='list-cont'>
+    <view class='w100 list-top'>
+      <image src='{{data.avatar}}'></image>
+      <view class='left fontSize32'>{{data.pId}}</view>
+      <view class='right cor-grey'>{{data.tCreateTime}}</view>
+    </view>
+    <view class='w100 list-bom'>
+      <view class='list-txt w100 left'>{{data.tContent}}</view>
+      <view class='list-img w100 left'>
+
+        <view wx:for="{{data.listImg}}" wx:for-item="items" wx:key="{{items}}">
+          <image src='{{items}}'></image>
         </view>
-        <view class='w100 list-bom'>
-              <view class='list-txt w100 left'>{{data.tContent}}</view>
-              <view class='list-img w100 left'>
-              
-                 <view wx:for="{{data.listImg}}" wx:for-item="items" wx:key="{{items}}" >
-                  <image src='{{items}}'></image>
-                </view>
-              </view>
-              <view class='list-num w100 left'>
-                    <view class='left' wx:if="{{data.city != null && data.city != ''}}">
-                      <image src="../../images/shops-ico02.png" bindtap='discuss' ></image>{{data.city}}
-                    </view>
-                    <view class='left' wx:if="{{data.city == null || data.city == ''}}"></view>
-                    <view class='right' bindtap='informationPraise' id = "{{data.tId}}" wx:if="{{data.praiseId != null}}" >
-                      <image src="../../images/index-ico05.png" ></image>{{data.tPraise}}
-                    </view>
-                    <view class='right' bindtap='informationPraise' id = "{{data.tId}}" wx:if="{{data.praiseId == null}}" >
-                      <image src="../../images/index-ico06.png" ></image>{{data.tPraise}}
-                    </view>
-              </view>
+      </view>
+      <view class='list-num w100 left'>
+        <view class='left' wx:if="{{data.city != null && data.city != ''}}">
+          <image src="../../images/shops-ico02.png" bindtap='discuss'></image>{{data.city}}
         </view>
+        <view class='left' wx:if="{{data.city == null || data.city == ''}}"></view>
+        <view class='right' bindtap='informationPraise' id="{{data.tId}}" wx:if="{{data.praiseId != null}}">
+          <image src="../../images/index-ico05.png"></image>{{data.tPraise}}
+        </view>
+        <view class='right' bindtap='informationPraise' id="{{data.tId}}" wx:if="{{data.praiseId == null}}">
+          <image src="../../images/index-ico05.png"></image>{{data.tPraise}}
+        </view>
+      </view>
+    </view>
   </view>
 </view>
 <view class="container discuss">
-    <view class='discuss-cont'>
-           <view class='discuss-title w100'>共 {{discussNum}} 条评论</view>
-           <view class='discuss-row' wx:for="{{discussList}}" wx:key="{{item}}">
-                <view class='w100 discuss-top'>
-                      <image src='{{item.avatar}}' class='discuss-head'></image>
-                      <view class='left mr20'>{{item.nickName}}</view>
-                      <view class='right'>{{item.createTime}}</view>
-                </view>
-                <view class='discuss-txt'>
-                      <view class='left'>{{item.tContent}}</view>
-                </view>
-           </view>
+  <view class='discuss-cont'>
+    <view class='discuss-title w100'>共 {{discussNum}} 条评论</view>
+    <view class='discuss-row' wx:for="{{discussList}}" wx:key="{{item}}">
+      <view class='w100 discuss-top'>
+        <image src='{{item.avatar}}' class='discuss-head'></image>
+        <view class='left mr20'>{{item.nickName}}</view>
+        <view class='right'>{{item.createTime}}</view>
+      </view>
+      <view class='discuss-txt'>
+        <view class='left'>{{item.tContent}}</view>
+      </view>
     </view>
+  </view>
 </view>
 <view class="container" style='height:99rpx; background-color:#F7F7F7;'></view>
 <view class="search-box">
-     <view class="section">
-          <input placeholder="请输入评论内容" value='{{data.discuss}}' bindinput="discussInput"/>
-          <view class='submit-btn' bindtap='discussCommit' id = "{{data.tId}}">发送</view>
-    </view>
+  <view class="section">
+    <input placeholder="请输入评论内容" value='{{data.discuss}}' bindinput="discussInput" />
+    <view class='submit-btn' bindtap='discussCommit' id="{{data.tId}}">发送</view>
+  </view>
 </view>
