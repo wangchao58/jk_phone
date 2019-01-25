@@ -7,7 +7,8 @@ Page({
   data: {
     photos: [],
     curImgList:[],
-    evalList: [{ tempFilePaths: [], imgList: [] }]
+    evalList: [{ tempFilePaths: [], imgList: [] }],
+    city: ''
   },
 
   onLoad: function (options) {
@@ -115,15 +116,28 @@ Page({
    */
   thisCity: function () {
     var that = this;
-    qqmapsdk.reverseGeocoder({
-      location: {
-        latitude: wx.getStorageSync('latitude'),
-        longitude: wx.getStorageSync('longitude')
-      },
-      success: function (res) {
-        that.setData({ city: res.result.address_component.city })
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        // console.log(res.result.address_component.city);
+        // const latitude = res.latitude
+        // const longitude = res.longitude
+        // const speed = res.speed
+        // const accuracy = res.accuracy
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: function (addressRes) {
+            var address = addressRes.result.formatted_addresses.recommend;
+            that.setData({
+             city: address
+            })
+          }
+        })
       }
-    });
+    })
   },
 
   /**
@@ -155,6 +169,10 @@ Page({
             wx.showToast({
               title: "发布成功"
             })
+            wx.navigateTo({
+              url: '../../index/information/information'
+            })
+           
           } else {
             wx.showToast({
               title: "发布失败"

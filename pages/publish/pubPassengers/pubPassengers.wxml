@@ -1,51 +1,53 @@
 <!--pages/publish/pubPassengers/pubPassengers.wxml-->
-<view class="details borderTop">
-       <view class="section">
-         <view class='section-label'>乘客姓名</view>
-         <input placeholder="请输入车主姓名" />
+<form bindsubmit="passengersForm">
+  <view class="details borderTop">
+        <view class="section">
+          <view class='section-label'>乘客姓名</view>
+          <input placeholder="请输入车主姓名" name="tLinkman"/>
+        </view>
+        <view class="section">
+          <view class='section-label'>手机号</view>
+            <input placeholder="请输入手机号" name="tPhone" />
       </view>
       <view class="section">
-         <view class='section-label'>手机号</view>
-          <input placeholder="请输入手机号" />
-    </view>
-    <view class="section">
-         <view class='section-label'>出发地</view>
-          <input placeholder="请输入出发地" />
-    </view>
-    <view class="section">
-         <view class='section-label'>目的地</view>
-          <input placeholder="请输入目的地" />
-    </view>
-    <view class="section">
-         <view class='section-label'>途径地</view>
-          <input placeholder="多个途径地请用逗号分开" />
-    </view>
-    <view class="section">
-        <view class='section-label'>出发时间</view>
-          <picker mode="date" value="{{startdate}}" start=" "  end=" " bindchange="startDateChange" > <view class="picker">{{startdate}}</view> </picker>
-          <view class="picker-line">-</view>
-        <picker mode="time" value="{{starttime}}" start=" " end=" " bindchange="startTimeChange" ><view class="picker">{{starttime}}</view></picker>
-    </view>
-    <view class="section">
-         <view class='section-label'>乘车人数</view>
-          <input placeholder="请输入乘车人数" />
-    </view>
-    <view class="section">
-         <view class='section-label'>参考车费</view>
-          <input placeholder="请输入参考车费（每人）" />
-    </view>
-    <view class="section">
-         <view class='section-label'>微信号</view>
-          <input placeholder="请输入微信号码" />
-    </view>
-    <view class="section borderN">
-         <view class='section-label'>补充说明</view>
-         <textarea  placeholder="请输入补充说明" />
-     </view>
-  <view class="clear"></view>
-</view>
-<view class="w100 borderN mt20 center">
-         <view style="padding:0 40rpx;">点击发布表示您已阅读并同意<text>《免责声明》</text>的内容</view>
-    </view>
-<view class="time-bottom"  bindtap='informationSub'>发布</view>
-<view class='w100' style="height:100rpx;"></view>
+          <view class='section-label'>出发地</view>
+            <input placeholder="请输入出发地" name="tPoint" />
+      </view>
+      <view class="section">
+          <view class='section-label'>目的地</view>
+            <input placeholder="请输入目的地" name="tDestination" />
+      </view>
+      <!-- <view class="section">
+          <view class='section-label'>途径地</view>
+            <input placeholder="多个途径地请用逗号分开" />
+      </view> -->
+      <view class="section">
+          <view class='section-label'>出发时间</view>
+            <picker mode="date" value="{{startdate}}" start=" "  end=" " name='tDepartDate' bindchange="startDateChange" > <view class="picker">{{startdate}}</view> </picker>
+            <view class="picker-line">-</view>
+          <picker mode="time" value="{{starttime}}" start=" " end=" " name='tDepartMin'  bindchange="startTimeChange" ><view class="picker">{{starttime}}</view></picker>
+      </view>
+      <view class="section">
+          <view class='section-label'>乘车人数</view>
+            <input placeholder="请输入乘车人数" name='tVacantSeat'   />
+      </view>
+      <view class="section">
+          <view class='section-label'>参考车费</view>
+            <input placeholder="请输入参考车费（每人）" name='tFare' />
+      </view>
+      <view class="section">
+          <view class='section-label'>微信号</view>
+            <input placeholder="请输入微信号码" name='tWechat'/>
+      </view>
+      <view class="section borderN">
+          <view class='section-label'>补充说明</view>
+          <textarea  placeholder="请输入补充说明" name='tExplain'/>
+      </view>
+    <view class="clear"></view>
+  </view>
+  <view class="w100 borderN mt20 center">
+          <view style="padding:0 40rpx;">点击发布表示您已阅读并同意<text>《免责声明》</text>的内容</view>
+      </view>
+  <button class="time-bottom"  bindtap='informationSub'  form-type="submit">发布</button>
+  <view class='w100' style="height:100rpx;"></view>
+</form>

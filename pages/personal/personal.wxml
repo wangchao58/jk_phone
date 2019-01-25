@@ -1,10 +1,13 @@
 <!--pages/personal/personal.wxml-->
-<view class="container"> 
+<view class="container" > 
     <view class='myhead'> 
+      <button class="container" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
         <image src='../images/002.jpg' class='myheadbg'></image> 
-        <image src='../images/pic_002.png' class='myheadimg'></image> 
-        <view class='myname'>李思洋</view> 
+        <image src='{{topImg}}' class='myheadimg'></image> 
+        <view class='myname'>{{nickName}}</view> 
+      </button>
     </view>
+  
     <view class='myOperate'>
        <view class='operate' bindtap='praise'>
             <view class='operate-num'><image src='../images/personal-ico09.png'></image></view>

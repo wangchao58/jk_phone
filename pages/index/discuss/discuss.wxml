@@ -9,10 +9,10 @@
         <view class='w100 list-bom'>
               <view class='list-txt w100 left'>{{data.tContent}}</view>
               <view class='list-img w100 left'>
-              <!-- <image src='{{data.tImg}}'></image> -->
-                 <image src='../../images/pic_001.png'></image>
-                 <image src='../../images/pic_002.png'></image>
-                 <image src='../../images/pic_003.png'></image>
+              
+                 <view wx:for="{{data.listImg}}" wx:for-item="items" wx:key="{{items}}" >
+                  <image src='{{items}}'></image>
+                </view>
               </view>
               <view class='list-num w100 left'>
                     <view class='left' wx:if="{{data.city != null && data.city != ''}}">

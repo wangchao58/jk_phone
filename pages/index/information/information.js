@@ -73,7 +73,15 @@ Page({
       }
     })
   },
-
+  /**
+     * 资讯评论
+     */
+  discussDetail: function (e) {
+    var tId = e.currentTarget.id;
+    wx.navigateTo({
+      url: '../../index/discuss/discuss?tId=' + tId
+    })
+  },
   /**
    * 条件查询
    */
