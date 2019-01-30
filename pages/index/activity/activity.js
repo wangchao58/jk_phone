@@ -59,6 +59,9 @@ Page({
         'rows': rows
       },
       success(res) {
+        if (selInput != '' && page == 1) {
+          that.setData({ listActivity: [] });
+        }
         var listActivity = that.data.listActivity;
         var data = res.data.activitytList;
         that.data.pages = res.data.pages;
