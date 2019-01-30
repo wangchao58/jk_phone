@@ -35,8 +35,8 @@
   </view>
   <view class="section borderN">
     点击下一步表示您已阅读并同意
-    <text>《入驻须知》</text>及
-    <text>《免责声明》</text>
+    <text bindtap='protocol'>《入驻须知》</text>及
+    <text bindtap='explain'>《免责声明》</text>
   </view>
   <view class="section borderN">
     <button class='section-submit' form-type="submit">提交审核，下一步</button>

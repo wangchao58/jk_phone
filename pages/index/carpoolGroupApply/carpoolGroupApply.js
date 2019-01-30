@@ -131,5 +131,14 @@ Page({
       // })
     })
   },
-
+  protocol:function(){
+    wx.navigateTo({
+      url: '../../publish/protocol/protocol?parame=pubPassengers'
+    })
+  },
+  explain:function(){
+    wx.navigateTo({
+      url: '../../publish/protocol/protocol?parame=explain'
+    })
+  }
 })

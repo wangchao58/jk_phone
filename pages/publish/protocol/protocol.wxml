@@ -29,3 +29,13 @@
 
     </view>
 </view>
+
+<view class="container" hidden='{{explain}}'>
+    <view class="title">入驻须知</view>
+    <view class="cont">
+<view class="cont-row">1、为什么要入驻？答：借助平台优势，免费发布和查询拼车信息，平台用户会主动申请加入群，壮大拼车群。</view>
+<view class="cont-row">2、入驻需要什么条件？答：您有一个微信群即可，且您必须是管理员。</view>
+<view class="cont-row">3、入驻是否收费？答：完全免费。</view>
+<view class="cont-row">4、入驻后我需要做什么？答：填写下面的申请表并提交审核→客服审核通过→上线。</view>
+    </view>
+</view>
