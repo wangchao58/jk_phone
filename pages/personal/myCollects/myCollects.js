@@ -9,8 +9,8 @@ Page({
     enshrineList:[],
     tabData: [
       { id: 0, name: "全部", cont: false, active: "tab-active" },
-      { id: 1, name: "活动", cont: true, active: "" },
-      { id: 2, name: "店铺", cont: true, active: "" }]
+      { id: 2, name: "活动", cont: true, active: "" },
+      { id: 1, name: "店铺", cont: true, active: "" }]
   },
   onLoad: function (options) {
     this.enshrineList(1,10,'');
