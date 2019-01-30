@@ -65,6 +65,7 @@ Page({
         } else {
           that.setData({ listInformation: [] });
         }
+        console.log(that.data.listInformation)
         // 隐藏加载框
         wx.hideLoading();
       }
@@ -133,44 +134,16 @@ Page({
       }
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  imgck: function (event) {
+     var src = event.currentTarget.dataset.src;//获取data-src
+     var imgList = event.currentTarget.dataset.list;//获取data-list
+    //图片预览
+    wx.previewImage({
+       current: src, // 当前显示图片的http链接
+     urls: imgList // 需要预览的图片http链接列表
 
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
     let that = this;
     return {

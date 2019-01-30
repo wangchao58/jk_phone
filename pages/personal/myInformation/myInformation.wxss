@@ -13,3 +13,4 @@
 .section input{ height:64rpx; background: #F6F6F6; border-radius:36rpx; float: left; width:520rpx; padding: 0 40rpx; font-size: 28rpx;}
 .section image{width: 44rpx; height: 44rpx; float: right; margin-top:10rpx; }
 .search-box{height:72rpx;}
+.remove{background: #66AFFF; color: #fff; width: 140rpx; height: 40rpx; line-height: 40rpx; text-align: center; border-radius: 6rpx; margin-top: 20rpx;}

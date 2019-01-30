@@ -32,11 +32,10 @@
     </view>
     <view class='w100 list-bom'>
       <view class='list-txt w100 left' id="{{item.tId}}" bindtap='discussDetail'>{{item.tContent}}</view>
-      <view class='list-img w100 left' id="{{item.tId}}" bindtap='discussDetail'>
+      <view class='list-img w100 left' id="{{item.tId}}">
         <view wx:for="{{item.listImg}}" wx:for-item="items" wx:key="{{items}}">
-          <image src='{{items}}'></image>
+          <image src='{{items}}' data-list="{{item.listImg}}" data-src="{{items}}" bindtap='imgck'></image>
         </view>
-
       </view>
       <view class='list-num w100 left'>
         <view class='left' wx:if="{{item.city != null && item.city != ''}}">

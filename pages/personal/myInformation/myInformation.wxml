@@ -12,15 +12,12 @@
       <image src='{{item.avatar}}'></image>
       <view class='left fontSize32'>{{item.pId}}</view>
       <view class='right cor-grey'>{{item.tCreateTime}}</view>
-      <view class='right mr30' bindtap='remove' data-index='{{index}}' id='{{item.tId}}' data-g='1'>
-          <image class='collect' src='../../images/remove.png'></image>
-        </view>
     </view>
     <view class='w100 list-bom'>
       <view class='list-txt w100 left' id="{{item.tId}}" bindtap='discussDetail'>{{item.tContent}}</view>
       <view class='list-img w100 left' id="{{item.tId}}" bindtap='discussDetail'>
-        <view wx:for="{{item.listImg}}" wx:for-item="items" wx:key="{{items}}">
-          <image src='{{items}}' id="{{item.tId}}" bindtap='discussDetail'></image>
+        <view wx:for="{{item.listImg}}" wx:for-item="items" wx:key="{{items}}" >
+          <image src='{{items}}' id="{{item.tId}}" data-list="{{item.listImg}}" data-src="{{items}}" bindtap='imgck' ></image>
         </view>
       </view>
       <view class='list-num w100 left'>
@@ -36,7 +33,8 @@
           <image src="../../images/index-ico05.png"></image>
           {{item.tPraise}}
         </view>
-        
+      </view>
+      <view class='right remove' bindtap='remove' data-index='{{index}}' id='{{item.tId}}' data-g='1'>删除
       </view>
     </view>
   </view>
