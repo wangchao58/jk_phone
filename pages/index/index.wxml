@@ -13,7 +13,7 @@
 <view class="container mt20">
   <view class='w100 nav'>
     <view class='nav-btn' bindtap='information'>
-      <image src="../images/index-ico01.png"></image>资讯</view>
+      <image src="../images/index-ico01.png"></image>此刻</view>
     <view class='nav-btn' bindtap='activity'>
       <image src="../images/index-ico02.png"></image>活动</view>
     <view class='nav-btn' bindtap='shops'>

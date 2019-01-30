@@ -1,16 +1,25 @@
 <view class="container discuss">
-  <view class='discuss-cont' wx:for="{{evaluateList}}" wx:key="{{item}}" id="{{item.tId}}" >
-    
+  <view class='discuss-cont' wx:for="{{evaluateList}}" wx:key="{{item}}" id="{{item.tId}}">
+
     <view class='discuss-row'>
       <image src='{{item.avatarUrl}}' class='discuss-head'></image>
       <view class='left discuss-txt'>
         <view class='discuss-name'>{{item.nickName}} </view>
         <view class='mt20'>
-          <text class='cor-blue'>回复了你：</text>{{item.eContent}}</view>
+          <text class='cor-blue'>回复了你： </text>{{item.eContent}}</view>
         <view class='cor-grey'>{{item.create_time}}</view>
       </view>
-      <view class='right discuss-nr' id="{{item.tId}}" bindtap='discussDetail'>{{item.t_content}}</view>
+      <view wx:if="{{item.tType == 3}}">
+        <view class='right discuss-nr' id="{{item.tId}}" bindtap='discussDetail'>
+          {{item.t_content}}
+        </view>
+      </view>
+       <view wx:if="{{item.tType == 1}}">
+        <view class='right discuss-nr' id="{{item.sId}}" bindtap='shopDetail'>
+          {{item.t_explain}}
+        </view>
+      </view>
     </view>
-    
+
   </view>
 </view>

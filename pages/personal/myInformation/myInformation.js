@@ -33,6 +33,7 @@ Page({
   listInformation: function (page, rows) {
     var that = this;
     var selInput = this.data.selInput;
+    var userId = wx.getStorageSync('userid');
     var src = app.globalData.src + "/information/getInformationList";
     if (page == null) {
       page = that.data.page;
@@ -46,6 +47,7 @@ Page({
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: {
+        'pId': userId,
         'tContent': selInput,
         'page': page,
         'rows': rows
@@ -66,6 +68,15 @@ Page({
         // 隐藏加载框
         wx.hideLoading();
       }
+    })
+  },
+  /**
+     * 资讯评论
+     */
+  discussDetail: function (e) {
+    var tId = e.currentTarget.id;
+    wx.navigateTo({
+      url: '../../index/discuss/discuss?tId=' + tId
     })
   },
 

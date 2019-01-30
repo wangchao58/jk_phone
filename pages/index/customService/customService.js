@@ -25,7 +25,7 @@ Page({
   copyTBL: function (e) {
     var self = this;
     wx.setClipboardData({
-      data: '2009988890',
+      data: 'shuangquan_666',
       success: function (res) {
         // self.setData({copyTip:true}),
         wx.showModal({

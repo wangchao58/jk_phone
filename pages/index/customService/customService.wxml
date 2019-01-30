@@ -3,7 +3,7 @@
   <view class="w100">
     <image src='../../images/code.jpg'></image>
   </view>
-  <view class='center mt10 fontSize28' >客服微信号：2009988890</view>
+  <view class='center mt10 fontSize28' >客服微信号：shuangquan_666</view>
   <view class="clear"></view>
 </view>
 <view class="time-bottom"  bindtap='copyTBL'>复制客服微信</view>

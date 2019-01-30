@@ -72,9 +72,17 @@ Page({
   */
   discussDetail: function (e) {
     var tId = e.currentTarget.id;
-    console.log(tId);
     wx.navigateTo({
       url: '../../index/discuss/discuss?tId=' + tId
+    })
+  },
+  /**
+  * 商铺列表
+  */
+  shopDetail: function (e) {
+    var tId = e.currentTarget.id;
+    wx.navigateTo({
+      url: '../../index/shopDetailed/shopDetailed?tId=' + tId
     })
   },
 

@@ -1,5 +1,5 @@
 <!--pages/index/carpoolListDetailed/carpoolListDetailed.wxml-->
-<map id="myMap" style="width: 100%; height: 300rpx;" scale='10' polyline="{{polyline}}"></map>
+<map id="myMap"  longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}"  style="width: 100%; height: 300rpx;" scale='10' polyline="{{polyline}}"></map>
 <view class="container">
   <view class='detailed'>
     <view class='detailed-head'>

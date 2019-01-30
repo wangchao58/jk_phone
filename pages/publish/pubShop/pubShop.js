@@ -9,12 +9,37 @@ Page({
     starttime: "开始时间",
     enddate: "结束日期",
     endtime: "结束时间",
-    photos: []
+    tPicture: ''
   },
   onLoad: function (options) {
-
+    
+    if (options.tId != null) {
+      this.shopData(options.tId);
+    }
+    
   },
-
+  /**
+   * 商铺详情信息
+   */
+  shopData: function (id) {
+    var that = this;
+    var src = app.globalData.src + "/store/selectByPrimaryKey";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        tId: id,
+      },
+      success(res) {
+        console.log(res.data); 
+        that.setData({
+          data: res.data,
+          tPicture: res.data.tPicture
+        });
+      }
+    })
+  },
   /**
    * 发布商铺提交
    */
@@ -23,15 +48,15 @@ Page({
     var tStoreName = e.detail.value.tStoreName;
     if (null != tStoreName && app.globalData.userInfo) {
       var userId = wx.getStorageSync('userid');
-      var photosUrl = that.data.photos;
-      console.log(photosUrl[0]);
+      var photosUrl = that.data.tPicture;
       var src = app.globalData.src + "/store/insertSelective";
       wx.request({
         url: src,
         method: 'POST',
         header: { 'content-type': 'application/x-www-form-urlencoded' },
         data: {
-          tPicture: photosUrl[0],
+          tPicture: photosUrl,
+          tId: e.detail.value.tId,
           tIssuer: userId,
           tStoreName: e.detail.value.tStoreName,
           tSite: e.detail.value.tSite,
@@ -79,7 +104,7 @@ Page({
               // 调用公共收藏js方法(从相册中选择)
               fileUpload.chooseImgByOne("album", count, function (result) {
                 that.setData({
-                  photos: result,
+                  tPicture: result,
                   imgShow: false
                 });
                 that.upLoadImg(result);
@@ -88,7 +113,7 @@ Page({
               //调用公共收藏js方法(拍照)
               fileUpload.chooseImg("camera", count, function (result) {
                 that.setData({
-                  photos: result
+                  tPicture: result
                 });
                 that.upLoadImg(result);
               })
@@ -125,11 +150,11 @@ Page({
 
   //删除已选图片方法
   removeimg: function (e) {
-    var photos = this.data.photos;
+    var tPicture = this.data.tPicture;
     var index = e.currentTarget.id
-    photos.splice(index, 1)
+    tPicture.splice(index, 1)
     this.setData({
-      photos: photos
+      tPicture: tPicture
     })
   },
 

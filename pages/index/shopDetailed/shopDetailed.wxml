@@ -1,80 +1,65 @@
 <view class="container pb30">
-     <image src='{{data.tPicture}}' style='width:100%;height:360rpx;'></image>
-     <view class="hd-title">
-     {{data.tStoreName}}
-     </view>
-     <view class="hd-label">
-          <view class="right"><image src="../../images/index-ico08.png" ></image>{{data.tCollectionNum}}</view>
-          <view class="right mr30"><image src="../../images/index-ico07.png" ></image>{{data.tViewsNum}}</view>
-     </view>
+  <image src='{{data.tPicture}}' style='width:100%;height:360rpx;'></image>
+  <view class="hd-title">
+    {{data.tStoreName}}
+  </view>
+  <view class="hd-label">
+    <view class="right">
+      <image src="../../images/index-ico08.png"></image>{{data.tCollectionNum}}</view>
+    <view class="right mr30">
+      <image src="../../images/index-ico07.png"></image>{{data.tViewsNum}}</view>
+  </view>
 </view>
 <view class="container">
-   <view class='hd-data borderTop'  bindtap='analyze' data-address='{{data.tSite}}' data-name='{{data.tStoreName}}' >
-        <image src="../../images/shops-ico02.png" class='addressIco'></image>
-        <view class='left'>{{data.tSite}}</view>
-   </view>
+  <view class='hd-data borderTop' bindtap='analyze' data-address='{{data.tSite}}' data-name='{{data.tStoreName}}'>
+    <image src="../../images/shops-ico02.png" class='addressIco'></image>
+    <view class='left'>{{data.tSite}}</view>
+  </view>
 </view>
 <view class="container mt20">
-   <view class='hd-cont'>
-          <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>商铺简介</view>
-          <view class='w100 cor-grey fontSize28 hd-txt'>{{data.tExplain}}</view>
-   </view>
+  <view class='hd-cont'>
+    <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>商铺简介</view>
+    <view class='w100 cor-grey fontSize28 hd-txt'>{{data.tExplain}}</view>
+  </view>
 </view>
 
 <view class="container mt20">
-   <view class='hd-cont'>
-          <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>商铺评价</view>
-          <view class='w100 borderBom hd-data-nr'>
-            <view class='hd-data-bt'>我要评价</view>
-            <view class='hd-data-txt'><textarea placeholder="请输入您的评价" /></view>
-            <view class='hd-data-bt w100'>
-                  <view class='hd-data-btn'>提交评价</view>
-            </view>
-          </view>
-   </view>
-   <view class='discuss-cont'>
-           <view class='discuss-row'>
-                      <image src='../../images/touxiang01.png' class='discuss-head'></image>
-                      <view class='left discuss-txt'>
-                            <view class='discuss-name'>鲸控科技</view>
-                            <view class='mt20'><text class='cor-blue'>回复了鲸控科技：</text>兄弟说话要有依据啊兄弟说话要有依据啊</view>
-                      </view>
-                      <view class='right discuss-nr'>01-25 09:32</view>
-           </view>
-           <view class='discuss-row'>
-                      <image src='../../images/touxiang02.png' class='discuss-head'></image>
-                      <view class='left discuss-txt'>
-                            <view class='discuss-name'>海底捞月 </view>
-                            <view class='mt20'>兄弟说话要有依据啊兄弟说话要有依据啊</view>
-                      </view>
-                      <view class='right discuss-nr'>01-25 09:32</view>
-           </view>
-           <view class='discuss-row'>
-                      <image src='../../images/touxiang03.png' class='discuss-head'></image>
-                      <view class='left discuss-txt'>
-                            <view class='discuss-name'>海底捞月 </view>
-                            <view class='mt20'>兄弟说话要有依据啊兄弟说话要有依据啊</view>
-                      </view>
-                      <view class='right discuss-nr'>01-25 09:32</view>
-           </view>
-           <view class='discuss-row'>
-                      <image src='../../images/touxiang01.png' class='discuss-head'></image>
-                      <view class='left discuss-txt'>
-                            <view class='discuss-name'>海底捞月 </view>
-                            <view class='mt20'>兄弟说话要有依据啊兄弟说话要有依据啊</view>
-                      </view>
-                      <view class='right discuss-nr'>01-25 09:32</view>
-           </view>
+  <view class='hd-cont'>
+    <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>商铺留言</view>
+    <view class='w100 borderBom hd-data-nr'>
+      <view class='hd-data-bt'>我要留言</view>
+      <view class='hd-data-txt'>
+        <textarea placeholder="请输入您的留言" bindinput="discussInput"/>
+      </view>
+      <view class='hd-data-bt w100'>
+        <view class='hd-data-btn' bindtap='discussCommit' id="{{data.tId}}">提交留言</view>
+      </view>
     </view>
+  </view>
+  <view class='discuss-cont'>
+    <view class='discuss-row' wx:for="{{shopEvaluateList}}" wx:key="{{item}}">
+      <image src='{{item.avatar}}' class='discuss-head'></image>
+      <view class='left discuss-txt'>
+        <view class='discuss-name'>{{item.nickName}}</view>
+        <view class='mt20'>
+          <text class='cor-blue'>他的留言：</text> {{item.tContent}}</view>
+      </view>
+      <view class='right discuss-nr'>{{item.createTime}}</view>
+    </view>
+    
+    
+  </view>
 </view>
 
 
 <view class="container" style='height:96rpx;'></view>
 <view class="bottomBox">
-     <view class='left'></view>
-     <button class='bottomIco' bindtap='toIndex'><image src='../../images/bottom-ico01.png'></image>首页</button>
-     <button class='bottomIco' bindtap='activityEnshrine' id='{{data.tId}}'><image src='../../images/bottom-ico02.png'></image>收藏</button>
-     <button class='bottomIco' open-type="share"><image src='../../images/bottom-ico03.png'></image>分享</button>
-     <view class='bottomBtn' data-phone="{{data.tPhone}}" bindtap='callPhone'>立即联系</view>
+  <view class='left'></view>
+  <button class='bottomIco' bindtap='toIndex'>
+    <image src='../../images/bottom-ico01.png'></image>首页</button>
+  <button class='bottomIco' bindtap='activityEnshrine' id='{{data.tId}}'>
+    <image src='../../images/bottom-ico02.png'></image>收藏</button>
+  <button class='bottomIco' open-type="share">
+    <image src='../../images/bottom-ico03.png'></image>分享</button>
+  <view class='bottomBtn' data-phone="{{data.tPhone}}" bindtap='callPhone'>立即联系</view>
 </view>
-

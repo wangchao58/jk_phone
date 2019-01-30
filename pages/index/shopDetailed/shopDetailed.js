@@ -12,9 +12,10 @@ Page({
     });
 
     this.tStoreData(options.tId);
+    this.discussData(options.tId);
   },
   /**
-   * 
+   * 查询数据
    */
   tStoreData: function (id) {
     var that = this;
@@ -31,6 +32,71 @@ Page({
       }
     })
   },
+  /**
+  * 商铺留言提交
+  */
+  discussCommit: function (e) {
+    var that = this;
+    var tId = e.currentTarget.id;
+    var tContent = that.data.tContent;
+    if (undefined != tContent) {
+      var userId = wx.getStorageSync('userid');
+      var src = app.globalData.src + "/evaluate/addEvaluate";
+      wx.request({
+        url: src,
+        method: 'POST',
+        header: { 'content-type': 'application/x-www-form-urlencoded' },
+        data: {
+          tOtherId: tId,
+          tContent: tContent,
+          pId: userId,
+          tType: "1"
+        },
+        success(res) {
+          that.discussData(tId);
+          wx.showToast({
+            title: "评论成功"
+          })
+        }
+      })
+    } else {
+      wx.showToast({
+        title: "评论内容为空"
+      })
+    }
+  },
+
+
+  /**
+   * 资讯评论数据
+   */
+  discussData: function (id) {
+    var that = this;
+    var src = app.globalData.src + "/evaluate/selTEvaluateList";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        tOtherId: id
+      },
+      success(res) {
+        that.setData({
+          shopEvaluateList: res.data,
+        });
+      }
+    })
+  },
+
+
+  //获取资讯评论内容
+  discussInput: function (e) {
+    this.setData({
+      tContent: e.detail.value
+    })
+  },
+
+
   /**
    * 店铺收藏
    */

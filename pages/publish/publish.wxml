@@ -2,7 +2,7 @@
        <view class="fabu">
               <view class="part zixun left" bindtap='pubiInfor'>
                     <image src='../images/publish-ico01.png'></image>
-                    <view>发布资讯</view>
+                    <view>此刻想说</view>
               </view>
               <view class="part zixun right" bindtap='pubActivity'>
                     <image src='../images/publish-ico02.png'></image>

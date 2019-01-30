@@ -93,14 +93,7 @@ Page({
     wx.setStorageSync('tType', tType);
     //调用公共点赞js方法
     praise.clickPraise(tId,tType,function (result) {
-      // that.setData({
-      //   data: result.data,
-      //   listInformation: [] 
-      // });
-      // 回调资讯列表查询
-      //that.listInformation();
-      
-        console.log(result.data);
+
         var message = that.data.listInformation;
         for (let i in message) { //遍历列表数据
           if (i == index) { //根据下标找到目标
@@ -114,8 +107,6 @@ Page({
               title: collectStatus ? '点赞成功' : '取消成功',
             })
             message[i].tPraise = result.data
-            
-            
           }
         }
         that.setData({

@@ -26,10 +26,10 @@
         </view>
         <view class='left' wx:if="{{item.city == null || item.city == ''}}"></view>
         <view class='right' bindtap='discussDetail' id="{{item.tId}}">
-          <image src="../../images/index-ico06.png" ></image>
+          <image src="../../images/index-ico06.png"></image>
           {{item.tEvaluate}}
         </view>
-        <view class='right mr30'  bindtap='informationPraise' data-index='{{index}}' id='{{item.tId}}'>
+        <view class='right mr30' bindtap='informationPraise' data-index='{{index}}' id='{{item.tId}}'>
           <image src="../../images/index-ico05.png"></image>
           {{item.tPraise}}
         </view>

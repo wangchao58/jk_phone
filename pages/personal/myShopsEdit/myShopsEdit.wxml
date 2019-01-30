@@ -1,34 +1,36 @@
-<!--pages/personal/myShopsEdit/myShopsEdit.wxml-->
-<view class="details borderTop">
-      <view class='chooseImage' bindtap='chooseImage'>
-            <view class='chooseImage-txt'>上传封面</view>
-            <image src='../../images/002.jpg' class='banner-img' ></image>
-       </view>
-       <view class="section mt20">
-         <view class='section-label'>店铺名称</view>
-         <input placeholder="请输入店铺名称" value='12343434' />
-      </view>
-    <view class="section">
-         <view class='section-label'>店铺地址</view>
-          <input placeholder="请输入店铺地址" value='12343434' />
+<form bindsubmit="shopForm">
+  <view class="details borderTop">
+    <view class='chooseImage' bindtap='chooseImage'>
+      <view class='chooseImage-txt' hidden='{{font}}'>上传封面</view>
+      <!-- <view wx:for="{{tPicture}}" wx:key="index" class='previewImg'> -->
+        <image src='{{data.tPicture}}' class='banner-img'  ></image>
+      <!-- </view> -->
+    </view>
+    <view class='chooseImage-txt' hidden='true'  name="tId" value='{{data.tId}}'></view>
+    <view class="section mt20">
+      <view class='section-label'>店铺名称</view>
+      <input placeholder="请输入店铺名称" name="tStoreName" value='{{data.tStoreName}}' />
     </view>
     <view class="section">
-         <view class='section-label'>联系电话</view>
-          <input placeholder="请输入电话号码" value='12343434' />
+      <view class='section-label'>店铺地址</view>
+      <input placeholder="请输入店铺地址" name="tSite" value='{{data.tSite}}'/>
     </view>
     <view class="section">
-         <view class='section-label'>微信号</view>
-          <input placeholder="请输入微信号码" value='12343434' />
+      <view class='section-label'>联系电话</view>
+      <input placeholder="请输入电话号码" name="tPhone" value='{{data.tPhone}}'/>
+    </view>
+    <view class="section">
+      <view class='section-label'>微信号</view>
+      <input placeholder="请输入微信号码" name="tWechat" value='{{data.tWechat}}'/>
     </view>
     <view class="section borderN">
-         <view class='section-label'>店铺介绍</view>
-         <textarea  placeholder="请输入店铺介绍" value='12343434' />
-     </view>
-  <view class="clear"></view>
-</view>
-<view class="time-bottom"  bindtap='informationSub'>确定修改</view>
-<view class='w100' style="height:100rpx;"></view>
+      <view class='section-label'>店铺介绍</view>
+      <textarea placeholder="请输入店铺介绍" name="tExplain" value='{{data.tExplain}}'/>
+    </view>
+    <view class="clear"></view>
+  </view>
+  <view class='w100' style="height:100rpx;"></view>
+  <button type="primary" form-type="submit">发布</button>
 
 
-
-
+</form>

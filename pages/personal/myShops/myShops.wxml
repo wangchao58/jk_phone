@@ -1,11 +1,12 @@
 <!--pages/personal/myShops/myShops.wxml-->
-<view class="container" >
-    <view class='list-cont'>
-         <image src='../../images/pic_04.png' class='hd-img' bindtap="detailed"></image>
-         <view class='list-title' bindtap="detailed" id='{{item.tId}}'>dfsdfsdf</view>
-         <view class='list-data' id='{{item.tId}}'>asdasdsad</view>
-         <view class='list-address' bindtap='analyze' data-address='{{item.tSite}}' data-name='{{item.tStoreName}}'><image src='../../images/shops-ico02.png'></image>asdsadsadsad</view>
-         <image bindtap='editShop' class='photoIco' src='../../images/shops-ico01.png'></image>
+<view class="container">
+  <view class='list-cont' wx:for="{{storeList}}" wx:key="item">
+    <image src='{{item.tPicture}}' class='hd-img' id='{{item.tId}}' bindtap="detailed"></image>
+    <view class='list-title' bindtap="detailed" id='{{item.tId}}'>{{item.tStoreName}}</view>
+    <view class='list-data' id='{{item.tId}}'>{{item.tExplain}}</view>
+    <view class='list-address' bindtap='analyze' data-address='{{item.tSite}}' data-name='{{item.tStoreName}}'>
+      <image src='../../images/shops-ico02.png'></image>{{item.tSite}}</view>
+    <image bindtap='editShop' class='photoIco' id='{{item.tId}}' src='../../images/shops-ico01.png'></image>
   </view>
 </view>
 <view class='buttonB' bindtap='builtShop'>创建店铺</view>
