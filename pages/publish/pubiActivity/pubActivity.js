@@ -147,7 +147,7 @@ Page({
             wx.showToast({
               title: "发布成功"
             })
-            wx.navigateTo({
+            wx.redirectTo({
               url: '../../index/activity/activity'
             })
           } else {
