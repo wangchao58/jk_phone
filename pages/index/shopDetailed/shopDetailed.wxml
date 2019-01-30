@@ -27,7 +27,6 @@
   <view class='hd-cont'>
     <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>商铺留言</view>
     <view class='w100 borderBom hd-data-nr'>
-      <view class='hd-data-bt'>我要留言</view>
       <view class='hd-data-txt'>
         <textarea placeholder="请输入您的留言" bindinput="discussInput"/>
       </view>
