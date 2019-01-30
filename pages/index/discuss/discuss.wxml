@@ -9,9 +9,8 @@
     <view class='w100 list-bom'>
       <view class='list-txt w100 left'>{{data.tContent}}</view>
       <view class='list-img w100 left'>
-
         <view wx:for="{{data.listImg}}" wx:for-item="items" wx:key="{{items}}">
-          <image src='{{items}}'></image>
+          <image src='{{items}}'  data-list="{{data.listImg}}" data-src="{{items}}"  bindtap='imgck'></image>
         </view>
       </view>
       <view class='list-num w100 left'>
