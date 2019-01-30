@@ -1,0 +1,5 @@
+/* pages/publish/protocol/protocol.wxss */
+page{background: #fff;}
+.title{ font-size: 32rpx; width: 100%; text-align: center; height: 50rpx; line-height: 50rpx;}
+.cont{ width: 90%; padding: 0 5% 50rpx; margin-top: 20rpx; line-height: 40rpx; color: #666;}
+.cont-row{ margin-top: 10rpx;}

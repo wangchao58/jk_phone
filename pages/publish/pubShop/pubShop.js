@@ -9,7 +9,8 @@ Page({
     starttime: "开始时间",
     enddate: "结束日期",
     endtime: "结束时间",
-    tPicture: ''
+    tPicture: '',
+    region: ['省', '市', '区']
   },
   onLoad: function (options) {
     
@@ -178,6 +179,12 @@ Page({
   endTimeChange(e) {
     this.setData({
       endtime: e.detail.value
+    })
+  },
+  bindRegionChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
     })
   }
 })

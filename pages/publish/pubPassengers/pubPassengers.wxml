@@ -46,7 +46,7 @@
     <view class="clear"></view>
   </view>
   <view class="w100 borderN mt20 center">
-          <view style="padding:0 40rpx;">点击发布表示您已阅读并同意<text>《免责声明》</text>的内容</view>
+          <view style="padding:0 40rpx;">点击发布表示您已阅读并同意<text bindtap='protocol'>《免责声明》</text>的内容</view>
       </view>
   <button class="time-bottom"  bindtap='informationSub'  form-type="submit">发布</button>
   <view class='w100' style="height:100rpx;"></view>

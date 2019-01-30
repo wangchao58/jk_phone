@@ -21,6 +21,7 @@
     "pages/publish/pubShop/pubShop",
     "pages/publish/pubPassengers/pubPassengers",
     "pages/publish/pubCarOwner/pubCarOwner",
+    "pages/publish/protocol/protocol",
     "pages/personal/personal",
     "pages/personal/propose/propose",
     "pages/personal/news/news",

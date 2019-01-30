@@ -1,4 +1,3 @@
-// pages/publish/pubiActivity/pubActivity.js
 var app = getApp();
 Page({
   data: {
@@ -74,6 +73,11 @@ Page({
   startTimeChange(e) {
     this.setData({
       starttime: e.detail.value
+    })
+  },
+  protocol:function(){
+    wx.navigateTo({
+      url: '../protocol/protocol?parame=pubPassengers'
     })
   }
 })
