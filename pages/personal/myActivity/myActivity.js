@@ -70,8 +70,8 @@ Page({
   myActivityDetailed: function (e) {
     var tId =e.currentTarget.id;
     wx.navigateTo({
-      // url: '../myActivityDetailed/myActivityDetailed'
-      url: '../../index/activityDetailed/activityDetailed?tId=' + tId
+      url: '../myActivityDetailed/myActivityDetailed?tId=' + tId
+      //url: '../../index/activityDetailed/activityDetailed?tId=' + tId
     })
   },
 })

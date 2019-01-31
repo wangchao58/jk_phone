@@ -1,11 +1,7 @@
 var app = getApp();
 Page({
   data: {
-    imgUrls: [
-      "../../images/001.jpg",
-      "../../images/002.jpg",
-      "../../images/003.jpg"
-    ],
+    imgUrls: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -15,12 +11,51 @@ Page({
     rows: 3,
     tDestination: '',
     carGroupList:[],
+    imgUrl: app.globalData.src + "/file/download?fileName=",
     pages: 1
   },
   onLoad: function (options) {
 
     this.carGroupList(1,3);
+    this.listSlide();
   },
+  /**
+   * 轮播图
+   */
+  listSlide: function () {
+    var that = this;
+    var src = app.globalData.src + "/slideshow/listSlideshowByPort";
+
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        'tstatus': 4
+      },
+      success(res) {
+        var imgUrls = that.data.imgUrls;
+        for (var i = 0; i < res.data.length; i++) {
+          imgUrls.push(res.data[i]);
+        }
+        that.setData({ imgUrls: imgUrls });
+
+      }
+    })
+  },
+
+  /**
+ * 跳转页面
+ */
+  urlDetail: function (e) {
+    var tId = e.currentTarget.id;
+    console.log(tId);
+    wx.navigateTo({
+      url: '/imgUrl/imgUrl?imgUrl=' + tId
+    })
+  },
+
+
   carGroupList: function (page, rows) {
 
     var that = this;

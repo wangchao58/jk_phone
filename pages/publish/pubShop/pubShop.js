@@ -24,6 +24,7 @@ Page({
    */
   shopData: function (id) {
     var that = this;
+    
     var src = app.globalData.src + "/store/selectByPrimaryKey";
     wx.request({
       url: src,
@@ -46,6 +47,10 @@ Page({
    */
   shopForm: function (e) {
     var that = this;
+    console.log(that.data.region);
+    for (var j = 0; j < 3;j++) {
+      console.log(that.data.region[j]) ;
+    }
     var tStoreName = e.detail.value.tStoreName;
     if (null != tStoreName && app.globalData.userInfo) {
       var userId = wx.getStorageSync('userid');
@@ -56,6 +61,7 @@ Page({
         method: 'POST',
         header: { 'content-type': 'application/x-www-form-urlencoded' },
         data: {
+          region: that.data.region,
           tPicture: photosUrl,
           tId: e.detail.value.tId,
           tIssuer: userId,
@@ -142,10 +148,10 @@ Page({
     
     //公共js
     fileUpload.imageUpload(path, function (result) {
-      // that.setData({
-      //   photos: result,
-      //   imgShow: false
-      // })
+      that.setData({
+        tPicture: result,
+        imgShow: false
+      })
     })
   },
 

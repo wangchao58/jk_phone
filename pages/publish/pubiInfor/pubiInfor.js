@@ -119,24 +119,36 @@ Page({
     wx.getLocation({
       type: 'wgs84',
       success(res) {
-        // console.log(res.result.address_component.city);
-        // const latitude = res.latitude
-        // const longitude = res.longitude
-        // const speed = res.speed
-        // const accuracy = res.accuracy
         qqmapsdk.reverseGeocoder({
           location: {
             latitude: res.latitude,
             longitude: res.longitude
           },
           success: function (addressRes) {
+            console.log(addressRes.result.address_component);
+            // const latitude = res.latitude
+            // const longitude = res.longitude
+            // const speed = res.speed
+            // const accuracy = res.accuracy
+            // console.log(latitude);
+            // console.log(longitude);
+            // console.log(speed);
+            // console.log(accuracy);
             var address = addressRes.result.formatted_addresses.recommend;
             that.setData({
              city: address
             })
           }
         })
+      },
+      fail: function() {
+        wx.showToast({
+          title: '授权失败',
+          icon: 'success',
+          duration: 1000
+        })
       }
+    
     })
   },
 

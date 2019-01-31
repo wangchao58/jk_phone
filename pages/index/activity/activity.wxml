@@ -1,41 +1,36 @@
 <!--pages/index/activity/activity.wxml-->
 <view class="container search-box">
-     <view class="section w100">
-          <input placeholder="请输入搜索内容" value='{{tHeadline}}' bindinput="selInput"/>
-          <image src='../../images/search_icon.png' bindtap='selActivity'></image>
-    </view>
+  <view class="section w100">
+    <input placeholder="请输入搜索内容" value='{{tHeadline}}' bindinput="selInput" />
+    <image src='../../images/search_icon.png' bindtap='selActivity'></image>
+  </view>
 </view>
 <view class="container">
   <view class="swiper">
-  <swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}" wx:key="{{item}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" style='width:100%;height:300rpx' />
-    </swiper-item>
-  </block>
-  </swiper>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+        <swiper-item bindtap='urlDetail' id='{{item.url}}'>
+          <image src="{{imgUrl}}{{item.picture}}" class="slide-image" style='width:100%;height:300rpx' />
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
 </view>
 
-<view class="container mt20" >
-    <view class='list-cont' wx:for="{{listActivity}}" wx:key="{{item}}" id="{{item.tId}}" bindtap='detailed'>
-         <!-- <image src='../../images/pic_04.png' class='hd-img'></image> -->
-         <image src='{{item.tImg}}' class='hd-img'></image>
-         <view class='list-title'>{{item.tHeadline}}</view>
-         <view class='list-data'>
-            <view class='left' wx:if="{{item.tMoney != null}}">
-              <text class='cor-red'>¥{{item.tMoney}}</text>起
-            </view>
-            <view class='left' wx:if="{{item.tMoney == null}}">
-              <text class='cor-green'>免费</text>
-            </view>
-            <view class='right'>{{item.tSite}}</view>
-            <view class='right mr20'>{{item.tStartTime}}</view>
-         </view>
+<view class="container mt20">
+  <view class='list-cont' wx:for="{{listActivity}}" wx:key="{{item}}" id="{{item.tId}}" bindtap='detailed'>
+    <!-- <image src='../../images/pic_04.png' class='hd-img'></image> -->
+    <image src='{{item.tImg}}' class='hd-img'></image>
+    <view class='list-title'>{{item.tHeadline}}</view>
+    <view class='list-data'>
+      <view class='left' wx:if="{{item.tMoney != null}}">
+        <text class='cor-red'>¥{{item.tMoney}}</text>起
+      </view>
+      <view class='left' wx:if="{{item.tMoney == null}}">
+        <text class='cor-green'>免费</text>
+      </view>
+      <view class='right'>{{item.tSite}}</view>
+      <view class='right mr20'>{{item.tStartTime}}</view>
+    </view>
   </view>
 </view>
-
-
-
-

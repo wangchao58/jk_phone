@@ -3,10 +3,7 @@ var app = getApp();
 var praise = require("../../js/praise.js");
 Page({
   data: {
-    imgUrls: [
-      "../images/001.jpg",
-      "../images/002.jpg"
-    ],
+    imgUrls: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -14,10 +11,12 @@ Page({
     page: 1,
     rows: 10,
     pages: 1,
+    imgUrl: app.globalData.src + "/file/download?fileName=",
     listInformation: []
   },
   onLoad: function (options) {
     this.listInformation();
+    this.listSlide();
   },
   information:function(){
     wx.navigateTo({
@@ -66,19 +65,41 @@ Page({
         var data = res.data.tInformation;
         that.data.pages = res.data.pages;
 
-        if (data.length != 0) {
-          for (var i = 0; i < data.length; i++) {
-            listInformation.push(data[i]);
-          }
-          that.setData({ listInformation: listInformation });
-        } else {
-          that.setData({ listInformation: [] });
+        for (var i = 0; i < data.length; i++) {
+          listInformation.push(data[i]);
         }
+        that.setData({ listInformation: listInformation });
+        
         // 隐藏加载框
         wx.hideLoading();
       }
     })
   },
+  /**
+   * 轮播图
+   */
+  listSlide: function () {
+    var that = this;
+    var src = app.globalData.src + "/slideshow/listSlideshowByPort";
+   
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        'tstatus': 1
+      },
+      success(res) {
+        var imgUrls = that.data.imgUrls;
+        for (var i = 0; i < res.data.length; i++) {
+          imgUrls.push(res.data[i]);
+        }
+        that.setData({ imgUrls: imgUrls });
+       
+      }
+    })
+  },
+
   imgck: function (event) {
     var src = event.currentTarget.dataset.src;//获取data-src
     var imgList = event.currentTarget.dataset.list;//获取data-list
@@ -131,6 +152,18 @@ Page({
     var tId = e.currentTarget.id;
     wx.navigateTo({
       url: 'discuss/discuss?tId=' + tId
+    })
+  },
+
+
+  /**
+   * 跳转页面
+   */
+  urlDetail: function (e) {
+    var tId = e.currentTarget.id;
+    console.log(tId);
+    wx.navigateTo({
+      url: '/imgUrl/imgUrl?imgUrl=' + tId
     })
   },
 

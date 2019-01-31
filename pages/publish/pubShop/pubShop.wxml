@@ -3,40 +3,37 @@
     <view class='chooseImage' bindtap='chooseImage'>
       <view class='chooseImage-txt' hidden='{{font}}'>上传封面</view>
       <!-- <view wx:for="{{tPicture}}" wx:key="index" class='previewImg'> -->
-        <image src='{{tPicture}}' class='banner-img'  ></image>
+      <image src='{{tPicture}}' class='banner-img'></image>
       <!-- </view> -->
     </view>
-    <input hidden='true'  name="tId" value='{{data.tId}}'></input>
+    <input hidden='true' name="tId" value='{{data.tId}}'></input>
     <view class="section mt20">
       <view class='section-label'>店铺名称</view>
       <input placeholder="请输入店铺名称" name="tStoreName" value='{{data.tStoreName}}' />
     </view>
     <view class="section mt20">
       <view class='section-label'>所在省市</view>
-            <picker
-          mode="region"
-          bindchange="bindRegionChange"
-        >
-          <view class="picker">
-            {{region[0]}}，{{region[1]}}，{{region[2]}}
-          </view>
-        </picker>
+      <picker mode="region" bindchange="bindRegionChange">
+        <view class="picker">
+          {{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
     </view>
     <view class="section">
       <view class='section-label'>详细地址</view>
-      <input placeholder="请输入店铺的详细街道地址" name="tSite" value='{{data.tSite}}'/>
+      <input placeholder="请输入店铺的详细街道地址" name="tSite" value='{{data.tSite}}' />
     </view>
     <view class="section">
       <view class='section-label'>联系电话</view>
-      <input placeholder="请输入电话号码" name="tPhone" value='{{data.tPhone}}'/>
+      <input placeholder="请输入电话号码" name="tPhone" value='{{data.tPhone}}' />
     </view>
     <view class="section">
       <view class='section-label'>微信号</view>
-      <input placeholder="请输入微信号码" name="tWechat" value='{{data.tWechat}}'/>
+      <input placeholder="请输入微信号码" name="tWechat" value='{{data.tWechat}}' />
     </view>
     <view class="section borderN">
       <view class='section-label'>店铺介绍</view>
-      <textarea placeholder="请输入店铺介绍" name="tExplain" value='{{data.tExplain}}'/>
+      <textarea placeholder="请输入店铺介绍" name="tExplain" value='{{data.tExplain}}' />
     </view>
     <view class="clear"></view>
   </view>

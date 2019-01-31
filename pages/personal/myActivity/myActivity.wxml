@@ -21,10 +21,10 @@
       <view class='right mr30'>{{item.tSite}}</view>
       <view class='right mr20'>{{item.tStartTime}}</view>
     </view>
-    <!-- <view class='list-bom'>
-      <view class='left cor-green'>报名中</view>
-      <view class='right'>76人已报名</view>
-    </view> -->
+    <view class='list-bom'>
+      <view class='left cor-green'></view>
+      <view class='right'>{{item.tApplyNum}}</view>
+    </view>
     <view class='pubTime'>{{item.tCreateTime}}</view>
   </view>
 
