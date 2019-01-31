@@ -6,7 +6,7 @@
     <view class='list-data' id='{{item.tId}}'>{{item.tExplain}}</view>
     <view class='list-address' bindtap='analyze' data-address='{{item.tSite}}' data-name='{{item.tStoreName}}'>
       <image src='../../images/shops-ico02.png'></image>{{item.tSite}}</view>
-    <image bindtap='editShop' class='photoIco' id='{{item.tId}}' src='../../images/shops-ico01.png'></image>
+    <image bindtap='editShop' class='photoIco' id='{{item.tId}}' src='../../images/bianji.png'></image>
   </view>
 </view>
 <view class='buttonB' bindtap='builtShop'>创建店铺</view>
