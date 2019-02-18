@@ -24,10 +24,13 @@
 
     <view wx:if="{{item.tType == 2}}">
       <image src='{{item.tImg}}' class='hd-img' bindtap='activity'></image>
-      <view class='list-title' bindtap='activity'>{{itme.tHeadline}}</view>
+      <view class='list-title' bindtap='activity'>{{item.tHeadline}}</view>
       <view class='list-data'>
-        <view class='left'>
-          <text class='cor-red'>{{item.tMoney}}</text>
+        <view class='left' wx:if="{{item.tMoney != null}}">
+          <text class='cor-red'>¥{{item.tMoney}}</text>起
+        </view>
+        <view class='left' wx:if="{{item.tMoney == null}}">
+          <text class='cor-green'>免费</text>
         </view>
         <view class='right'>{{item.asite}}</view>
         <view class='right mr20'>{{item.tStartTime}}</view>
