@@ -145,9 +145,8 @@ Page({
    */
   upload: function (page, path) {
     var that = this;
-    
     //公共js
-    fileUpload.imageUpload(path, function (result) {
+    fileUpload.imageUploads(path, function (result) {
       that.setData({
         tPicture: result,
         imgShow: false

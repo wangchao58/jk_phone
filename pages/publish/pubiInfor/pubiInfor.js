@@ -76,6 +76,7 @@ Page({
    */
   upload: function (page, path) {
     var that = this;
+    console.log(path);
     //公共js
     fileUpload.imageUpload(path, function (result) {
       that.setData({
