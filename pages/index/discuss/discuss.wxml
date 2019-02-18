@@ -7,7 +7,7 @@
       <view class='right cor-grey'>{{data.tCreateTime}}</view>
     </view>
     <view class='w100 list-bom'>
-      <view class='list-txt w100 left'>{{data.tContent}}</view>
+      <view class='list-txt w100 left'><text selectable='true'>{{data.tContent}}</text></view>
       <view class='list-img w100 left'>
         <view wx:for="{{data.listImg}}" wx:for-item="items" wx:key="{{items}}">
           <image src='{{items}}'  data-list="{{data.listImg}}" data-src="{{items}}"  bindtap='imgck'></image>

@@ -3,7 +3,6 @@
   <view class="swiper">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{imgUrls}}" wx:key="{{item}}">
-      
         <swiper-item  bindtap='urlDetail' id='{{item.url}}'>
           <image src="{{imgUrl}}{{item.picture}}" class="slide-image" style='width:100%;height:300rpx' />
         </swiper-item>
@@ -32,7 +31,9 @@
       <view class='right cor-grey'>{{item.tCreateTime}}</view>
     </view>
     <view class='w100 list-bom'>
-      <view class='list-txt w100 left' id="{{item.tId}}" bindtap='discussDetail'>{{item.tContent}}</view>
+      <view class='list-txt w100 left' id="{{item.tId}}" bindtap='discussDetail'>
+        <text selectable="true">{{item.tContent}}</text>
+      </view>
       <view class='list-img w100 left' id="{{item.tId}}">
         <view wx:for="{{item.listImg}}" wx:for-item="items" wx:key="{{items}}">
           <image src='{{items}}' data-list="{{item.listImg}}" data-src="{{items}}" bindtap='imgck'></image>
