@@ -23,7 +23,7 @@
     </view>
     <view class='list-bom'>
       <view class='left cor-green'></view>
-      <view class='right'>{{item.tApplyNum}}</view>
+      <view class='right'>目前人数：{{item.tApplyNum}}</view>
     </view>
     <view class='pubTime'>{{item.tCreateTime}}</view>
   </view>
