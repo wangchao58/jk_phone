@@ -47,10 +47,10 @@
          <view class='section-label'><image src='../images/personal-ico08.png'></image>我的店铺</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view>
-    <view class="section" bindtap='myRoute'>
+    <!-- <view class="section" bindtap='myRoute'>
          <view class='section-label'><image src='../images/personal-ico04.png'></image>我的行程</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
-    </view>
+    </view> -->
     <view class="section borderN" bindtap='propose'>
          <view class='section-label'><image src='../images/personal-ico07.png'></image>投诉建议</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
