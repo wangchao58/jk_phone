@@ -1,10 +1,7 @@
 var app = getApp();
 Page({
   data: {
-    imgUrls: [
-      "../../images/001.jpg",
-      "../../images/002.jpg"
-    ],
+    imgUrls: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -12,11 +9,52 @@ Page({
     page: 1,
     rows: 10,
     pages: 1,
-    listActivity: []
+    listActivity: [],
+    imgUrl: app.globalData.src + "/file/download?fileName=",
   },
   onLoad: function (options) {
+    this.listSlide();
     this.listActivity();
   },
+
+  /**
+   * 轮播图
+   */
+  listSlide: function () {
+    var that = this;
+    var src = app.globalData.src + "/slideshow/listSlideshowByPort";
+
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        'tstatus': 2
+      },
+      success(res) {
+        var imgUrls = that.data.imgUrls;
+        console.log(res.data)
+        for (var i = 0; i < res.data.length; i++) {
+          imgUrls.push(res.data[i]);
+        }
+        that.setData({ imgUrls: imgUrls });
+
+      }
+    })
+  },
+
+
+  /**
+   * 跳转页面
+   */
+  urlDetail: function (e) {
+    var tId = e.currentTarget.id;
+    console.log(tId);
+    wx.navigateTo({
+      url: '/imgUrl/imgUrl?imgUrl=' + tId
+    })
+  },
+
   detailed:function(e){
     var tId = e.currentTarget.id;
     wx.navigateTo({

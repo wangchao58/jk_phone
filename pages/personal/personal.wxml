@@ -31,10 +31,10 @@
     </view> 
 </view> 
 <view class="container mt20"> 
-    <!-- <view class="section" bindtap='news'>
+    <view class="section" bindtap='news'>
          <view class='section-label'><image src='../images/personal-ico02.png'></image>消息通知</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
-    </view> -->
+    </view>
     <view class="section" bindtap='myInformation'>
          <view class='section-label'><image src='../images/personal-ico01.png'></image>此刻</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
@@ -47,10 +47,10 @@
          <view class='section-label'><image src='../images/personal-ico08.png'></image>我的店铺</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view>
-    <!-- <view class="section" bindtap='myRoute'>
+    <view class="section" bindtap='myRoute'>
          <view class='section-label'><image src='../images/personal-ico04.png'></image>我的行程</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
-    </view> -->
+    </view>
     <view class="section borderN" bindtap='propose'>
          <view class='section-label'><image src='../images/personal-ico07.png'></image>投诉建议</view>
          <image src='../images/right-btn.png' class="right-btn"></image>

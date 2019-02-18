@@ -1,18 +1,42 @@
 // pages/personal/news/news.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    applyDataList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.applyDataList(options.tId);
+  },
 
+  /**
+    * 参加信息
+    */
+  applyDataList: function (id) {
+    var that = this;
+    var src = app.globalData.src + "/activity/activityApplyByPortList";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        pId:  wx.getStorageSync('userid')
+      },
+      success(res) {
+        var applyDataList = that.data.applyDataList;
+        for (var i = 0; i < res.data.listApply.length; i++) {
+          applyDataList.push(res.data.listApply[i]);
+        }
+        that.setData({ applyDataList: applyDataList });
+      }
+    })
   },
 
   /**

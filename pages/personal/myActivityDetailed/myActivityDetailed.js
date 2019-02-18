@@ -1,20 +1,81 @@
 // pages/personal/myActivityDetailed/myActivityDetailed.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 500,
+    photoIco: "../../images/shops-ico01.png",
+    applyDataList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.activityData(options.tId);
+    this.applyDataList(options.tId);
   },
 
+  /**
+   * 活动详情信息
+   */
+  activityData: function (id, enshrineViews) {
+    var that = this;
+    var userId = wx.getStorageSync('userid');
+    var src = app.globalData.src + "/activity/getActivityByTid";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        tId: id,
+        enshrineViews: enshrineViews,
+        pId: userId
+      },
+      success(res) {
+        that.setData({
+          data: res.data
+        });
+      }
+    })
+  },
+
+  /**
+   * 参加信息
+   */
+  applyDataList: function (id) {
+    var that = this;
+    var src = app.globalData.src + "/activity/activityApplyByPortList";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        tId: id
+      },
+      success(res) {
+        var applyDataList = that.data.applyDataList;
+        for (var i = 0; i < res.data.listApply.length; i++) {
+          applyDataList.push(res.data.listApply[i]);
+        }
+        that.setData({ applyDataList: applyDataList });
+      }
+    })
+  },
+
+  callPhone: function (e) {
+    var phone = e.currentTarget.dataset.phone
+    wx.makePhoneCall({
+      phoneNumber: phone
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,76 +1,60 @@
 <!--pages/personal/myActivityDetailed/myActivityDetailed.wxml-->
-<view class="container pb30" >
-     <!-- <image src='{{tImg}}' style='width:100%;height:360rpx;'></image> -->
-     <image src='../../images/002.jpg' style='width:100%;height:360rpx;'></image>
-     <view class="hd-title">活动名称</view>
-     <view class="hd-label">
-          <view class="left"><text class='cor-red'>¥30</text></view>
-          <!-- <view class="left cor-green" wx:if="{{data.tMoney == null}}">免费</view> -->
-          <view class="right"><image src="../../images/index-ico08.png" ></image>30</view>
-          <view class="right mr30"><image src="../../images/index-ico07.png" ></image>60</view>
-     </view>
-</view>
-<view class="container mt20">
-   <view class='hd-data borderBom'>
-        <view class='hd-data-bt'>活动时间</view>
-        <view class='left'>2019.01.22 09：30 - 2019.01.22 14：30 </view>
-   </view>
-   <view class='hd-data borderBom'>
-        <view class='hd-data-bt'>活动地点</view>
-        <view class='left'>23123</view>
-   </view>
-   <view class='hd-data borderBom'>
-        <view class='hd-data-bt'>发布者</view>
-        <view class='left'>12323</view>
-   </view>
-   <view class='hd-data'>
-        <view class='hd-data-bt'>手机号码</view>
-        <view class='left'>123123</view>
-   </view>
-</view>
-<view class="container mt20" >
-   <view class='hd-cont'>
-      <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>活动详情</view>
-      <view class='w100 cor-grey fontSize28 hd-txt'>活动详情活动详情活动详情活动详情活动详情活动详情</view>
-    </view>
-</view>
-<view class="container mt20" >
-   <view class='hd-cont'>
-      <view class='w100 cor-bock center fontSize36 hd-cont-bt'>报名信息</view>
-      <view class='w100'>
-          <view class='join'>
-                <image src="../../images/pic_001.png"></image>
-                <view class='join-nr'>
-                    <view class='join-name'>实打实撒旦<text class='right cor-grey'>01/22 08:00</text></view>
-                    <view class='join-data'>实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦</view>
-                </view>
-                <view class='join-btn'>同意</view>
-          </view>
-          <view class='join'>
-                <image src="../../images/pic_001.png"></image>
-                <view class='join-nr'>
-                    <view class='join-name'>实打实撒旦<text class='right cor-grey'>01/22 08:00</text></view>
-                    <view class='join-data'>实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦</view>
-                </view>
-                <view class='join-btn'>同意</view>
-          </view>
-          <view class='join'>
-                <image src="../../images/pic_001.png"></image>
-                <view class='join-nr'>
-                    <view class='join-name'>实打实撒旦<text class='right cor-grey'>01/22 08:00</text></view>
-                    <view class='join-data'>实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦</view>
-                </view>
-                <view class='join-btn join-pass'>已同意</view>
-          </view>
-          <view class='join'>
-                <image src="../../images/pic_001.png"></image>
-                <view class='join-nr'>
-                    <view class='join-name'>实打实撒旦<text class='right cor-grey'>01/22 08:00</text></view>
-                    <view class='join-data'>实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦实打实撒旦</view>
-                </view>
-                <view class='join-btn join-pass'>已同意</view>
-          </view>
+<view class="container pb30">
+  <!-- <image src='{{tImg}}' style='width:100%;height:360rpx;'></image> -->
+  <image src='{{data.tImg}}' style='width:100%;height:360rpx;'></image>
+  <view class="hd-title">{{data.tHeadline}}</view>
+  <view class="hd-label">
+    <!-- <view class="left"><text class='cor-red'>¥30</text></view> -->
+    <view wx:if="{{data.tMoney != null}}">
+      <view class="left">
+        <text class='cor-red'>¥{{data.tMoney}}</text>
       </view>
     </view>
+    <!-- <view class="left cor-green" wx:if="{{data.tMoney == null}}">免费</view> -->
+    <view class="right">
+      <image src="../../images/index-ico08.png"></image>{{data.tCollectionNum}}</view>
+    <view class="right mr30">
+      <image src="../../images/index-ico07.png"></image>{{data.tViewsNum}}</view>
+  </view>
 </view>
-
+<view class="container mt20">
+  <view class='hd-data borderBom'>
+    <view class='hd-data-bt'>活动时间</view>
+    <view class='left'>{{data.tStartTime}} - {{data.tEndTime}}</view>
+  </view>
+  <view class='hd-data borderBom'>
+    <view class='hd-data-bt'>活动地点</view>
+    <view class='left'>{{data.tSite}}</view>
+  </view>
+  <view class='hd-data borderBom'>
+    <view class='hd-data-bt'>发布者</view>
+    <view class='left'>{{data.pId}}</view>
+  </view>
+  <view class='hd-data'>
+    <view class='hd-data-bt'>手机号码</view>
+    <view class='left'>{{data.tPhone}}</view>
+  </view>
+</view>
+<view class="container mt20">
+  <view class='hd-cont'>
+    <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>活动详情</view>
+    <view class='w100 cor-grey fontSize28 hd-txt'>{{data.tContent}}</view>
+  </view>
+</view>
+<view class="container mt20">
+  <view class='hd-cont'>
+    <view class='w100 cor-bock center fontSize36 hd-cont-bt'>报名信息</view>
+    <view class='w100'  wx:for="{{applyDataList}}" wx:key="{{item}}">
+      <view class='join'>
+        <image src="../../images/pic_001.png"></image>
+        <view class='join-nr'>
+          <view class='join-name'>{{item.nickname}}
+            <text class='right cor-grey'>{{item.t_time}}</text>
+          </view>
+          <view class='join-data'>{{item.t_introduction}}</view>
+        </view>
+        <image bindtap='callPhone' data-phone='{{item.t_phone}}' class='photoIco' src='{{photoIco}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
