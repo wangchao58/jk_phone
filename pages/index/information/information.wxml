@@ -17,7 +17,14 @@
       <view class='list-txt w100 left'><text selectable="true">{{item.tContent}}</text></view>
       <view class='list-img w100 left' id="{{item.tId}}">
         <view wx:for="{{item.listImg}}" wx:for-item="items" wx:key="{{items}}">
-          <image src='{{items}}' data-list="{{item.listImg}}" data-src="{{items}}" bindtap='imgck'></image>
+          <!-- 图片展示调整 -->
+          <view wx:if='{{item.listImg.length > 1}}'>
+            <image src='{{items}}' data-list="{{item.listImg}}" data-src="{{items}}" bindtap='imgck' mode='aspectFill'></image>
+          </view>
+
+          <view wx:if='{{item.listImg.length == 1}}'>
+            <image src='{{items}}' data-list="{{item.listImg}}" data-src="{{items}}" bindtap='imgck' mode="widthFix"></image>
+          </view>
         </view>
       </view>
       <view class='list-num w100 left'>
