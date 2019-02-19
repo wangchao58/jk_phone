@@ -35,8 +35,7 @@ Page({
   },
   carpool: function () {
     wx.navigateTo({
-      // url: 'carpool/carpool'
-      url: '###'
+      url: 'carpool/carpool'
     })
   },
   /**
