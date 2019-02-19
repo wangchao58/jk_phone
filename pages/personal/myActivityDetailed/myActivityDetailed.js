@@ -52,12 +52,14 @@ Page({
   applyDataList: function (id) {
     var that = this;
     var src = app.globalData.src + "/activity/activityApplyByPortList";
+    var userId = wx.getStorageSync('userid');
     wx.request({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: {
-        tId: id
+        tId: id,
+        pId: userId
       },
       success(res) {
         var applyDataList = that.data.applyDataList;

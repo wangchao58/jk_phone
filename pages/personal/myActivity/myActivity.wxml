@@ -7,7 +7,7 @@
   </view>
 </view>
 <view class="list"  wx:for="{{listActivity}}" wx:key="{{item}}" id="{{item.tId}}" >
-  <view class="list-row" bindtap='myActivityDetailed' id='{{item.tId}}'>
+  <view class="list-row" bindtap='myActivityDetailed' id='{{item.tId}}' data-participation="{{item.participation}}">
     <image src="{{item.tImg}}"></image>
     <view class='list-title'>{{item.tHeadline}}</view>
     <view class='list-data'>

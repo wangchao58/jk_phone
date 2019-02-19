@@ -69,8 +69,9 @@ Page({
 
   myActivityDetailed: function (e) {
     var tId =e.currentTarget.id;
+    var participation = e.currentTarget.dataset.participation;
     wx.navigateTo({
-      url: '../myActivityDetailed/myActivityDetailed?tId=' + tId
+      url: '../myActivityDetailed/myActivityDetailed?tId=' + tId + '&participation=' + participation
       //url: '../../index/activityDetailed/activityDetailed?tId=' + tId
     })
   },
