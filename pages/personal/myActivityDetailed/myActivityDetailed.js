@@ -19,7 +19,7 @@ Page({
    */
   onLoad: function (options) {
     this.activityData(options.tId);
-    this.applyDataList(options.tId);
+    this.applyDataList(options.tId, options.participation);
   },
 
   /**
@@ -49,10 +49,13 @@ Page({
   /**
    * 参加信息
    */
-  applyDataList: function (id) {
+  applyDataList: function (id, participation) {
     var that = this;
     var src = app.globalData.src + "/activity/activityApplyByPortList";
-    var userId = wx.getStorageSync('userid');
+    var userId = '';
+    if (participation == '1'){
+      var userId = wx.getStorageSync('userid');
+    }
     wx.request({
       url: src,
       method: 'POST',
