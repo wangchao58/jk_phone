@@ -109,7 +109,7 @@ Page({
           if (!res.cancel) {
             if (res.tapIndex == 0) {
               // 调用公共收藏js方法(从相册中选择)
-              fileUpload.chooseImgByOne("album", count, function (result) {
+              fileUpload.chooseImg("album", count, function (result) {
                 that.setData({
                   tPicture: result,
                   imgShow: false

@@ -12,6 +12,9 @@ Page({
     photos: []
   },
   onLoad: function (options) {
+    if (options.tId != null) {
+      this.activityData(options.tId);
+    }
 
   },
   startDateChange(e) {
@@ -36,6 +39,34 @@ Page({
   },
 
   /**
+   * 活动编辑详情信息
+   */
+   activityData: function (id) {
+    var that = this;
+     var src = app.globalData.src + "/activity/selActivityByPrimaryKey";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        tId: id,
+      },
+      success(res) {
+        console.log(res.data);
+        console.log(res.data.tImg)
+        that.setData({
+          data: res.data,
+          tImg: res.data.tImg,
+          startdate: res.data.startdate,
+          starttime: res.data.starttime,
+          enddate: res.data.enddate,
+          endtime: res.data.endtime
+        });
+      }
+    })
+  },
+
+  /**
      * 选择图片方法
      */
   chooseImage: function () {
@@ -51,7 +82,7 @@ Page({
               // 调用公共收藏js方法(从相册中选择)
               fileUpload.chooseImg("album", count, function (result) {
                 that.setData({
-                  photos: result
+                  tImg: result
                 });
                 that.upLoadImg(result);
               })
@@ -59,7 +90,7 @@ Page({
               //调用公共收藏js方法(拍照)
               fileUpload.chooseImg("camera", count, function (result) {
                 that.setData({
-                  photos: result
+                  tImg: result
                 });
                 that.upLoadImg(result);
               })
@@ -88,7 +119,7 @@ Page({
     //公共js
     fileUpload.imageUpload(path, function (result) {
       that.setData({
-        photos: result,
+        tImg: result,
         imgShow: false
       })
     })
@@ -96,16 +127,16 @@ Page({
 
   //删除已选图片方法
   removeimg: function (e) {
-    var photos = this.data.photos;
+    var tImg = this.data.photos;
     var index = e.currentTarget.id
-    photos.splice(index, 1)
+    tImg.splice(index, 1)
     this.setData({
-      photos: photos
+      tImg: tImg
     })
   },
 
   /**
-   * 发布资讯提交
+   * 编辑活动提交
    */
   activityForm: function (e) {
     var that = this;
@@ -124,13 +155,14 @@ Page({
     }
     if (null != tHeadline && app.globalData.userInfo) {
       var userId = wx.getStorageSync('userid');
-      var photosUrl = that.data.photos;
+      var photosUrl = that.data.tImg;
       var src = app.globalData.src + "/activity/addActivity";
       wx.request({
         url: src,
         method: 'POST',
         header: { 'content-type': 'application/x-www-form-urlencoded' },
         data: {
+          tId: e.detail.value.tId,
           pId: userId,
           tImg: photosUrl,
           tHeadline: e.detail.value.tHeadline,

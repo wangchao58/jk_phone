@@ -7,10 +7,14 @@
   </view>
 </view>
 <view class="list"  wx:for="{{listActivity}}" wx:key="{{item}}" id="{{item.tId}}" >
-  <view class="list-row" bindtap='myActivityDetailed' id='{{item.tId}}' data-participation="{{item.participation}}">
-    <image src="{{item.tImg}}"></image>
-    <view class='list-title'>{{item.tHeadline}}</view>
-    <view class='list-data'>
+  <view class="list-row" data-participation="{{item.participation}}">
+    <image src="{{item.tImg}}"  bindtap='myActivityDetailed' id='{{item.tId}}'></image>
+    <!-- 编辑发布活动 -->
+    <view wx:if="{{item.participation != 1}}">
+      <image bindtap='editActivity' id='{{item.tId}}' src='../../images/bianji.png'></image>
+    </view>
+    <view class='list-title' bindtap='myActivityDetailed' id='{{item.tId}}'>{{item.tHeadline}}</view>
+    <view class='list-data' bindtap='myActivityDetailed' id='{{item.tId}}'>
       <view class='left' wx:if="{{item.tMoney != null}}">
               <text class='cor-red'>¥{{item.tMoney}}</text>起
             </view>

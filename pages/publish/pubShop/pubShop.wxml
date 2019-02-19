@@ -3,7 +3,7 @@
     <view class='chooseImage' bindtap='chooseImage'>
       <view class='chooseImage-txt' hidden='{{font}}'>上传封面</view>
       <!-- <view wx:for="{{tPicture}}" wx:key="index" class='previewImg'> -->
-      <image src='{{tPicture}}' class='banner-img'></image>
+      <image src='{{tPicture}}' class='banner-img'></image> 
       <!-- </view> -->
     </view>
     <input hidden='true' name="tId" value='{{data.tId}}'></input>

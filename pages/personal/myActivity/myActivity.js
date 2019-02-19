@@ -75,4 +75,14 @@ Page({
       //url: '../../index/activityDetailed/activityDetailed?tId=' + tId
     })
   },
+
+  /**
+   * 跳转活动编辑页面
+   */
+  editActivity: function (e) {
+    var tId = e.currentTarget.id;
+    wx.navigateTo({
+      url: '../../publish/pubiActivity/pubActivity?tId=' + tId
+    })
+  },
 })
