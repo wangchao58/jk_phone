@@ -8,7 +8,8 @@ Page({
     photos: [],
     curImgList:[],
     evalList: [{ tempFilePaths: [], imgList: [] }],
-    city: ''
+    city: '',
+    max: 200 //最多字数
   },
 
   onLoad: function (options) {
@@ -19,9 +20,20 @@ Page({
   },
 
   // 获取索要发布的资讯信息
-  informationInput: function (e) {
+  inputs: function (e) {
+    // 获取输入框的内容
+    var value = e.detail.value;
+    // 获取输入框内容的长度
+    var len = parseInt(value.length);
+
+    //最多字数限制
+    if (len > this.data.max) {
+      return;
+    }
+    // 当输入框内容的长度大于最大长度限制（max)时，终止setData()的执行
     this.setData({
-      informationInput: e.detail.value
+      currentWordNumber: len, //当前字数 
+      informationInput: e.detail.value 
     })
   },
 
@@ -157,10 +169,9 @@ Page({
    * 发布资讯提交
    */
   informationSub: function () {
-    
-    
     var that = this;
     var informationInput = this.data.informationInput;
+    console.log("informationInput" + informationInput)
     if (null != informationInput && app.globalData.userInfo){
       var city = that.data.city;
       var photosUrl = that.data.photos;
@@ -201,8 +212,6 @@ Page({
         content: '内容不能为空或未登录',
        
       })
-     
     }
-    
   }
 })

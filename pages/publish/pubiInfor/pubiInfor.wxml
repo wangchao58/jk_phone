@@ -1,6 +1,8 @@
 <view class="details borderTop">
   <view class="w100 mt30 fontSize28">
-     <textarea selectable='true'  placeholder="分享新鲜事" value='{{data.information}}' bindinput="informationInput" />
+     <textarea class="areas" selectable='true'  placeholder="分享新鲜事" value='{{data.information}}' maxlength="{{max}}" bindinput="inputs">
+      <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+     </textarea>
   </view>
  <view class="w100 mt20 borderBom pb20">
        <view class='chooseImage' bindtap='chooseImage'>
