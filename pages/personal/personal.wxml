@@ -12,12 +12,12 @@
        <view class='operate' bindtap='praise'>
             <view class='operate-num'><image src='../images/personal-ico09.png'></image></view>
             <view class='operate-txt'>赞</view>
-            
+            <view class='operate-cir'>1</view>
        </view>
        <view class='operate' bindtap='myDiscuss'>
           <view class='operate-num'><image src='../images/personal-ico10.png'></image></view>
           <view class='operate-txt'>评论</view>
-         
+         <view class='operate-cir'>33</view>
        </view>
        <view class='operate' bindtap='myCollects'>
           <view class='operate-num'><image src='../images/personal-ico06.png'></image></view>
