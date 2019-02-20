@@ -18,8 +18,9 @@
           <image src="../../images/shops-ico02.png" bindtap='discuss'></image>{{data.city}}
         </view>
         <view class='left' wx:if="{{data.city == null || data.city == ''}}"></view>
+
         <view class='right' bindtap='informationPraise' id="{{data.tId}}" wx:if="{{data.praiseId != null}}">
-          <image src="../../images/index-ico05.png"></image>{{data.tPraise}}
+          <image src="../../images/index-ico05-hover.png"></image>{{data.tPraise}}
         </view>
         <view class='right' bindtap='informationPraise' id="{{data.tId}}" wx:if="{{data.praiseId == null}}">
           <image src="../../images/index-ico05.png"></image>{{data.tPraise}}
