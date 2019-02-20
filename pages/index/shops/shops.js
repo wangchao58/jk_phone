@@ -154,23 +154,21 @@ Page({
 
   },
   //解析地址
-  // analyze:function(e){
-  //   var shopName = e.currentTarget.dataset.name;
-  //   var shopAddress = e.currentTarget.dataset.address;
-  //   qqmapsdk.geocoder({
-  //     address: shopAddress,
-  //     success: function (res) {
-  //       const latitude = res.result.location.lat;
-  //       const longitude = res.result.location.lng;
-  //       wx.openLocation({
-  //         latitude,
-  //         longitude,
-  //         name: shopName,
-  //         address: shopAddress
-  //       })
-  //     }
-  //   })
-  // },
+  analyze: function (e) {
+    var shopName = e.currentTarget.dataset.name;
+    var shopAddress = e.currentTarget.dataset.address;
+    const longitude = e.currentTarget.dataset.longitude;
+    const latitude = e.currentTarget.dataset.latitude;
+
+    console.log("========" + shopName + shopAddress + longitude + latitude)
+    wx.openLocation({
+      longitude: Number(longitude),
+      latitude: Number(latitude),
+      name: shopName,
+      address: shopAddress
+    })
+  },	 
+
   /**
    * 获取当前城市名称
    */

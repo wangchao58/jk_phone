@@ -55,6 +55,8 @@ Page({
     if (null != tStoreName && app.globalData.userInfo) {
       var userId = wx.getStorageSync('userid');
       var photosUrl = that.data.tPicture;
+      var longitude = wx.getStorageSync('longitude');
+      var latitude = wx.getStorageSync('latitude');
       var src = app.globalData.src + "/store/insertSelective";
       wx.request({
         url: src,
@@ -69,7 +71,9 @@ Page({
           tSite: e.detail.value.tSite,
           tPhone: e.detail.value.tPhone,
           tWechat: e.detail.value.tWechat,
-          tExplain: e.detail.value.tExplain
+          tExplain: e.detail.value.tExplain,
+          longitude: longitude,
+          latitude: latitude
         },
         success(res) {
           if (res.data > 0) {

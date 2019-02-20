@@ -139,22 +139,17 @@ Page({
   analyze: function (e) {
     var shopName = e.currentTarget.dataset.name;
     var shopAddress = e.currentTarget.dataset.address;
-    console.log(shopAddress)
-    qqmapsdk.geocoder({
-      address: shopAddress,
-      success: function (res) {
-        const latitude = res.result.location.lat;
-        const longitude = res.result.location.lng;
-        console.log(latitude)
-        wx.openLocation({
-          latitude,
-          longitude,
-          name: shopName,
-          address: shopAddress
-        })
-      }
+    const longitude = e.currentTarget.dataset.longitude;
+    const latitude = e.currentTarget.dataset.latitude;
+    console.log("========" + shopName + shopAddress + longitude + latitude)
+    wx.openLocation({
+      longitude: Number(longitude),
+      latitude: Number(latitude),
+      name: shopName,
+      address: shopAddress
     })
   },
+
   /**
    * 用户点击右上角分享
    */
