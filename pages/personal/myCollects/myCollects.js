@@ -113,14 +113,17 @@ Page({
       phoneNumber: phone
     })
   },
-  detailed: function () {
+  detailed: function (e) {
+    var tId = e.currentTarget.id;
     wx.navigateTo({
-      url: '../../index/shopDetailed/shopDetailed'
+      url: '../../index/shopDetailed/shopDetailed?tId=' + tId
     })
   },
-  activity: function () {
+  activity: function (e) {
+    var tId = e.currentTarget.id;
+    console.log(tId)
     wx.navigateTo({
-      url: '../../index/activityDetailed/activityDetailed'
+      url: '../../index/activityDetailed/activityDetailed?tId=' + tId
     })
   }
 })

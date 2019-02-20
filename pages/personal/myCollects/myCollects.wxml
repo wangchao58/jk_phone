@@ -11,8 +11,8 @@
 
   <view class='list-cont gs'>
     <view wx:if="{{item.tType == 1}}">
-      <image src='{{item.tPicture}}' class='hd-img' bindtap="detailed"></image>
-      <view class='list-title' bindtap="detailed" id='{{item.tId}}'>{{item.tStoreName}}</view>
+      <image src='{{item.tPicture}}' class='hd-img' bindtap="detailed" id='{{item.sId}}'></image>
+      <view class='list-title' bindtap="detailed" id='{{item.sId}}'>{{item.tStoreName}}</view>
       <view class='list-data' id='{{item.tId}}'>{{item.tExplain}}</view>
       <view class='list-address' bindtap='analyze' data-address='{{item.tSite}}' data-name='{{item.tStoreName}}'>
         <image src='../../images/shops-ico02.png'></image>{{item.tSite}}</view>
@@ -23,8 +23,8 @@
     </view>
 
     <view wx:if="{{item.tType == 2}}">
-      <image src='{{item.tImg}}' class='hd-img' bindtap='activity'></image>
-      <view class='list-title' bindtap='activity'>{{item.tHeadline}}</view>
+      <image src='{{item.tImg}}' class='hd-img' bindtap='activity' id='{{item.aId}}'></image>
+      <view class='list-title' bindtap='activity' id='{{item.aId}}'>{{item.tHeadline}}</view>
       <view class='list-data'>
         <view class='left' wx:if="{{item.tMoney != null}}">
           <text class='cor-red'>¥{{item.tMoney}}</text>起
