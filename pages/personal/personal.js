@@ -4,7 +4,11 @@ Page({
   data: {
     topImg: "",
     userInfo: {},
-    nickName: "点击登录"
+    nickName: "点击登录",
+    numPraise: 0,//点赞总数
+    num: 0,//新点赞数
+    numDiscuss: 0,//评论总数
+    size: 0//新的评论数
   },
   onLoad: function (options) {
     if (app.globalData.userInfo) {
@@ -13,6 +17,8 @@ Page({
         hasUserInfo: true,
       });
       this.userData(app.globalData.userInfo);
+      this.praisenum();
+      this.discussnum();
     } 
   },
   bindGetUserInfo(e) {
@@ -70,6 +76,72 @@ Page({
       }
     })
   },
+
+  // 我的点赞提示
+  praisenum: function(){
+    var that = this;
+    var userid = wx.getStorageSync('userid');
+    var src = app.globalData.src + "/praise/totalPraise";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        'fId': userid
+      },
+      success(res) {
+        const numPraise = that.data.numPraise;
+        const tPraiseTotal = res.data.tPraiseTotal;
+        if (numPraise < tPraiseTotal){
+          that.setData({
+            num: tPraiseTotal - numPraise,
+            numPraise: tPraiseTotal
+          });
+        }else{
+          that.setData({
+            num: 0,
+            numPraise: tPraiseTotal
+          });
+        }
+      }
+    })
+  },
+
+  //我的评论提示
+  discussnum: function(){
+    var that = this;
+    var userid = wx.getStorageSync('userid');
+    var src = app.globalData.src + "/evaluate/totalEvaluate";
+    
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        'fId': userid
+      },
+      success(res) {
+        const numDiscuss = that.data.numDiscuss;
+        const totalEvaluate = res.data.totalEvaluate;
+        if (numDiscuss < totalEvaluate) {
+          that.setData({
+            size: totalEvaluate - numDiscuss,
+            numDiscuss: totalEvaluate
+          });
+        } else {
+          that.setData({
+            size: 0,
+            numDiscuss: totalEvaluate
+          });
+        }
+      }
+    })
+  },
+
   //投诉建议
   news: function () {
     wx.navigateTo({
