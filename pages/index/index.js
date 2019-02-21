@@ -18,6 +18,11 @@ Page({
     this.listInformation();
     this.listSlide();
   },
+
+  onShow: function(){
+    this.listInformation();
+  },
+
   information:function(){
     wx.navigateTo({
       url: 'information/information'
@@ -61,6 +66,7 @@ Page({
         'rows': rows
       },
       success(res) {
+        that.setData({ listInformation: [] });
         var listInformation = that.data.listInformation;
         var data = res.data.tInformation;
         that.data.pages = res.data.pages;

@@ -23,6 +23,10 @@ Page({
     this.listInformation();
   },
 
+  onShow: function(){
+    this.listInformation();
+  },
+
   /**
    * 列表数据查询获取查询条件
    */
@@ -36,6 +40,7 @@ Page({
    * 资讯列表
    */
   listInformation: function (page, rows) {
+    console.log("++++++++++++++++++++")
     var that = this;
     var selInput = this.data.selInput;
     var src = app.globalData.src + "/information/getInformationList";
@@ -56,9 +61,9 @@ Page({
         'rows': rows
       },
       success(res) {
-        if (selInput != '' && page == 1) {
+        // if (selInput != '' && page == 1) {
           that.setData({ listInformation: [] });
-        }
+        // }
         var listInformation = that.data.listInformation;
         var data = res.data.tInformation;
         that.data.pages = res.data.pages;
@@ -146,13 +151,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
 
   },
 
