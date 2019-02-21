@@ -21,6 +21,13 @@ Page({
       this.discussnum();
     } 
   },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.praisenum();
+    this.discussnum();
+  },
   bindGetUserInfo(e) {
     
     app.globalData.userInfo = e.detail.userInfo
