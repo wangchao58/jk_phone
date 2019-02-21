@@ -39,7 +39,7 @@
       <input name="tSite" placeholder="请输入活动地点" value='{{data.tSite}}'/>
     </view>
 
-    <view class="section borderN">
+    <view class="section">
       <view class='section-label'>活动费用</view>
       <input name="tMoney" placeholder="请输入活动费用" value='{{data.tMoney}}'/>
     </view>
