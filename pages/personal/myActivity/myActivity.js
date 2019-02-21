@@ -18,7 +18,12 @@ Page({
     for (var i = 0; i < that.data.tabData.length; i++) {
       var active = "tabData[" + i + "].active";
       if (that.data.tabData[i].id == id) {
-        this.activityList(1, 10, id);
+        if (id == 0){
+          this.activityList(1, 10, '');
+        }else{
+          this.activityList(1, 10, id);
+        }
+        
         that.setData({
           [active]: "tab-active"
         })
@@ -34,6 +39,7 @@ Page({
    * 加载列表
    */
   activityList: function (page, rows, participation) {
+    console.log("participation" + participation)
     var that = this;
     var src = app.globalData.src + "/activity/getActivityList";
     if (page == null) {
