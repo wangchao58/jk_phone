@@ -14,7 +14,9 @@
       <view class='right cor-grey'>{{item.tCreateTime}}</view>
     </view>
     <view class='w100 list-bom'>
-      <view class='list-txt w100 left' id="{{item.tId}}" bindtap='discussDetail'>{{item.tContent}}</view>
+      <view class='list-txt w100 left' id="{{item.tId}}" bindtap='discussDetail'>
+        <text selectable="true">{{item.tContent}}</text>
+      </view>
       <view class='list-img w100 left' id="{{item.tId}}" bindtap='discussDetail'>
         <view wx:for="{{item.listImg}}" wx:for-item="items" wx:key="{{items}}" >
           <image src='{{items}}' id="{{item.tId}}" data-list="{{item.listImg}}" data-src="{{items}}" bindtap='imgck' ></image>
