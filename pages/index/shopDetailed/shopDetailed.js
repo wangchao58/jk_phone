@@ -17,14 +17,18 @@ Page({
   /**
    * 查询数据
    */
-  tStoreData: function (id) {
+  tStoreData: function (id, enshrineViews) {
+    console.log("dddddd" + enshrineViews)
     var that = this;
     var src = app.globalData.src + "/store/selectByPrimaryKey";
     wx.request({
       url: src,
       method: 'POST',
       header: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: { tId: id },
+      data: { 
+        tId: id,
+        enshrineViews: enshrineViews 
+      },
       success(res) {
         that.setData({
           data: res.data
@@ -115,11 +119,8 @@ Page({
           mask: true
         })
       }
-      that.setData({
-        //data: result.data
-      });
       // 回调活动详情查询（“true”为标识收藏调用，不进行浏览量的计算）
-      //that.activityData(tId, "true");
+      that.tStoreData(tId, "true");
     })
   },
 
