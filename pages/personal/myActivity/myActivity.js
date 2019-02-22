@@ -91,4 +91,16 @@ Page({
       url: '../../publish/pubiActivity/pubActivity?tId=' + tId
     })
   },
+
+  /**
+  * 页面上拉触底事件的处理函数
+  */
+  onReachBottom: function () {
+    var that = this;
+    var page = that.data.page + 1;
+    that.data.page = page;
+    if (page <= that.data.pages) {
+      that.activityList(page, that.data.rows, '');
+    }
+  }
 })

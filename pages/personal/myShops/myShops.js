@@ -2,7 +2,10 @@
 var app = getApp();
 Page({
   data: {
-
+    page: 1,
+    rows: 10,
+    pages: 1,
+    storeList: []
   },
   onLoad: function (options) {
 
@@ -61,5 +64,17 @@ Page({
     wx.navigateTo({
       url: '../../index/shopDetailed/shopDetailed?tId=' + tId
     })
+  },
+
+  /**
+  * 页面上拉触底事件的处理函数
+  */
+  onReachBottom: function () {
+    var that = this;
+    var page = that.data.page + 1;
+    that.data.page = page;
+    if (page <= that.data.pages) {
+      that.storeList(page, that.data.rows);
+    }
   }
 })
