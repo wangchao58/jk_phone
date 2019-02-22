@@ -60,7 +60,7 @@
   <button class='bottomIco' bindtap='activityEnshrine' id='{{data.tId}}' wx:if="{{data.enshrineId == null}}">
     <image src='../../images/bottom-ico02.png'></image>收藏</button>
     <button class='bottomIco' bindtap='activityEnshrine' id='{{data.tId}}' wx:if="{{data.enshrineId != null}}">
-    <image src='../../images/shoucang.jpg'></image>收藏</button>
+    <image src='../../images/shoucang.png'></image>收藏</button>
 
   <button class='bottomIco' open-type="share">
     <image src='../../images/bottom-ico03.png'></image>分享</button>
