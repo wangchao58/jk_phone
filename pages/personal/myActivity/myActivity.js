@@ -83,6 +83,52 @@ Page({
   },
 
   /**
+   * 删除
+   */
+  remove: function (e) {
+    var that = this;
+    var index = e.currentTarget.dataset.index;
+    console.log("=======" + index)
+    var tId = e.currentTarget.id;
+    var userId = wx.getStorageSync('userid');
+    var src = app.globalData.src + "/activity/removeActivity";
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除么',
+      success(res) {
+        if (res.confirm) {
+          wx.request({
+            url: src,
+            method: 'POST',
+            header: { 'content-type': 'application/x-www-form-urlencoded' },
+            data: {
+              'pId': userId,
+              'tId': tId,
+            },
+            success(res) {
+              if (res.data >= 1) {
+                var message = that.data.listActivity;
+                message.splice(index, 1);
+                that.setData({
+                  listActivity: message
+                });
+                wx.showToast({
+                  title: '成功',
+                  icon: 'error',
+                  duration: 1000,
+                  mask: true
+                })
+              }
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+
+  /**
    * 跳转活动编辑页面
    */
   editActivity: function (e) {
