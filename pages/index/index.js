@@ -66,13 +66,15 @@ Page({
         'rows': rows
       },
       success(res) {
-        that.setData({ listInformation: [] });
+        // that.setData({ listInformation: [] });
         var listInformation = that.data.listInformation;
         var data = res.data.tInformation;
         that.data.pages = res.data.pages;
 
         for (var i = 0; i < data.length; i++) {
           listInformation.push(data[i]);
+          listInformation[i].tPraise = data[i].tPraise;
+          listInformation[i].tEvaluate = data[i].tEvaluate;
         }
         that.setData({ listInformation: listInformation });
         

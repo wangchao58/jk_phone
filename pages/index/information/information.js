@@ -60,15 +60,17 @@ Page({
         'rows': rows
       },
       success(res) {
-        // if (selInput != '' && page == 1) {
+        if (selInput != '' && page == 1) {
           that.setData({ listInformation: [] });
-        // }
+        }
         var listInformation = that.data.listInformation;
         var data = res.data.tInformation;
         that.data.pages = res.data.pages;
         if (data.length != 0) {
           for (var i = 0; i < data.length; i++) {
             listInformation.push(data[i]);
+            listInformation[i].tPraise = data[i].tPraise;
+            listInformation[i].tEvaluate = data[i].tEvaluate;
           }
           that.setData({ listInformation: listInformation });
         } else {
