@@ -10,9 +10,6 @@
   <view class="list-row" >
     <image src="{{item.tImg}}"  bindtap='myActivityDetailed' data-participation="{{item.participation}}" id='{{item.tId}}'></image>
     <!-- 编辑发布活动 -->
-    <view wx:if="{{item.participation != 1}}">
-      <image bindtap='editActivity' id='{{item.tId}}' src='../../images/bianji.png'></image>
-    </view>
     <view class='list-title' bindtap='myActivityDetailed' data-participation="{{item.participation}}" id='{{item.tId}}'>{{item.tHeadline}}</view>
     <view class='list-data' bindtap='myActivityDetailed' data-participation="{{item.participation}}" id='{{item.tId}}'>
       <view class='left' wx:if="{{item.tMoney != null}}">
@@ -26,8 +23,10 @@
       <view class='right mr20'>{{item.tStartTime}}</view>
     </view>
     <view class='list-bom'>
-      <view class='left cor-green'></view>
-      <view class='right'>目前人数：{{item.tApplyNum}}</view>
+      <view class='left bmrs'>报名人数：{{item.tApplyNum}}</view>
+      <view class='right edit-btn'>删除</view> 
+      <view class='right edit-btn' bindtap='editActivity' id='{{item.tId}}' wx:if="{{item.participation != 1}}">编辑</view>
+     
     </view>
     <view class='pubTime'>{{item.tCreateTime}}</view>
   </view>

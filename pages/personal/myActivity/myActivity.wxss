@@ -10,6 +10,7 @@
 .list-data{line-height:36rpx; color: #666;}
 .list-data .right{ margin-top: 4rpx;}
 .list-data .cor-red,.list-data .cor-green{ font-size: 32rpx; margin-right: 5rpx;}
-.pubTime{position: absolute; top: -40rpx; left:50%; width: 240rpx; margin-left: -120rpx; text-align: center; color: #999;}
-.list-bom{width:650rpx; float: left; margin:20rpx 30rpx 0; padding: 20rpx 0 0;border-top: #F7F7F7 solid 1rpx; line-height: 32rpx; color: #999;}
-.list-bom .left{ font-size: 32rpx;}
+.pubTime{position: absolute; top: -40rpx; left:50%; width: 300rpx; margin-left: -150rpx; text-align: center; color: #999;}
+.list-bom{width:650rpx; float: left; margin:20rpx 30rpx 0; padding: 20rpx 0 0;border-top: #F7F7F7 solid 1rpx; color: #999;}
+.list-bom .left{ font-size: 28rpx;line-height: 34rpx; }
+.edit-btn{ background:#66AFFF;color: #fff; padding: 8rpx 15rpx; border-radius: 5rpx; margin-left: 20rpx; }
