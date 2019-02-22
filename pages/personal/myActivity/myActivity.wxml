@@ -24,7 +24,7 @@
     </view>
     <view class='list-bom'>
       <view class='left bmrs'>报名人数：{{item.tApplyNum}}</view>
-      <view class='right edit-btn' bindtap='remove' data-index='{{index}}' id='{{item.tId}}'>删除</view> 
+      <view class='right edit-btn' bindtap='remove' data-index='{{index}}' id='{{item.tId}}' wx:if="{{item.participation != 1}}">删除</view> 
       <view class='right edit-btn' bindtap='editActivity' id='{{item.tId}}' wx:if="{{item.participation != 1}}">编辑</view>
      
     </view>
