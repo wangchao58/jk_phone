@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "此刻"
+  "navigationBarTitleText": "此刻",
+  "enablePullDownRefresh": true
 }

@@ -40,7 +40,6 @@ Page({
    * 资讯列表
    */
   listInformation: function (page, rows) {
-    console.log("++++++++++++++++++++")
     var that = this;
     var selInput = this.data.selInput;
     var src = app.globalData.src + "/information/getInformationList";
@@ -196,5 +195,23 @@ Page({
     if (page <= that.data.pages) {
       that.listInformation(page, that.data.rows);
     }
+  },
+
+  /**
+   * 下拉刷新
+   */
+  onPullDownRefresh: function () {
+    // wx.showNavigationBarLoading() //在标题栏中显示加载
+    var that = this;
+    var page = that.data.page;
+    if (page > 1) {
+      page = that.data.page - 1;
+      that.data.page = page;
+    } else {
+      page = that.data.page;
+    }
+    that.listInformation(page, that.data.rows);
+    wx.hideNavigationBarLoading() //完成停止加载
+    wx.stopPullDownRefresh() //停止下拉刷新
   }
 })
