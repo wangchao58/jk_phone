@@ -15,7 +15,7 @@ Page({
     listInformation: []
   },
   onLoad: function (options) {
-    this.listInformation();
+    // this.listInformation();
     this.listSlide();
   },
 
