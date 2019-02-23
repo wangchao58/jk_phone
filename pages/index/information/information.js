@@ -83,6 +83,48 @@ Page({
   },
 
   /**
+   * 下拉刷新数据
+   */
+  listInforRefresh: function (page, rows) {
+    var that = this;
+    var src = app.globalData.src + "/information/getInformationList";
+    if (page == null) {
+      page = that.data.page;
+      rows = that.data.rows;
+    }
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        'page': page,
+        'rows': rows
+      },
+      success(res) {
+        that.setData({ listInformation: [] });
+        var listInformation = that.data.listInformation;
+        var data = res.data.tInformation;
+        that.data.pages = res.data.pages;
+        if (data.length != 0) {
+          for (var i = 0; i < data.length; i++) {
+            listInformation.push(data[i]);
+            listInformation[i].tPraise = data[i].tPraise;
+            listInformation[i].tEvaluate = data[i].tEvaluate;
+          }
+          that.setData({ listInformation: listInformation });
+        } else {
+          that.setData({ listInformation: [] });
+        }
+        // 隐藏加载框
+        wx.hideLoading();
+      }
+    })
+  },
+
+  /**
      * 资讯评论
      */
   discussDetail: function (e) {
@@ -205,15 +247,10 @@ Page({
   onPullDownRefresh: function () {
     // wx.showNavigationBarLoading() //在标题栏中显示加载
     var that = this;
-    var page = that.data.page;
-    if (page > 1) {
-      page = that.data.page - 1;
-      that.data.page = page;
-    } else {
-      page = that.data.page;
-    }
-    that.listInformation(page, that.data.rows);
-    wx.hideNavigationBarLoading() //完成停止加载
-    wx.stopPullDownRefresh() //停止下拉刷新
+    var page = 1;
+    that.data.page = page;
+    that.listInforRefresh(page, that.data.rows);
+    wx.hideNavigationBarLoading(); //完成停止加载
+    wx.stopPullDownRefresh(); //停止下拉刷新
   }
 })
