@@ -12,6 +12,6 @@ swiper{ height: 300rpx;}
 .list-data{line-height:32rpx; height:64rpx; overflow:hidden; color: #999; float: left; width: 400rpx; margin-top:5rpx;}
 .list-data .right{ margin-top: 4rpx;}
 .hd-img{width: 160rpx; height: 160rpx; float: left;border-radius: 10rpx; margin-right:30rpx;}
-.photoIco{width: 44rpx; height: 44rpx; position: absolute; right: 0; top:20rpx;}
+.photoIco{width: 44rpx; height: 44rpx; position: absolute; right: 0; top:130rpx;}
 .list-address{ float:left; position: relative; font-size: 28rpx; color: #666; line-height: 32rpx; height: 32rpx;margin-top: 15rpx;overflow:hidden; text-overflow: ellipsis; white-space: nowrap;width: 480rpx}
 .list-address image{ width: 32rpx; height: 32rpx; float: left; margin-right: 10rpx;}
