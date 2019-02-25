@@ -5,13 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    age: "",
-    phone: "",
-    sex: "",
-    style: "",
-    occupation: "",
-    distance: "",
-    arrow: "../../../assets/img/right-btn.png",
     topImg: "../../../assets/img/topImg.png",
     topName: "点击登录",
     topSm: "亲，您还没有登录~",
