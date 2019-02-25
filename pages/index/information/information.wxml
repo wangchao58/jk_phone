@@ -36,10 +36,30 @@
           <image src="../../images/index-ico06.png"></image>
           {{item.tEvaluate}}
         </view>
-        <view class='right mr30' bindtap='informationPraise' data-index='{{index}}' id='{{item.tId}}'>
+
+        <!-- <view class='right mr30' bindtap='informationPraise' data-index='{{index}}' id='{{item.tId}}'>
           <image src="../../images/index-ico05.png"></image>
           {{item.tPraise}}
+        </view> -->
+
+        <view wx:if="{{item.praiseImage != null}}">
+         <view class='right mr30' bindtap='informationPraise' data-index='{{index}}' id='{{item.tId}}'>
+          <image src="{{item.praiseImage}}"></image>{{item.tPraise}}
+          </view>
         </view>
+
+        <view wx:if="{{item.praiseImage == null}}">
+          <view class='right mr30' bindtap='informationPraise' data-index='{{index}}' id='{{item.tId}}' wx:if="{{item.praiseId != null}}">
+            <image src="../../images/index-ico05-hover.png"></image>{{item.tPraise}}
+          </view>
+          <view class='right mr30' bindtap='informationPraise' data-index='{{index}}' id='{{item.tId}}' wx:if="{{item.praiseId == null}}">
+            <image src="../../images/index-ico05.png"></image>{{item.tPraise}}
+          </view>
+        </view>
+
+
+
+
       </view>
     </view>
   </view>

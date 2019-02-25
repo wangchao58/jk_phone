@@ -20,7 +20,7 @@ Page({
   },
 
   onShow: function(){
-    this.listInformation();
+    this.listInforRefresh();
   },
 
   information:function(){
@@ -48,6 +48,7 @@ Page({
    */
   listInformation: function (page, rows) {
     var that = this;
+    var userId = wx.getStorageSync('userid');
     var src = app.globalData.src + "/information/getInformationList";
     if (page == null) {
       page = that.data.page;
@@ -63,7 +64,8 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: {
         'page': page,
-        'rows': rows
+        'rows': rows,
+        'pId': userId
       },
       success(res) {
         // that.setData({ listInformation: [] });
@@ -75,6 +77,7 @@ Page({
           listInformation.push(data[i]);
           listInformation[i].tPraise = data[i].tPraise;
           listInformation[i].tEvaluate = data[i].tEvaluate;
+          listInformation[i].praiseId = data[i].praiseId;
         }
         that.setData({ listInformation: listInformation });
         
@@ -89,6 +92,7 @@ Page({
    */
   listInforRefresh: function (page, rows) {
     var that = this;
+    var userId = wx.getStorageSync('userid');
     var src = app.globalData.src + "/information/getInformationList";
     if (page == null) {
       page = that.data.page;
@@ -103,7 +107,8 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: {
         'page': page,
-        'rows': rows
+        'rows': rows,
+        'pId': userId
       },
       success(res) {
         that.setData({ listInformation: [] });
@@ -115,6 +120,7 @@ Page({
             listInformation.push(data[i]);
             listInformation[i].tPraise = data[i].tPraise;
             listInformation[i].tEvaluate = data[i].tEvaluate;
+            listInformation[i].praiseId = data[i].praiseId;
           }
           that.setData({ listInformation: listInformation });
         } else {
@@ -187,6 +193,11 @@ Page({
             wx.showToast({
               title: collectStatus ? '点赞成功' : '取消成功',
             })
+            if (collectStatus) {
+              message[i].praiseImage = "../images/index-ico05-hover.png";
+            } else {
+              message[i].praiseImage = "../images/index-ico05.png";
+            }
             message[i].tPraise = result.data
           }
         }
