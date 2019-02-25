@@ -1,0 +1,17 @@
+/* pages/personal/set/set.wxss */
+.row{ padding: 0;}
+.person-appraise-row{margin: 0 5%; float: left;  width: 90%;padding:30rpx 0;font-size:28rpx;position: relative;}
+.person-top{width: 90%; position: relative; margin-top:72rpx; height: 126rpx; padding-bottom: 72rpx;}
+.person-top-name{font-size:40rpx; font-weight: bold;margin-top: 10rpx;letter-spacing:3rpx;}
+.person-top-qm{ color: #999; margin-top: 12rpx;}
+.person-top-img{ width: 126rpx; height: 126rpx; position: absolute;top:0; right: 0; border-radius: 50%;}
+.person-appraise{
+  width: 100%;
+}
+
+.mr40{margin-right: 40rpx;}
+.person-appraise:active{
+  background: #fafafa;
+  color: #999;
+}
+.fgdw{overflow: hidden;text-overflow: ellipsis; white-space: nowrap;width: 230rpx;text-align: right;}

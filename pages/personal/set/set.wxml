@@ -1,0 +1,43 @@
+<!--pages/personal/set/set.wxml-->
+<view class="container">
+  <view class="person-top">
+       <view class="person-top-name" style='{{topNameColor}}'>{{topName}}</view>
+       <view class="person-top-qm">{{topSm}}</view>
+       <image class='person-top-img' src='{{topImg}}'></image>
+  </view>
+</view>
+<view class="container row">
+     <view class="person-appraise" bindtap='age'>
+      <view class="person-appraise-row borderBom">
+          <view class="left">年龄</view>
+          <view class="right mr40 fontSize24">{{age}}</view>
+          <image class='right-btn'src='{{arrow}}'></image>
+      </view>
+     </view>
+     <view class="person-appraise" bindtap='phone'>
+       <view class="person-appraise-row">
+          <view class="left">更换手机号</view>
+          <view class="right mr40 fontSize24">{{phone}}</view>
+          <image class='right-btn' src='{{arrow}}'></image>
+       </view>
+      </view>
+</view>
+<view class="container row" bindtap='sex'>
+     <view class="person-appraise">
+        <view class="person-appraise-row borderBom">
+          <view class="left">性别</view>
+          <view class="right mr40 fontSize24">{{sex}}</view>
+          <image class='right-btn' src='{{arrow}}'></image>
+        </view>
+      </view>
+     <view class="person-appraise" bindtap='occupation'>
+        <view class="person-appraise-row  borderBom">
+            <view class="left">职业属性</view>
+            <view class="right mr40 fontSize24">{{occupation}}</view>
+            <image class='right-btn' src='{{arrow}}'></image>
+        </view>
+     </view>
+</view>
+<view class="container footer">
+  <view class="mt130 cor-grey center">—— · 匠心服务 • 品质享受 · ——</view>
+</view>
