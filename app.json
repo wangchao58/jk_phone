@@ -36,7 +36,10 @@
     "pages/personal/praise/praise",
     "pages/personal/myDiscuss/myDiscuss",
     "pages/index/status/status",
-    "pages/imgUrl/imgUrl"
+    "pages/imgUrl/imgUrl",
+    "pages/personal/about/about",
+    "pages/personal/set/set",
+    "pages/personal/service/service"
   ],
   "window": {
     "backgroundTextStyle": "light",
