@@ -53,7 +53,7 @@
           </view>
           <view class='join-data'>{{item.t_introduction}}</view>
         </view>
-        <image bindtap='callPhone' data-phone='{{item.t_phone}}' class='photoIco' src='{{photoIco}}'></image>
+        <image style='float:right' bindtap='callPhone' data-phone='{{item.t_phone}}' class='photoIco' src='{{photoIco}}'></image>
       </view>
     </view>
   </view>
