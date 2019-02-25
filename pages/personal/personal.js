@@ -200,5 +200,26 @@ Page({
     wx.navigateTo({
       url: 'myDiscuss/myDiscuss'
     })
+  },
+
+  // 联系客服
+  callPhone: function (e) {
+    wx.navigateTo({
+      url: 'service/service'
+    })
+  },
+
+  // 关于我们
+  aboutus: function(){
+    wx.navigateTo({
+      url: 'about/about'
+    })
+  },
+
+  // 个人设置
+  Setting: function () {
+    wx.navigateTo({
+      url: 'set/set'
+    })
   }
 })
