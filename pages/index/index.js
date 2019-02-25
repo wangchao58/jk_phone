@@ -15,12 +15,12 @@ Page({
     listInformation: []
   },
   onLoad: function (options) {
-    // this.listInformation();
+    this.listInformation();
     this.listSlide();
   },
 
   onShow: function(){
-    this.listInforRefresh();
+    this.listInformation();
   },
 
   information:function(){
@@ -66,12 +66,14 @@ Page({
         'rows': rows
       },
       success(res) {
+        console.log("dddd")
         // that.setData({ listInformation: [] });
         var listInformation = that.data.listInformation;
         var data = res.data.tInformation;
         that.data.pages = res.data.pages;
 
         for (var i = 0; i < data.length; i++) {
+          console.log("index" + data[9].tEvaluate + "评论" + data[9].tContent);
           listInformation.push(data[i]);
           listInformation[i].tPraise = data[i].tPraise;
           listInformation[i].tEvaluate = data[i].tEvaluate;
