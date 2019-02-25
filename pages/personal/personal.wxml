@@ -51,8 +51,20 @@
          <view class='section-label'><image src='../images/personal-ico04.png'></image>我的行程</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view> -->
-    <view class="section borderN" bindtap='propose'>
+    <view class="section" bindtap='propose'>
          <view class='section-label'><image src='../images/personal-ico07.png'></image>投诉建议</view>
+         <image src='../images/right-btn.png' class="right-btn"></image>
+    </view>
+    <view class="section" bindtap='propose'>
+         <view class='section-label'><image src='../images/kefu.png'></image>联系客服</view>
+         <image src='../images/right-btn.png' class="right-btn"></image>
+    </view>
+    <view class="section" bindtap='propose'>
+         <view class='section-label'><image src='../images/shezhi.png'></image>设置</view>
+         <image src='../images/right-btn.png' class="right-btn"></image>
+    </view>
+    <view class="section borderN" bindtap='propose'>
+         <view class='section-label'><image src='../images/women.png'></image>关于我们</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view>
 </view>
