@@ -2,6 +2,7 @@
 var app = getApp();
 // 引用公共js
 var fileUpload = require("../../../js/fileUpload.js");
+const innerAudioContext = wx.createInnerAudioContext();
 Page({
   data: {
     imgShow: true,
@@ -19,6 +20,11 @@ Page({
     }
     
   },
+
+  onShow: function () {
+    innerAudioContext.src = "http://i.bjjkkj.com/sound/sound.mp3"
+  },
+
   /**
    * 商铺详情信息
    */
@@ -76,6 +82,8 @@ Page({
           latitude: latitude
         },
         success(res) {
+          // 声音播放
+          innerAudioContext.play();
           if (res.data > 0) {
             wx.showToast({
               title: "发布成功"

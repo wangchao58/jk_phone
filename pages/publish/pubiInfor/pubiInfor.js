@@ -3,6 +3,7 @@ var app = getApp();
 var fileUpload = require("../../../js/fileUpload.js");
 var QQMapWX = require('../../../pages/images/qqmap-wx-jssdk.min.js');
 var qqmapsdk; 
+const innerAudioContext = wx.createInnerAudioContext();
 Page({
   data: {
     photos: [],
@@ -17,6 +18,10 @@ Page({
       key: app.globalData.mapKey
     });
     this.thisCity();
+  },
+
+  onShow:function(){
+    innerAudioContext.src = "http://i.bjjkkj.com/sound/sound.mp3"
   },
 
   // 获取索要发布的资讯信息
@@ -192,6 +197,8 @@ Page({
         },
         success(res) {
           if (res.data > 0) {
+            // 声音播放
+            innerAudioContext.play();
             wx.showToast({
               title: "发布成功"
             })
