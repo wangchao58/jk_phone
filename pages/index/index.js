@@ -223,9 +223,8 @@ Page({
    */
   urlDetail: function (e) {
     var tId = e.currentTarget.id;
-    console.log(tId);
     wx.navigateTo({
-      url: '/imgUrl/imgUrl?imgUrl=' + tId
+      url: '../imgUrl/imgUrl?imgUrl=' + tId
     })
   },
 

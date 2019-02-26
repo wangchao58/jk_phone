@@ -13,8 +13,6 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    console.log(options.imgUrl)
-   // this.data.imgUrl = options.imgUrl;  
     that.setData({
       imgUrl: options.imgUrl
     })
