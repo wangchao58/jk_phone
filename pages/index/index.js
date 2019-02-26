@@ -223,9 +223,9 @@ Page({
    */
   urlDetail: function (e) {
     var tId = e.currentTarget.id;
-    wx.navigateTo({
-      url: '../imgUrl/imgUrl?imgUrl=' + tId
-    })
+    // wx.navigateTo({
+    //   url: '../imgUrl/imgUrl?imgUrl=' + tId
+    // })
   },
 
   /**
