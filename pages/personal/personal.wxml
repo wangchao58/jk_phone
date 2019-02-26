@@ -72,8 +72,8 @@
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view> -->
 
-    <view class="section borderN" bindtap='aboutus'>
+    <!-- <view class="section borderN" bindtap='aboutus'>
          <view class='section-label'><image src='../images/women.png'></image>关于我们</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
-    </view>
+    </view> -->
 </view>
