@@ -61,16 +61,16 @@
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view> -->
     <view class="section">
-         <contact-button class='cBtn' type="default-dark" size="20" session-from="weapp">
          <view class='section-label'><image src='../images/kefu.png'></image>联系客服</view>
+         <contact-button class='cBtn' type="default-dark" size="20" session-from="weapp">
          </contact-button>
     </view>
     
 
-    <view class="section" bindtap='Setting'>
+    <!-- <view class="section" bindtap='Setting'>
          <view class='section-label'><image src='../images/shezhi.png'></image>个人设置</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
-    </view>
+    </view> -->
 
     <view class="section borderN" bindtap='aboutus'>
          <view class='section-label'><image src='../images/women.png'></image>关于我们</view>

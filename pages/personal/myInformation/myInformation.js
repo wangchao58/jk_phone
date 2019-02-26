@@ -34,7 +34,7 @@ Page({
     var that = this;
     var selInput = this.data.selInput;
     var userId = wx.getStorageSync('userid');
-    var src = app.globalData.src + "/information/getInformationList";
+    var src = app.globalData.src + "/information/getInformationListByUser";
     if (page == null) {
       page = that.data.page;
       rows = that.data.rows;
