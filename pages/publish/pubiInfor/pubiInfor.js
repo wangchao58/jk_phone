@@ -21,7 +21,8 @@ Page({
   },
 
   onShow:function(){
-    innerAudioContext.src = "http://i.bjjkkj.com/sound/sound.mp3"
+    innerAudioContext.src = "http://i.bjjkkj.com/sound/sound.mp3";
+    innerAudioContext.obeyMuteSwitch = false
   },
 
   // 获取索要发布的资讯信息
