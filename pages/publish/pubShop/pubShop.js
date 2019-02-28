@@ -11,7 +11,8 @@ Page({
     enddate: "结束日期",
     endtime: "结束时间",
     tPicture: '',
-    region: ['省', '市', '区']
+    region: ['省', '市', '区'],
+    max: 500 //最多字数
   },
   onLoad: function (options) {
     
@@ -40,10 +41,11 @@ Page({
         tId: id,
       },
       success(res) {
-        console.log(res.data); 
+        var len = parseInt(res.data.tExplain.length);
         that.setData({
           data: res.data,
-          tPicture: res.data.tPicture
+          tPicture: res.data.tPicture,
+          currentWordNumber: len
         });
       }
     })
@@ -203,5 +205,23 @@ Page({
     this.setData({
       region: e.detail.value
     })
-  }
+  },
+
+  // 获取索要发布的资讯信息
+  inputs: function (e) {
+    // 获取输入框的内容
+    var value = e.detail.value;
+    // 获取输入框内容的长度
+    var len = parseInt(value.length);
+
+    //最多字数限制
+    if (len > this.data.max) {
+      return;
+    }
+    // 当输入框内容的长度大于最大长度限制（max)时，终止setData()的执行
+    this.setData({
+      currentWordNumber: len, //当前字数 
+      informationInput: e.detail.value
+    })
+  },
 })

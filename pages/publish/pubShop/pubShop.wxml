@@ -27,14 +27,20 @@
       <view class='section-label'>联系电话</view>
       <input placeholder="请输入电话号码" name="tPhone" value='{{data.tPhone}}' />
     </view>
-    <view class="section">
+    <!-- <view class="section">
       <view class='section-label'>微信号</view>
       <input placeholder="请输入微信号码" name="tWechat" value='{{data.tWechat}}' />
-    </view>
+    </view> -->
+    
     <view class="section borderN">
       <view class='section-label'>店铺介绍</view>
-      <textarea placeholder="请输入店铺介绍" name="tExplain" value='{{data.tExplain}}' />
+      <view class="w100 mt30 fontSize28">
+        <textarea class="areas" selectable='true' name="tExplain"  placeholder="输入店铺介绍" value='{{data.tExplain}}' maxlength="{{max}}" bindinput="inputs">
+          <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+        </textarea>
+      </view>
     </view>
+
     <view class="clear"></view>
   </view>
   <view class='w100' style="height:100rpx;"></view>
