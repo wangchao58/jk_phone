@@ -19,7 +19,9 @@
 <view class="container mt20">
   <view class='hd-cont'>
     <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>商铺简介</view>
-    <view class='w100 cor-grey fontSize28 hd-txt'>{{data.tExplain}}</view>
+    <view class='w100 cor-grey fontSize28 hd-txt'>
+      <text selectable="true">{{data.tExplain}}</text>
+    </view>
   </view>
 </view>
 
