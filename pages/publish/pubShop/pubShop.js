@@ -2,6 +2,7 @@
 var app = getApp();
 // 引用公共js
 var fileUpload = require("../../../js/fileUpload.js");
+var isblank = require("../../../js/blank.js");
 const innerAudioContext = wx.createInnerAudioContext();
 Page({
   data: {
@@ -60,7 +61,7 @@ Page({
       console.log(that.data.region[j]) ;
     }
     var tStoreName = e.detail.value.tStoreName;
-    if (null != tStoreName && app.globalData.userInfo) {
+    if (!isblank.blank(tStoreName) && null != tStoreName && app.globalData.userInfo) {
       var userId = wx.getStorageSync('userid');
       var photosUrl = that.data.tPicture;
       var longitude = wx.getStorageSync('longitude');
