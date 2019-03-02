@@ -81,7 +81,6 @@ Page({
     var that = this;
     var tContent = that.data.tContent;
     var tId = this.data.tId;
-    console.log("tContent" + tContent + "=======tId" + tId)
     if (undefined != tContent) {
       var userId = wx.getStorageSync('userid');
       var src = app.globalData.src + "/evaluate/addEvaluate";
