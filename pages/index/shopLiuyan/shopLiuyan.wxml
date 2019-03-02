@@ -1,0 +1,10 @@
+<!--pages/index/shopLiuyan/shopLiuyan.wxml-->
+<view class="container"> 
+    <view class="section mt30"> 
+         <view class='section-label' name="tIntroduction">投诉建议</view> 
+         <textarea  placeholder="请输入您的建议或投诉内容" bindinput="discussInput"/> 
+    </view> 
+    <view class="section"> 
+         <view class='section-submit' bindtap='signUp'>提交</view> 
+    </view> 
+</view> 

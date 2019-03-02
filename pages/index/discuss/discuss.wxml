@@ -50,6 +50,8 @@
         <view class='right'>{{item.createTime}}</view>
       </view>
       <view class='discuss-txt'>
+        <view class='left huifu' hidden='false'>@长歌：</view>
+        
         <view class='left'>{{item.tContent}}</view>
       </view>
     </view>

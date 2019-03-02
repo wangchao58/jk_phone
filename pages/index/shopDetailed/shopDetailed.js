@@ -99,7 +99,12 @@ Page({
       tContent: e.detail.value
     })
   },
-
+  //跳转留言
+  shopLiuyan:function(){
+    wx.navigateTo({
+      url: '../shopLiuyan/shopLiuyan'
+    })
+  },
 
   /**
    * 店铺收藏

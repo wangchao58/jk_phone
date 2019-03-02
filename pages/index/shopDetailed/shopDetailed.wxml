@@ -59,6 +59,9 @@
   <button class='bottomIco' bindtap='toIndex'>
     <image src='../../images/bottom-ico01.png'></image>首页</button>
 
+<button class='bottomIco' bindtap='shopLiuyan'>
+    <image src='../../images/bottom-ico04.png'></image>留言</button>
+
   <button class='bottomIco' bindtap='activityEnshrine' id='{{data.tId}}' wx:if="{{data.enshrineId == null}}">
     <image src='../../images/bottom-ico02.png'></image>收藏</button>
     <button class='bottomIco' bindtap='activityEnshrine' id='{{data.tId}}' wx:if="{{data.enshrineId != null}}">

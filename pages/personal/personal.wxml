@@ -60,11 +60,6 @@
          <view class='section-label'><image src='../images/kefu.png'></image>联系客服</view>
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view> -->
-    <view class="section">
-         <view class='section-label'><image src='../images/kefu.png'></image>联系客服</view>
-         <contact-button class='cBtn' type="default-dark" size="20" session-from="weapp">
-         </contact-button>
-    </view>
     
 
     <!-- <view class="section" bindtap='Setting'>
@@ -77,3 +72,5 @@
          <image src='../images/right-btn.png' class="right-btn"></image>
     </view> -->
 </view>
+
+<button open-type="contact" class='kefu'>联系客服</button>

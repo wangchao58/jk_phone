@@ -8,6 +8,7 @@
     "pages/index/discuss/discuss",
     "pages/index/shops/shops",
     "pages/index/shopDetailed/shopDetailed",
+    "pages/index/shopLiuyan/shopLiuyan",
     "pages/index/carpool/carpool",
     "pages/index/carpoolGroup/carpoolGroup",
     "pages/index/carpoolGroupDetailed/carpoolGroupDetailed",

@@ -25,15 +25,15 @@
     <view wx:if="{{item.tType == 2}}">
       <image src='{{item.tImg}}' class='hd-img' bindtap='activity' id='{{item.aId}}'></image>
       <view class='list-title' bindtap='activity' id='{{item.aId}}'>{{item.tHeadline}}</view>
-      <view class='list-data'>
-        <view class='left' wx:if="{{item.tMoney != null}}">
+      <view class='list-data'><view class='left' wx:if="{{item.tMoney != null}}">
           <text class='cor-red'>¥{{item.tMoney}}</text>起
         </view>
         <view class='left' wx:if="{{item.tMoney == null}}">
           <text class='cor-green'>免费</text>
-        </view>
+         </view></view>
+      <view class='list-data'>
         <view class='right'>{{item.asite}}</view>
-        <view class='right mr20'>{{item.tStartTime}}</view>
+        <view class='left'>{{item.tStartTime}}</view>
       </view>
       <view bindtap='remove' data-index='{{index}}' id='{{item.aId}}' data-g='2'>
         <image id='{{item.tType}}' class='collect' src='../../images/remove.png'></image>
