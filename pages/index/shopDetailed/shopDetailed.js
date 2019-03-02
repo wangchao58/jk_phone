@@ -99,10 +99,13 @@ Page({
       tContent: e.detail.value
     })
   },
+
   //跳转留言
-  shopLiuyan:function(){
+  shopLiuyan:function(e){
+    var tId = e.currentTarget.id;
+    console.log("tId" + tId)
     wx.navigateTo({
-      url: '../shopLiuyan/shopLiuyan'
+      url: '../shopLiuyan/shopLiuyan?tId=' + tId
     })
   },
 

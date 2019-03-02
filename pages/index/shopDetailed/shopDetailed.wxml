@@ -28,14 +28,14 @@
 <view class="container mt20">
   <view class='hd-cont'>
     <view class='w100 borderBom cor-bock center fontSize36 hd-cont-bt'>商铺留言</view>
-    <view class='w100 borderBom hd-data-nr'>
+    <!-- <view class='w100 borderBom hd-data-nr'>
       <view class='hd-data-txt'>
         <textarea placeholder="请输入您的留言" bindinput="discussInput"/>
       </view>
       <view class='hd-data-bt w100'>
         <view class='hd-data-btn' bindtap='discussCommit' id="{{data.tId}}">提交留言</view>
       </view>
-    </view>
+    </view> -->
   </view>
   <view class='discuss-cont'>
     <view class='discuss-row' wx:for="{{shopEvaluateList}}" wx:key="{{item}}">
@@ -59,7 +59,7 @@
   <button class='bottomIco' bindtap='toIndex'>
     <image src='../../images/bottom-ico01.png'></image>首页</button>
 
-<button class='bottomIco' bindtap='shopLiuyan'>
+<button class='bottomIco' bindtap='shopLiuyan' id="{{data.tId}}">
     <image src='../../images/bottom-ico04.png'></image>留言</button>
 
   <button class='bottomIco' bindtap='activityEnshrine' id='{{data.tId}}' wx:if="{{data.enshrineId == null}}">

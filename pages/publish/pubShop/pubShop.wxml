@@ -25,8 +25,9 @@
     </view>
     <view class="section">
       <view class='section-label'>联系电话</view>
-      <input placeholder="请输入电话号码" name="tPhone" value='{{data.tPhone}}' disabled='true' />
-      <view class='getPhone' bindtap=''>获取手机号</view>
+      <input placeholder="请输入电话号码" name="tPhone" value='{{data.tPhone}}'/>
+      <!-- <input placeholder="请输入电话号码" name="tPhone" value='{{data.tPhone}}' disabled='true' /> -->
+      <!-- <view class='getPhone' bindtap=''>获取手机号</view> -->
     </view>
     <!-- <view class="section">
       <view class='section-label'>微信号</view>

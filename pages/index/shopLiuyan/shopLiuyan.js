@@ -1,18 +1,21 @@
 // pages/index/shopLiuyan/shopLiuyan.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tId: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      tId: options.tId
+    })
   },
 
   /**
@@ -62,5 +65,49 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  //获取店铺留言内容
+  discussInput: function (e) {
+    this.setData({
+      tContent: e.detail.value
+    })
+  },
+
+  /**
+  * 商铺留言提交
+  */
+  discussCommit: function () {
+    var that = this;
+    var tContent = that.data.tContent;
+    var tId = this.data.tId;
+    console.log("tContent" + tContent + "=======tId" + tId)
+    if (undefined != tContent) {
+      var userId = wx.getStorageSync('userid');
+      var src = app.globalData.src + "/evaluate/addEvaluate";
+      wx.request({
+        url: src,
+        method: 'POST',
+        header: { 'content-type': 'application/x-www-form-urlencoded' },
+        data: {
+          tOtherId: tId,
+          tContent: tContent,
+          pId: userId,
+          tType: "1"
+        },
+        success(res) {
+          wx.showToast({
+            title: "留言成功"
+          })
+          wx.navigateTo({
+            url: '../shopDetailed/shopDetailed?tId=' + tId
+          })
+        }
+      })
+    } else {
+      wx.showToast({
+        title: "留言内容为空"
+      })
+    }
+  },
 })
