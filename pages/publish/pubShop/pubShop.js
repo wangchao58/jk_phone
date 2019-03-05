@@ -3,6 +3,8 @@ var app = getApp();
 // 引用公共js
 var fileUpload = require("../../../js/fileUpload.js");
 var isblank = require("../../../js/blank.js");
+// var QQMapWX = require("../../../js/qqmap-wx-jssdk.min.js");
+var coordinate = require("../../../js/coordinate.js");
 const innerAudioContext = wx.createInnerAudioContext();
 Page({
   data: {
@@ -24,7 +26,7 @@ Page({
   },
 
   onShow: function () {
-    innerAudioContext.src = "http://i.bjjkkj.com/sound/sound.mp3"
+    innerAudioContext.src = "http://i.bjjkkj.com/sound/sound.mp3";
   },
 
   /**
@@ -56,58 +58,58 @@ Page({
    */
   shopForm: function (e) {
     var that = this;
-    console.log(that.data.region);
-    for (var j = 0; j < 3;j++) {
-      console.log(that.data.region[j]) ;
-    }
-    var tStoreName = e.detail.value.tStoreName;
-    if (!isblank.blank(tStoreName) && null != tStoreName && app.globalData.userInfo) {
-      var userId = wx.getStorageSync('userid');
-      var photosUrl = that.data.tPicture;
-      var longitude = wx.getStorageSync('longitude');
-      var latitude = wx.getStorageSync('latitude');
-      var src = app.globalData.src + "/store/insertSelective";
-      wx.request({
-        url: src,
-        method: 'POST',
-        header: { 'content-type': 'application/x-www-form-urlencoded' },
-        data: {
-          region: that.data.region,
-          tPicture: photosUrl,
-          tId: e.detail.value.tId,
-          tIssuer: userId,
-          tStoreName: e.detail.value.tStoreName,
-          tSite: e.detail.value.tSite,
-          tPhone: e.detail.value.tPhone,
-          tWechat: e.detail.value.tWechat,
-          tExplain: e.detail.value.tExplain,
-          longitude: longitude,
-          latitude: latitude
-        },
-        success(res) {
-          // 声音播放
-          innerAudioContext.play();
-          if (res.data > 0) {
-            wx.showToast({
-              title: "发布成功"
-            })
-            wx.redirectTo({
-              url: '../../index/shops/shops'
-            })
-          } else {
-            wx.showToast({
-              title: "发布失败"
-            })
+    // 根据地址信息获取坐标
+    coordinate.coordinate(that.data.region + "," + e.detail.value.tSite, function (result) {
+      for (var j = 0; j < 3;j++) {
+        console.log(that.data.region[j]) ;
+      }
+      var tStoreName = e.detail.value.tStoreName;
+      if (!isblank.blank(tStoreName) && null != tStoreName && app.globalData.userInfo) {
+        var userId = wx.getStorageSync('userid');
+        var photosUrl = that.data.tPicture;
+        var src = app.globalData.src + "/store/insertSelective";
+        wx.request({
+          url: src,
+          method: 'POST',
+          header: { 'content-type': 'application/x-www-form-urlencoded' },
+          data: {
+            region: that.data.region,
+            tPicture: photosUrl,
+            tId: e.detail.value.tId,
+            tIssuer: userId,
+            tStoreName: e.detail.value.tStoreName,
+            tSite: e.detail.value.tSite,
+            tPhone: e.detail.value.tPhone,
+            tWechat: e.detail.value.tWechat,
+            tExplain: e.detail.value.tExplain,
+            longitude: result.result.location.lng,
+            latitude: result.result.location.lat
+          },
+          success(res) {
+            // 声音播放
+            innerAudioContext.play();
+            if (res.data > 0) {
+              wx.showToast({
+                title: "发布成功"
+              })
+              wx.redirectTo({
+                url: '../../index/shops/shops'
+              })
+            } else {
+              wx.showToast({
+                title: "发布失败"
+              })
+            }
           }
-        }
-      })
-    } else {
-      wx.showModal({
-        title: '友情提示',
-        content: '内容不能为空或未登录',
+        })
+      } else {
+        wx.showModal({
+          title: '友情提示',
+          content: '内容不能为空或未登录',
 
-      })
-    }
+        })
+      }
+    })
   },
 
   /**

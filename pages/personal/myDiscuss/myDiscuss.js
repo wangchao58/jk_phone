@@ -48,7 +48,6 @@ Page({
         var evaluateList = that.data.evaluateList;
         var data = res.data.listEvaluate;
         that.data.pages = res.data.pages;
-
         if (data.length != 0) {
           for (var i = 0; i < data.length; i++) {
             evaluateList.push(data[i]);
