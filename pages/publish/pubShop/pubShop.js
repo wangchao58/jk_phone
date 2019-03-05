@@ -15,7 +15,8 @@ Page({
     endtime: "结束时间",
     tPicture: '',
     region: ['省', '市', '区'],
-    max: 500 //最多字数
+    max: 500, //最多字数
+    wxPhone: ''
   },
   onLoad: function (options) {
     
@@ -227,4 +228,49 @@ Page({
       informationInput: e.detail.value
     })
   },
+
+  /**
+   * 获取手机号
+   */
+  getPhoneNumber: function (e) {
+    var that = this;
+    wx.checkSession({
+      success: function () {
+        console.log("errMsg:" + e.detail.errMsg + ",iv:" + e.detail.iv + ",encryptedData:" + e.detail.encryptedData)
+        var ency = e.detail.encryptedData;
+        var iv = e.detail.iv;
+        var sessionk = wx.getStorageSync('session_key');
+        if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
+          that.setData({
+            modalstatus: true
+          });
+        } else {//同意授权
+          wx.request({
+            method: "GET",
+            url: app.globalData.src + "/WxPhone/deciphering",
+            data: {
+              encrypdata: ency,
+              ivdata: iv,
+              sessionkey: sessionk
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success: (res) => {
+              console.log("解密成功~~~~~~~将解密的号码保存到本地~~~~~~~~" + res.data.phoneNumber);
+              that.setData({
+                wxPhone: res.data.phoneNumber
+              });
+            }, fail: function (res) {
+              console.log("解密失败~~~~~~~~~~~~~" + res.data.phoneNumber);
+            }
+          });
+        }
+      },
+      fail: function () {
+        console.log("session_key 已经失效，需要重新执行登录流程");
+      }
+    });
+  }
+
 })
