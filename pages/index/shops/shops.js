@@ -66,6 +66,8 @@ Page({
    */
   storeList: function(page, rows, tStoreName) {
     var that = this;
+    var longitude = wx.getStorageSync('longitude');
+    var latitude = wx.getStorageSync('latitude');
     var src = app.globalData.src + "/store/selectByExampleByPort";
     if (page == null) {
       page = that.data.page;
@@ -86,7 +88,9 @@ Page({
         'tStoreName': tStoreName,
         'province': that.data.province,
         'city': that.data.city,
-        'district': that.data.district
+        'district': that.data.district,
+        'longitude': longitude,
+        'latitude': latitude
       },
       success(res) {
         if (tStoreName != '' && page == 1) {
