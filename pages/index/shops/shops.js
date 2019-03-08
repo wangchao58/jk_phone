@@ -65,6 +65,9 @@ Page({
    * 加载列表
    */
   storeList: function(page, rows, tStoreName) {
+    if (undefined == tStoreName){
+      tStoreName = '';
+    }
     var that = this;
     var longitude = wx.getStorageSync('longitude');
     var latitude = wx.getStorageSync('latitude');
@@ -152,6 +155,8 @@ Page({
     var tStoreName = that.data.tStoreName;
     var page = that.data.page + 1;
     that.data.page = page;
+
+    this.thisCity1();
     if (page <= that.data.pages) {
       that.storeList(page, that.data.rows, tStoreName);
     }
@@ -210,6 +215,35 @@ Page({
 
     })
   },
+
+  /**
+   * 获取当前城市名称
+   */
+  thisCity1: function () {
+    var that = this;
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: function (addressRes) {
+            console.log(addressRes.result.address_component);
+
+            var address = addressRes.result.formatted_addresses.recommend;
+            that.setData({
+              province: addressRes.result.address_component.province,
+              city: addressRes.result.address_component.city,
+              district: addressRes.result.address_component.district,
+            })
+          }
+        })
+      }
+    })
+  },
+
   detailed: function(e) {
     wx.navigateTo({
       url: '../shopDetailed/shopDetailed?tId=' + e.currentTarget.id
