@@ -19,9 +19,9 @@ Page({
     this.listSlide();
   },
 
-  onShow: function(){
-    this.listInforRefresh();
-  },
+  // onShow: function(){
+  //   this.listInforRefresh();
+  // },
 
   information:function(){
     wx.navigateTo({

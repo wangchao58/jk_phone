@@ -23,9 +23,9 @@ Page({
     this.listInformation();
   },
 
-  onShow: function(){
-    this.listInforRefresh();
-  },
+  // onShow: function(){
+  //   this.listInforRefresh();
+  // },
 
   /**
    * 列表数据查询获取查询条件
