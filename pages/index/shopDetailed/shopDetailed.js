@@ -18,8 +18,8 @@ Page({
    * 查询数据
    */
   tStoreData: function (id, enshrineViews) {
-    console.log("dddddd" + enshrineViews)
     var that = this;
+    var userId = wx.getStorageSync('userid');
     var src = app.globalData.src + "/store/selectByPrimaryKey";
     wx.request({
       url: src,
@@ -27,7 +27,8 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' },
       data: { 
         tId: id,
-        enshrineViews: enshrineViews 
+        enshrineViews: enshrineViews,
+        personId: userId
       },
       success(res) {
         that.setData({
