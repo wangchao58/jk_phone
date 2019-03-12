@@ -116,6 +116,7 @@ Page({
       }
     })
   },
+
   selInput: function(e) {
     this.setData({
       tStoreName: e.detail.value
@@ -125,7 +126,7 @@ Page({
     var that = this;
     var tStoreName = that.data.tStoreName;
     if (tStoreName != null && tStoreName != '') {
-      this.storeList(1, 10, tStoreName);
+      this.selStoreList(1, 10, tStoreName);
     } else {
       wx.showToast({
         title: '请输入要搜索的内容',
@@ -134,6 +135,53 @@ Page({
       })
     }
   },
+
+  selStoreList: function (page, rows, tStoreName) {
+    if (undefined == tStoreName) {
+      tStoreName = '';
+    }
+    var that = this;
+    var src = app.globalData.src + "/store/selectByExampleByPort";
+    if (page == null) {
+      page = that.data.page;
+      rows = that.data.rows;
+    }
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        'page': page,
+        'rows': rows,
+        'tStoreName': tStoreName
+      },
+      success(res) {
+        if (tStoreName != '' && page == 1) {
+          that.setData({
+            storeList: []
+          });
+        }
+        var storeList = that.data.storeList;
+        var data = res.data.tStoreList;
+        that.data.pages = res.data.pages;
+
+        for (var i = 0; i < data.length; i++) {
+          storeList.push(data[i]);
+        }
+        that.setData({
+          storeList: storeList
+        });
+        // 隐藏加载框
+        wx.hideLoading();
+      }
+    })
+  },
+
   callPhone: function(e) {
     var phone = e.currentTarget.dataset.phone
     wx.makePhoneCall({
