@@ -44,15 +44,14 @@
   <view class='discuss-cont'>
     <view class='discuss-title w100'>共 {{discussNum}} 条评论</view>
     <view class='discuss-row' wx:for="{{discussList}}" wx:key="{{item}}">
-      <view class='w100 discuss-top'>
+      <view class='w100 discuss-top' >
         <image src='{{item.avatar}}' class='discuss-head'></image>
         <view class='left mr20'>{{item.nickName}}</view>
         <view class='right'>{{item.createTime}}</view>
       </view>
       <view class='discuss-txt'>
-        <view class='left huifu' hidden='false'>@长歌：</view>
-        
-        <view class='left'>{{item.tContent}}</view>
+        <!-- <view class='left huifu' hidden='false'>@长歌：</view> -->
+        <view class='left' id="{{item.nickName}}" bindtap='reply'>{{item.tContent}}</view>
       </view>
     </view>
   </view>
@@ -60,7 +59,7 @@
 <view class="container" style='height:99rpx; background-color:#F7F7F7;'></view>
 <view class="search-box">
   <view class="section">
-    <input placeholder="请输入评论内容" value='{{data.discuss}}' bindinput="discussInput" />
+    <input placeholder="请输入评论内容" value='{{discuss}}' bindinput="discussInput" />
     <view class='submit-btn' bindtap='discussCommit' id="{{data.tId}}">发送</view>
   </view>
 </view>

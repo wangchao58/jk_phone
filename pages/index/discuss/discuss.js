@@ -123,5 +123,17 @@ Page({
       that.discussData(tId);
     })
   },
+
+  /**
+   * 评论回复
+   */
+  reply: function(e){
+    var that = this;
+    var nickName = e.currentTarget.id;
+    var nickNameData = '回复' + nickName+'：';
+    that.setData({
+      discuss: nickNameData
+    })
+  }
   
 })
