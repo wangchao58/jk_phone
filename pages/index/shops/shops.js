@@ -18,7 +18,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var that = this;
     qqmapsdk = new QQMapWX({
       key: app.globalData.mapKey
@@ -64,7 +64,10 @@ Page({
   /**
    * 加载列表
    */
-  storeList: function(page, rows, tStoreName) {
+  storeList: function (page, rows, tStoreName) {
+    if (undefined == tStoreName) {
+      tStoreName = '';
+    }
     var that = this;
     var longitude = wx.getStorageSync('longitude');
     var latitude = wx.getStorageSync('latitude');
@@ -76,87 +79,54 @@ Page({
     wx.showLoading({
       title: '玩命加载中',
     })
-    if (undefined == tStoreName) {
-      wx.request({
-        url: src,
-        method: 'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        data: {
-          'page': page,
-          'rows': rows,
-          'tStoreName': tStoreName
-        },
-        success(res) {
-          if (tStoreName != '' && page == 1) {
-            that.setData({
-              storeList: []
-            });
-          }
-          var storeList = that.data.storeList;
-          var data = res.data.tStoreList;
-          that.data.pages = res.data.pages;
-
-          for (var i = 0; i < data.length; i++) {
-            storeList.push(data[i]);
-          }
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        'page': page,
+        'rows': rows,
+        'tStoreName': tStoreName,
+        'province': that.data.province,
+        'city': that.data.city,
+        'district': that.data.district,
+        'longitude': longitude,
+        'latitude': latitude
+      },
+      success(res) {
+        if (tStoreName != '' && page == 1) {
           that.setData({
-            storeList: storeList
+            storeList: []
           });
-          // 隐藏加载框
-          wx.hideLoading();
         }
-      })
-    }else{
-      wx.request({
-        url: src,
-        method: 'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        data: {
-          'page': page,
-          'rows': rows,
-          'tStoreName': tStoreName,
-          'province': that.data.province,
-          'city': that.data.city,
-          'district': that.data.district,
-          'longitude': longitude,
-          'latitude': latitude
-        },
-        success(res) {
-          if (tStoreName != '' && page == 1) {
-            that.setData({
-              storeList: []
-            });
-          }
-          var storeList = that.data.storeList;
-          var data = res.data.tStoreList;
-          that.data.pages = res.data.pages;
+        var storeList = that.data.storeList;
+        var data = res.data.tStoreList;
+        that.data.pages = res.data.pages;
 
-          for (var i = 0; i < data.length; i++) {
-            storeList.push(data[i]);
-          }
-          that.setData({
-            storeList: storeList
-          });
-          // 隐藏加载框
-          wx.hideLoading();
+        for (var i = 0; i < data.length; i++) {
+          storeList.push(data[i]);
         }
-      })
-    }
+        that.setData({
+          storeList: storeList
+        });
+        // 隐藏加载框 
+        wx.hideLoading();
+      }
+    })
   },
-  selInput: function(e) {
+
+  selInput: function (e) {
     this.setData({
       tStoreName: e.detail.value
     })
   },
-  tStoreInquire: function(e) {
+  tStoreInquire: function (e) {
     var that = this;
     var tStoreName = that.data.tStoreName;
     if (tStoreName != null && tStoreName != '') {
-      this.storeList(1, 10, tStoreName);
+      this.selStoreList(1, 10, tStoreName);
     } else {
       wx.showToast({
         title: '请输入要搜索的内容',
@@ -165,7 +135,57 @@ Page({
       })
     }
   },
-  callPhone: function(e) {
+
+  /**
+   * 店铺列表条件查询（不分地域）
+   */
+  selStoreList: function (page, rows, tStoreName) {
+    if (undefined == tStoreName) {
+      tStoreName = '';
+    }
+    var that = this;
+    var src = app.globalData.src + "/store/selectByExampleByPort";
+    if (page == null) {
+      page = that.data.page;
+      rows = that.data.rows;
+    }
+    wx.showLoading({
+      title: '玩命加载中',
+    })
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        'page': page,
+        'rows': rows,
+        'tStoreName': tStoreName
+      },
+      success(res) {
+        if (tStoreName != '' && page == 1) {
+          that.setData({
+            storeList: []
+          });
+        }
+        var storeList = that.data.storeList;
+        var data = res.data.tStoreList;
+        that.data.pages = res.data.pages;
+
+        for (var i = 0; i < data.length; i++) {
+          storeList.push(data[i]);
+        }
+        that.setData({
+          storeList: storeList
+        });
+        // 隐藏加载框
+        wx.hideLoading();
+      }
+    })
+  },
+
+  callPhone: function (e) {
     var phone = e.currentTarget.dataset.phone
     wx.makePhoneCall({
       phoneNumber: phone
@@ -174,14 +194,14 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function(e) {
+  onPullDownRefresh: function (e) {
 
 
   },
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     var that = this;
     var tStoreName = that.data.tStoreName;
     var page = that.data.page + 1;
@@ -207,12 +227,12 @@ Page({
       name: shopName,
       address: shopAddress
     })
-  },	 
+  },
 
   /**
    * 获取当前城市名称
    */
-  thisCity: function() {
+  thisCity: function () {
     var that = this;
     wx.getLocation({
       type: 'wgs84',
@@ -222,7 +242,7 @@ Page({
             latitude: res.latitude,
             longitude: res.longitude
           },
-          success: function(addressRes) {
+          success: function (addressRes) {
             console.log(addressRes.result.address_component);
 
             var address = addressRes.result.formatted_addresses.recommend;
@@ -235,7 +255,7 @@ Page({
           }
         })
       },
-      fail: function() {
+      fail: function () {
         that.storeList(1, 10, '');
         // wx.showToast({
         //   title: '授权失败',
@@ -275,7 +295,7 @@ Page({
     })
   },
 
-  detailed: function(e) {
+  detailed: function (e) {
     wx.navigateTo({
       url: '../shopDetailed/shopDetailed?tId=' + e.currentTarget.id
     })
@@ -283,7 +303,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     wx.request({
       url: app.globalData.src + '/share/insertSelective',
       method: 'POST',

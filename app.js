@@ -13,7 +13,7 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
           // url: "https://i.bjjkkj.com/personage/addPersonage",
-          url: "http://192.168.100.26/personage/addPersonage",
+          url: "http://192.168.99.190/personage/addPersonage",
           method: 'POST',
           header: {
             'content-type': 'application/x-www-form-urlencoded'
@@ -90,7 +90,7 @@ App({
     userInfo: null,
     mapKey: "VV4BZ-WGU6J-NBQFZ-KBMLJ-5P4LZ-YAFEM",
     // src: "https://i.bjjkkj.com"  //服务器域名
-    src: "http://192.168.100.26", //服务器域名
+    src: "http://192.168.99.190", //服务器域名
   }
 
 
