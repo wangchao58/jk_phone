@@ -71,9 +71,9 @@ Page({
         if (data.length != 0) {
           for (var i = 0; i < data.length; i++) {
             listInformation.push(data[i]);
-            listInformation[i].tPraise = data[i].tPraise;
-            listInformation[i].tEvaluate = data[i].tEvaluate;
-            listInformation[i].praiseId = data[i].praiseId;
+            // listInformation[i].tPraise = data[i].tPraise;
+            // listInformation[i].tEvaluate = data[i].tEvaluate;
+            // listInformation[i].praiseId = data[i].praiseId;
           }
           that.setData({ listInformation: listInformation });
         } else {
@@ -116,9 +116,9 @@ Page({
         if (data.length != 0) {
           for (var i = 0; i < data.length; i++) {
             listInformation.push(data[i]);
-            listInformation[i].tPraise = data[i].tPraise;
-            listInformation[i].tEvaluate = data[i].tEvaluate;
-            listInformation[i].praiseId = data[i].praiseId;
+            // listInformation[i].tPraise = data[i].tPraise;
+            // listInformation[i].tEvaluate = data[i].tEvaluate;
+            // listInformation[i].praiseId = data[i].praiseId;
           }
           that.setData({ listInformation: listInformation });
         } else {
