@@ -46,10 +46,18 @@ Page({
       },
       success(res) {
         var len = parseInt(res.data.tExplain.length);
+        // 省市县编辑回显
+        that.setData({ region: [] });
+        var region = that.data.region;
+        region.push(res.data.province)
+        region.push(res.data.city)
+        region.push(res.data.district)
+        
         that.setData({
           data: res.data,
           tPicture: res.data.tPicture,
-          currentWordNumber: len
+          currentWordNumber: len,
+          region: region
         });
       }
     })

@@ -30,9 +30,10 @@
         <input name="tPhone" value='{{wxPhone}}' disabled='true' />
       </view>
       <view wx:if="{{wxPhone==''}}">
-        <input placeholder="请输入电话号码" name="tPhone" value='{{data.tPhone}}' disabled='true' />
+        <input placeholder="请输入电话号码" name="tPhone" value='{{data.tPhone}}'/>
+        <!-- <input placeholder="请输入电话号码" name="tPhone" value='{{data.tPhone}}' disabled='true' /> -->
       </view>
-      <button class='getPhone' size='mini' type='primary' plain="true" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">获取手机号</button>
+      <!-- <button class='getPhone' size='mini' type='primary' plain="true" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">获取手机号</button> -->
     </view>
     <!-- <view class="section">
       <view class='section-label'>微信号</view>
