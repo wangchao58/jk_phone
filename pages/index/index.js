@@ -17,6 +17,7 @@ Page({
   onLoad: function (options) {
     this.listInformation();
     this.listSlide();
+    this.InformationTop();
   },
 
   // onShow: function(){
@@ -83,6 +84,29 @@ Page({
         
         // 隐藏加载框
         wx.hideLoading();
+      }
+    })
+  },
+
+  /**
+   * 置顶此刻信息查询
+   */
+  InformationTop: function(){
+    var that = this;
+    var userId = wx.getStorageSync('userid');
+    var src = app.globalData.src + "/information/getInformationTop";
+    wx.request({
+      url: src,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: {
+        isTop: '1',
+        pId: userId
+      },
+      success(res) {
+        that.setData({
+          data: res.data
+        });
       }
     })
   },
