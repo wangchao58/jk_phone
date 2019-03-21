@@ -7,51 +7,53 @@
 </view>
 
 <!-- 置顶信息START -->
-<view class="container mt20">
-  <view class='list-cont'>
-    <view class='w100 list-top' id="{{data.tId}}" bindtap='discussDetail'>
-      <image src='{{data.avatar}}'></image>
-      <view class='left fontSize32'>{{data.pId}}</view>
-      <view class='right cor-grey'>{{data.tCreateTime}}</view>
-    </view>
-    <view class='w100 list-bom'>
-      <view class='list-txt w100 left' id="{{data.tId}}" bindtap='discussDetail'>
-        <text selectable="true">{{data.tContent}}</text>
+<view wx:if="{{data.tContent != null && data.tContent != ''}}">
+  <view class="container mt20">
+    <view class='list-cont'>
+      <view class='w100 list-top' id="{{data.tId}}" bindtap='discussDetail'>
+        <image src='{{data.avatar}}'></image>
+        <view class='left fontSize32'>{{data.pId}}</view>
+        <view class='right cor-grey'>{{data.tCreateTime}}</view>
       </view>
-      <view class='list-img w100 left' id="{{data.tId}}">
-        <view wx:for="{{data.listImg}}" wx:for-item="items" wx:key="{{items}}">
-          <!-- 图片展示调整 -->
-          <view wx:if='{{data.listImg.length > 1}}'>
-            <image src='{{items}}' data-list="{{data.listImg}}" data-src="{{items}}" bindtap='imgck' mode='aspectFill'></image>
+      <view class='w100 list-bom'>
+        <view class='list-txt w100 left' id="{{data.tId}}" bindtap='discussDetail'>
+          <text selectable="true">{{data.tContent}}</text>
+        </view>
+        <view class='list-img w100 left' id="{{data.tId}}">
+          <view wx:for="{{data.listImg}}" wx:for-item="items" wx:key="{{items}}">
+            <!-- 图片展示调整 -->
+            <view wx:if='{{data.listImg.length > 1}}'>
+              <image src='{{items}}' data-list="{{data.listImg}}" data-src="{{items}}" bindtap='imgck' mode='aspectFill'></image>
+            </view>
+
+            <view wx:if='{{data.listImg.length == 1}}'>
+              <image src='{{items}}' data-list="{{data.listImg}}" data-src="{{items}}" bindtap='imgck' mode="widthFix"></image>
+            </view>
+            
+          </view>
+        </view>
+        <view class='list-num w100 left'> 
+          <view class='left' wx:if="{{data.city != null && data.city != ''}}">
+            <image src="../../images/shops-ico02.png" bindtap='discuss'></image>{{data.city}}
+          </view>
+          <view class='left' wx:if="{{data.city == null || data.city == ''}}"></view>
+          <view class='right' bindtap='discussDetail' id="{{data.tId}}">
+            <image src="../../images/index-ico06.png"></image>{{data.tEvaluate}}
           </view>
 
-          <view wx:if='{{data.listImg.length == 1}}'>
-            <image src='{{items}}' data-list="{{data.listImg}}" data-src="{{items}}" bindtap='imgck' mode="widthFix"></image>
+          <view wx:if="{{data.praiseImage != null}}">
+          <view class='right mr30' bindtap='informationTopPraise' data-index='{{index}}' id='{{data.tId}}'>
+            <image src="{{data.praiseImage}}"></image>{{data.tPraise}}
+            </view>
           </view>
-          
-        </view>
-      </view>
-      <view class='list-num w100 left'>
-        <view class='left' wx:if="{{data.city != null && data.city != ''}}">
-          <image src="../../images/shops-ico02.png" bindtap='discuss'></image>{{data.city}}
-        </view>
-        <view class='left' wx:if="{{data.city == null || data.city == ''}}"></view>
-        <view class='right' bindtap='discussDetail' id="{{data.tId}}">
-          <image src="../../images/index-ico06.png"></image>{{data.tEvaluate}}
-        </view>
 
-        <view wx:if="{{data.praiseImage != null}}">
-         <view class='right mr30' bindtap='informationTopPraise' data-index='{{index}}' id='{{data.tId}}'>
-          <image src="{{data.praiseImage}}"></image>{{data.tPraise}}
-          </view>
-        </view>
-
-        <view wx:if="{{data.praiseImage == null}}">
-          <view class='right mr30' bindtap='informationTopPraise' data-index='{{index}}' id='{{data.tId}}' wx:if="{{data.praiseId != null || data.praiseId ==0}}">
-            <image src="../../images/index-ico05-hover.png"></image>{{data.tPraise}}
-          </view>
-          <view class='right mr30' bindtap='informationTopPraise' data-index='{{index}}' id='{{data.tId}}' wx:if="{{data.praiseId == null || data.praiseId ==0}}">
-            <image src="../../images/index-ico05.png"></image>{{data.tPraise}}
+          <view wx:if="{{data.praiseImage == null}}">
+            <view class='right mr30' bindtap='informationTopPraise' data-index='{{index}}' id='{{data.tId}}' wx:if="{{data.praiseId != null || data.praiseId ==0}}">
+              <image src="../../images/index-ico05-hover.png"></image>{{data.tPraise}}
+            </view>
+            <view class='right mr30' bindtap='informationTopPraise' data-index='{{index}}' id='{{data.tId}}' wx:if="{{data.praiseId == null || data.praiseId ==0}}">
+              <image src="../../images/index-ico05.png"></image>{{data.tPraise}}
+            </view>
           </view>
         </view>
       </view>
