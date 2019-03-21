@@ -58,16 +58,16 @@
         </view>
 
         <view wx:if="{{data.praiseImage != null}}">
-         <view class='right mr30' bindtap='informationPraise' data-index='{{index}}' id='{{data.tId}}'>
-          <image src="{{data.praiseImage}}"></image>{{tPraise}}
+         <view class='right mr30' bindtap='informationTopPraise' data-index='{{index}}' id='{{data.tId}}'>
+          <image src="{{data.praiseImage}}"></image>{{data.tPraise}}
           </view>
         </view>
 
-        <view wx:if="{{item.praiseImage == null}}">
-          <view class='right mr30' bindtap='informationPraise' data-index='{{index}}' id='{{data.tId}}' wx:if="{{data.praiseId != null || data.praiseId ==0}}">
+        <view wx:if="{{data.praiseImage == null}}">
+          <view class='right mr30' bindtap='informationTopPraise' data-index='{{index}}' id='{{data.tId}}' wx:if="{{data.praiseId != null || data.praiseId ==0}}">
             <image src="../images/index-ico05-hover.png"></image>{{data.tPraise}}
           </view>
-          <view class='right mr30' bindtap='informationPraise' data-index='{{index}}' id='{{data.tId}}' wx:if="{{data.praiseId == null || data.praiseId ==0}}">
+          <view class='right mr30' bindtap='informationTopPraise' data-index='{{index}}' id='{{data.tId}}' wx:if="{{data.praiseId == null || data.praiseId ==0}}">
             <image src="../images/index-ico05.png"></image>{{data.tPraise}}
           </view>
         </view>

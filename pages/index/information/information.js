@@ -207,6 +207,41 @@ Page({
         })
     })
   },
+
+  /**
+     * 首页置顶资讯点赞
+     */
+  informationTopPraise: function (e) {
+    var that = this;
+    var tId = e.currentTarget.id;
+    var tType = '3';
+    wx.setStorageSync('tId', tId);
+    wx.setStorageSync('tType', tType);
+    //调用公共点赞js方法
+    praise.clickPraise(tId, tType, function (result) {
+      var message = that.data.data;
+      var collectStatus = true
+      if (message.tPraise <= result.data) { //如果是没点赞+1
+        collectStatus = true
+      } else {
+        collectStatus = false
+      }
+      wx.showToast({
+        title: collectStatus ? '点赞成功' : '取消成功',
+      })
+      if (collectStatus) {
+        message.praiseImage = "../../images/index-ico05-hover.png";
+      } else {
+        message.praiseImage = "../../images/index-ico05.png";
+      }
+      message.tPraise = result.data
+      console.log(" message.tPraise" + message.tPraise)
+      that.setData({
+        data: message
+      })
+    })
+  },
+
   /**
    * 条件查询
    */
